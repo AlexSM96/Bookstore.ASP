@@ -1,0 +1,16 @@
+﻿
+@model IList<AuthorViewModel>
+@{
+    ViewData["Title"] = "Authors";
+}
+
+<h1>Авторы</h1>
+
+<div class="container">
+    <ul class="navbar nav-item">
+        @foreach (var author in Model)
+        {
+            <li class="nav-item">@author.Name</li>
+        }
+    </ul>
+</div>
