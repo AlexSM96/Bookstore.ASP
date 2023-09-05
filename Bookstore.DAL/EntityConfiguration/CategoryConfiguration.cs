@@ -8,21 +8,14 @@ namespace Bookstore.DAL.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<Category> builder)
         {
-            builder.HasKey(c => c.Id);
-
             builder
-                .HasIndex(c => c.Id)
-                .IsUnique();
-
+                .HasKey(c => c.Id);
             builder
-                .Property(c => c.Title)
-                .HasMaxLength(50)
+                .Property(c => c.Name)
                 .IsRequired();
-
             builder
-                .HasOne(c => c.Book)
-                .WithMany(b => b.Categories)
-                .HasForeignKey(c => c.BookId);
+                .HasMany(c => c.Books)
+                .WithMany(x => x.Categories);
         }
     }
 }

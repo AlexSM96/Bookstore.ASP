@@ -5,7 +5,8 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bookstore.DAL
 {
-    public sealed class BookstoreDbContext : DbContext, IBookDbContext, IAuthorDbContext
+    public sealed class BookstoreDbContext 
+        : DbContext, IBaseDbContext
     {
         public BookstoreDbContext(DbContextOptions<BookstoreDbContext> option)
             : base(option) { }
@@ -27,10 +28,10 @@ namespace Bookstore.DAL
             modelBuilder
                 .ApplyConfiguration(new BookConfiguration())
                 .ApplyConfiguration(new AuthorConfiguration())
-                .ApplyConfiguration(new CategoryConfiguration())
                 .ApplyConfiguration(new OrderConfiguration())
                 .ApplyConfiguration(new ReviewConfiguration())
-                .ApplyConfiguration(new UserConfiguration());
+                .ApplyConfiguration(new UserConfiguration())
+                .ApplyConfiguration(new CategoryConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

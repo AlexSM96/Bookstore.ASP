@@ -1,16 +1,16 @@
-﻿
-@model IList<AuthorViewModel>
+﻿@model IList<AuthorViewModel>
 @{
     ViewData["Title"] = "Authors";
 }
 
 <h1>Авторы</h1>
-
 <div class="container">
-    <ul class="navbar nav-item">
+    <ul class="list-group-horizontal-lg">
         @foreach (var author in Model)
         {
-            <li class="nav-item">@author.Name</li>
+            <li class="list-group-item list-group-item-info">
+                <a class="nav-item" asp-controller="Book" asp-action="GetBooks" title="Открыть книги автора">@author.Name</a>
+            </li>
         }
     </ul>
 </div>

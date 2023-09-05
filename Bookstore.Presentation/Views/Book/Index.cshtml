@@ -3,14 +3,33 @@
     ViewData["Title"] = "Books";
 }
 
-<div>
-    <a class="nav-link" asp-area="" asp-controller="Book" asp-action="AddBook">Добавить книгу</a>
-</div>
+<h1>Книги</h1>
 <div class="container">
     <ul class="list-group-flush">
         @foreach (var book in Model)
         {
-            <li class="list-group-item">@book.Title</li>
+            <li class="list-group-item">
+                <div class="row">
+                    <div class="col-md-3" align="center">
+                        <img src="~/img/@book.ImagePath" width="150" />
+                    </div>
+                    <div class="col-md-9">
+                        <h3>@book.Title</h3>
+                        <p>Дата издания: @book.PublicationDate.ToShortDateString()</p>
+                        <span>
+                            @{
+                                var text = book.Authors.Count > 1 ? "Авторы:" : "Автор:";
+                            }
+                            @text
+                            @foreach (var author in book.Authors)
+                            {
+                                <small>@author.Name</small>
+                            }
+                        </span>
+                        <button class="btn btn-outline-primary">Преобрести: @book.Price &#8381;</button>
+                    </div>
+                </div>
+            </li>
         }
     </ul>
 </div>

@@ -1,0 +1,17 @@
+﻿@model AuthorViewModel
+@{
+    ViewData["Title"] = "AddAuthor";
+}
+
+<div class="form-container">
+    <h3>Добавить автора</h3>
+    <form class="form-text" asp-controller="Author" asp-action="AddAuthor" method="post">
+        <div align="left">
+            <label class="form" asp-for="Name">ФИО автора</label>
+            <input class="form-control" asp-for="Name" />
+            <span class="validation-message" asp-validation-for="Name"></span>
+        </div>
+        <br />
+        <button class="btn btn-outline-dark" type="submit">Добавить</button>
+    </form>
+</div>

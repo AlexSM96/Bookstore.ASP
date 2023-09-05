@@ -1,0 +1,27 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "SignIn";
+}
+
+<div class="registration-container">
+    <h3>Вход в систему</h3>
+    <form asp-controller="Accont" asp-action="RegisterUser" method="post">
+        <div align="left">
+            <label class="form-label" asp-for="Email">Email адрес</label>
+            <input class="form-control" asp-for="Email" />
+            <span asp-validation-for="Email" class="validation-message"></span>
+        </div>
+        <div align="left">
+            <label class="form-label" asp-for="Password">Пороль</label>
+            <input class="form-control" asp-for="Password" />
+            <span asp-validation-for="Password" class="validation-message"></span>
+        </div>
+        <br />
+        <div>
+            <button class="nav-link text-decoration-underline"
+                asp-controller="Account" asp-action="SignIn"
+                type="submit">Войти</button>
+        </div>
+    </form>
+</div>
+

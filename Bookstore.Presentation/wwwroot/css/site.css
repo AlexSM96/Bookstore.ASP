@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -11,7 +11,7 @@ html {
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
@@ -25,14 +25,118 @@ body {
     font-family: 'Roboto Mono', monospace;
 }
 
-.validation-message{
+.validation-message {
     color: red;
 }
 
-.form-container{
+.form-container {
     border-radius: 25px;
     box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
     padding: 10px;
     background-color: lightblue;
     width: 600px
 }
+
+.category {
+    display: flex;
+    margin: 25px;
+    border-radius: 10px;
+    background-color: orange;
+    padding: 5px;
+    width: max-content;
+}
+
+.ad-carousel {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    margin: 0 auto;
+    overflow: hidden;
+    background-color: fuchsia;
+    border-radius: 25px;
+    box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+    .slider img {
+        width: 40%;
+        height: 90%;
+        object-fit: cover;
+        margin: 20px 45px;
+        border-radius: 5px;
+    }
+
+.prev-button, .next-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 50px;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    font-size: 50px;
+    color: white;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+.registration-container {
+    font-size: 20px;
+    text-align: center;
+    margin: auto;
+    padding: 10px;
+    width: 400px;
+    background-color: #a5b4cf;
+    box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
+    border-radius: 10px;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    font-size: 20px;
+    padding: 5px;
+    margin-bottom: 20px;
+    border-radius: 40px;
+    box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
+}
+
+.nav {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+    .nav li {
+        float: left;
+    }
+
+.color {
+    background-color: orange;
+}
+
+.logo-container {
+    display: flex;
+    justify-content: space-between;
+    padding: initial;
+    margin: 15px;
+}
+
+    .logo-container > div {
+        width: 50%;
+        margin: auto;
+    }
+
+        .logo-container > div:last-child {
+            text-align: right;
+        }

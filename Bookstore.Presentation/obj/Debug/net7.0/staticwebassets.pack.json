@@ -13,6 +13,58 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\admin-ico.jpg",
+      "PackagePath": "staticwebassets\\img\\admin-ico.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\logo.png",
+      "PackagePath": "staticwebassets\\img\\logo.png"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\search-ico.png",
+      "PackagePath": "staticwebassets\\img\\search-ico.png"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Башня ласточки.jpg",
+      "PackagePath": "staticwebassets\\img\\Башня ласточки.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Владычица озера.jpg",
+      "PackagePath": "staticwebassets\\img\\Владычица озера.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Крещение огнём.jpg",
+      "PackagePath": "staticwebassets\\img\\Крещение огнём.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Кровь эльфов.jpg",
+      "PackagePath": "staticwebassets\\img\\Кровь эльфов.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Меч предназначения.jpg",
+      "PackagePath": "staticwebassets\\img\\Меч предназначения.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Последнее желание.jpg",
+      "PackagePath": "staticwebassets\\img\\Последнее желание.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Сезон гроз.jpg",
+      "PackagePath": "staticwebassets\\img\\Сезон гроз.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Час презрения.jpg",
+      "PackagePath": "staticwebassets\\img\\Час презрения.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Язык Программирования.jpg",
+      "PackagePath": "staticwebassets\\img\\Язык Программирования.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\js\\carousel.js",
+      "PackagePath": "staticwebassets\\js\\carousel.js"
+    },
+    {
       "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

@@ -1,17 +1,21 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.Presentation.Controllers
 {
     public class HomeController : Controller
     {
-        public HomeController()
-        {
-            
-        }
+        private readonly IBaseService<Book> _service;
+        private readonly IMapper _mapper;
 
-        public IActionResult Index()
+        public HomeController(IBaseService<Book> service, IMapper mapper) =>
+            (_service,_mapper) =(service, mapper);
+        
+        public async Task<IActionResult> Index()
         {
-            return View();
+            var response = await _service.GetAllAsync(CancellationToken.None);
+            var books = response.TakeLast(4);
+            return View(_mapper.Map<IList<BookViewModel>>(books));
         }
     }
 }

@@ -1,43 +1,39 @@
 ﻿using AutoMapper;
-using AutoMapper.QueryableExtensions;
 using Bookstore.Application.Interfaces;
-using Bookstore.Application.Mapping.AuthorDto;
 using Bookstore.Application.Services.Base;
 using Bookstore.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Bookstore.Application.Services.AuthorServices
 {
-    public class AuthorService : IBaseService<AuthorViewModel>
+    public class AuthorService : IBaseService<Author>
     {
-        private readonly IAuthorDbContext _context;
-        private readonly IMapper _mapper;
+        private readonly IBaseDbContext _context;
 
-        public AuthorService(IAuthorDbContext context, IMapper mapper) =>
-            (_context, _mapper) = (context, mapper);
+        public AuthorService(IBaseDbContext context, IMapper mapper) =>
+            _context = context;
 
 
-        public async Task<IList<AuthorViewModel>> GetAllAsync(CancellationToken cancellationToken)
+        public async Task<IList<Author>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Authors
-                .ProjectTo<AuthorViewModel>(_mapper.ConfigurationProvider)
-                .ToListAsync(cancellationToken);
+                .ToListAsync(cancellationToken)
+                 ?? throw new ArgumentNullException();
         }
 
-        public async Task CreateAsync(AuthorViewModel model, CancellationToken cancellationToken)
+        public async Task CreateAsync(Author author, CancellationToken cancellationToken)
         {
             try
             {
-                model.Id = Guid.NewGuid();
-                var author = await _context.Authors
-                    .FirstOrDefaultAsync(a => a.Id == model.Id);
+                author.Id = Guid.NewGuid();
+                var newAuthor = await _context.Authors
+                    .FirstOrDefaultAsync(a => a.Id == author.Id);
 
-                if (author is not null)
+                if (newAuthor is not null)
                 {
-                    throw new Exception($"Автор: ID = {author.Id},Name = {author.Name}");
+                    throw new Exception($"Автор: ID = {author.Id}, Name = {author.Name}");
                 }
 
-                author = _mapper.Map<Author>(model);
                 await _context.Authors.AddAsync(author);
                 await _context.SaveChangesAsync(cancellationToken);
             }
@@ -67,19 +63,21 @@ namespace Bookstore.Application.Services.AuthorServices
         }
 
 
-        public async Task UpdateAsync(AuthorViewModel model, CancellationToken cancellationToken)
+        public async Task UpdateAsync(Author author, CancellationToken cancellationToken)
         {
             try
             {
-                var author = await _context.Authors
-                    .FirstOrDefaultAsync(a => a.Id == model.Id);
+                var authorFromDb = await _context.Authors
+                    .FirstOrDefaultAsync(a => a.Id == author.Id);
 
-                if (author is null || author.Id != model.Id)
+                if (authorFromDb is null || authorFromDb.Id != author.Id)
                 {
-                    throw new ArgumentNullException(nameof(author));
+                    throw new ArgumentNullException(nameof(authorFromDb));
                 }
 
-                _context.Authors.Update(author);
+                authorFromDb.Name = author.Name;
+
+                _context.Authors.Update(authorFromDb);
                 await _context.SaveChangesAsync(cancellationToken);
             }
             catch (Exception e)

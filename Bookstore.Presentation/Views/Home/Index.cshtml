@@ -1,8 +1,18 @@
-﻿@{
+﻿@model IEnumerable<BookViewModel>
+@{
     ViewData["Title"] = "Home Page";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+<div class="container">
+    <div class="ad-carousel">
+        <div class="slider">
+            @foreach (var book in Model)
+            {
+                <img src="~/img/@book.ImagePath" />
+            }
+        </div>
+        <button class="prev-button" aria-label="Посмотреть предыдущий слайд">&lang;</button>
+        <button class="next-button" aria-label="Посмотреть следующий слайд">&rang;</button>
+    </div>
 </div>
+

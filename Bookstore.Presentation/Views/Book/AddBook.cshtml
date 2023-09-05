@@ -1,44 +1,36 @@
 ﻿@model BookViewModel
-@{
-    ViewData["Title"] = "AddBook";
-}
 
 <div class="form-container">
     <h3>Добавить книгу</h3>
     <form class="form-text" asp-area="" asp-controller="Book" asp-action="AddBook" method="post">
-        <div>
+        <div align="left">
             <label asp-for="Title">Название книги<sup>*</sup></label>
-            <input class="list-group-item col-md-12" asp-for="Title" type="text" />
+            <input class="form-control" asp-for="Title" type="text" />
             <span class="validation-message" asp-validation-for="Title"></span>
         </div>
-        <div>
+        <div align="left">
             <label asp-for="Authors">Авторы<sup>*</sup></label>
-            <select id="authorsSelect" class="form-select" asp-for="Authors"></select>
+            <input class="form-control" type="text" />
             <span class="validation-message" asp-validation-for="Authors"></span>
         </div>
-        <div >
-            <label asp-for="Categories">Категории<sup>*</sup></label>
-            <select class="form-select" asp-for="Categories"></select>
-            <span class="validation-message" asp-validation-for="Categories"></span>
-        </div>
-        <div>
+        <div align="left">
             <label asp-for="PublicationDate">Дата издания<sup>*</sup></label>
-            <input id="date" class="list-group-item col-md-12" asp-for="PublicationDate" type="date" value=""/>
+            <input id="date" class="form-control" asp-for="PublicationDate" type="date" value="" />
             <span class="validation-message" asp-validation-for="PublicationDate"></span>
         </div>
-        <div>
+        <div align="left">
             <label asp-for="Price">Цена<sup>*</sup></label>
-            <input class="list-group-item col-md-12" asp-for="Price" type="text" />
+            <input class="form-control" asp-for="Price" type="text" />
             <span class="validation-message" asp-validation-for="Price"></span>
         </div>
-        <div>
+        <div align="left">
             <label asp-for="ImagePath">Путь до изображения</label>
-            <input class="list-group-item col-md-12" asp-for="ImagePath" type="text"/>
+            <input class="form-control" asp-for="ImagePath" type="file" />
             <span class="validation-message" asp-validation-for="ImagePath"></span>
         </div>
-        <div>
+        <div align="left">
             <label asp-for="Description">Описание</label>
-            <textarea class="list-group-item col-md-12" asp-for="Description" type="text"></textarea>
+            <textarea class="form-control" asp-for="Description" type="text"></textarea>
             <span class="validation-message" asp-validation-for="Description"></span>
         </div>
         <br />

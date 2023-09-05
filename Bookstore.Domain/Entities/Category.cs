@@ -4,10 +4,8 @@ namespace Bookstore.Domain.Entities
 {
     public class Category : BaseEntity
     {
-        public string Title { get; set; }
+        public string Name { get; set; }
 
-        public Guid BookId { get; set; }
-
-        public Book Book { get; set; }
+        public ICollection<Book> Books { get; set; }
     }
 }

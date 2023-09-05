@@ -1,0 +1,11 @@
+﻿global using Bookstore.Application.Interfaces;
+global using Bookstore.Application.Mapping.AuthorDto;
+global using Bookstore.Application.Mapping.BookDto;
+global using Bookstore.Application.Services.AccountServices;
+global using Bookstore.Application.Services.AuthorServices;
+global using Bookstore.Application.Services.Base;
+global using Bookstore.Application.Services.BookServices;
+global using Bookstore.DAL;
+global using Bookstore.Domain.Entities;
+global using Microsoft.AspNetCore.Authentication.Cookies;
+global using Microsoft.EntityFrameworkCore;

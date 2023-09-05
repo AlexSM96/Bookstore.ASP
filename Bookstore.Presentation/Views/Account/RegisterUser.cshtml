@@ -1,0 +1,36 @@
+﻿@model RegistrationViewModel
+@{
+    ViewData["Title"] = "RegisterUser";
+}
+
+<div class="registration-container">
+    <h3>Регистрация на сайте</h3>
+    <form asp-controller="Accont" asp-action="RegisterUser" method="post">
+        <div align="left">
+            <label class="form-label" asp-for="Login">Введите ваше имя</label>
+            <input class="form-control" asp-for="Login" />
+            <span asp-validation-for="Login" class="validation-message"></span>
+        </div>
+        <div align="left">
+            <label class="form-label" asp-for="Email">Email адрес</label>
+            <input class="form-control" asp-for="Email" />
+            <span asp-validation-for="Email" class="validation-message"></span>
+        </div>
+        <div align="left">
+            <label class="form-label" asp-for="Password">Пороль</label>
+            <input class="form-control" asp-for="Password" />
+            <span asp-validation-for="Password" class="validation-message"></span>
+        </div>
+        <br />
+        <div>
+            <button class="nav-link text-decoration-underline" 
+                asp-controller="Account" asp-action="RegisterUser" 
+                type="submit">Зарегистрироваться</button>
+            <a class="nav-link text-decoration-underline"
+               asp-controller="Account" asp-action="SignIn">Войти</a>
+        </div>
+    </form>
+</div>
+
+
+

@@ -26,6 +26,8 @@ namespace Bookstore.DAL.EntityConfiguration
             builder
                 .Property(b => b.Description)
                 .HasMaxLength(500);
+
+
         }
     }
 }

@@ -1,13 +1,3 @@
-using Bookstore.Application.Interfaces;
-using Bookstore.Application.Mapping.AuthorDto;
-using Bookstore.Application.Mapping.BookDto;
-using Bookstore.Application.Mapping.CategoryDto;
-using Bookstore.Application.Services.AuthorServices;
-using Bookstore.Application.Services.Base;
-using Bookstore.Application.Services.BookServices;
-using Bookstore.DAL;
-using Microsoft.EntityFrameworkCore;
-
 var builder = WebApplication.CreateBuilder(args);
 
 ConfigureServices(builder);
@@ -49,12 +39,20 @@ void ConfigureServices(WebApplicationBuilder builder)
     });
 
     builder.Services
-        .AddAutoMapper(typeof(BookViewModel),
-            typeof(AuthorViewModel), typeof(CategoryViewModel));
+        .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
+        .AddCookie(option =>
+        {
+            option.LoginPath = new PathString("/Account/SignIn");
+            option.AccessDeniedPath = new PathString("/Account/SignIn");
+        });
 
     builder.Services
-        .AddScoped<IBookDbContext, BookstoreDbContext>()
-        .AddScoped<IAuthorDbContext, BookstoreDbContext>()
-        .AddScoped<IBaseService<BookViewModel>, BookService>()
-        .AddScoped<IBaseService<AuthorViewModel>, AuthorService>();
+        .AddAutoMapper(typeof(BookViewModel),
+            typeof(AuthorViewModel));
+
+    builder.Services
+        .AddScoped<IBaseDbContext, BookstoreDbContext>()
+        .AddScoped<IBaseService<Book>, BookService>()
+        .AddScoped<IBaseService<Author>, AuthorService>()
+        .AddScoped<IAccountService, AccountService>();
 }

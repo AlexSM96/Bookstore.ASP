@@ -1,4 +1,5 @@
 ﻿using Bookstore.Domain.Entities.Base;
+using Bookstore.Domain.Enums;
 
 namespace Bookstore.Domain.Entities
 {
@@ -9,6 +10,8 @@ namespace Bookstore.Domain.Entities
         public string Email { get; set; }
 
         public string Password { get; set; }
+
+        public Role Role { get; set; }
 
         public IList<Review>? Reviews { get; set; }
 
