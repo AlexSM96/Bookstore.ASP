@@ -1,7 +1,5 @@
 ﻿using Bookstore.Application.Mapping.AccountDto;
-using Bookstore.Application.Services.Base;
 using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Mvc;
 using System.Security.Claims;
 
@@ -13,7 +11,6 @@ namespace Bookstore.Presentation.Controllers
 
         public AccountController(IAccountService service) => _service = service;
         
-
         [HttpGet]
         public IActionResult RegisterUser() => View(new RegistrationViewModel());
 

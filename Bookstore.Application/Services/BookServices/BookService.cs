@@ -9,13 +9,15 @@ namespace Bookstore.Application.Services.BookServices
     public class BookService : IBaseService<Book>
     {
         private readonly IBaseDbContext _context;
-        
+
         public BookService(IBaseDbContext context, IMapper mapper) =>
             _context = context;
 
         public async Task<IList<Book>> GetAllAsync(CancellationToken cancellationToken)
         {
             return await _context.Books
+                .Include(x => x.Authors)
+                .Include(x => x.Categories)
                 .ToListAsync(cancellationToken)
                 ?? throw new ArgumentNullException(nameof(IList<Book>));
         }
@@ -31,7 +33,6 @@ namespace Bookstore.Application.Services.BookServices
                 {
                     throw new ArgumentNullException(nameof(newBook));
                 }
-
 
                 await _context.Books.AddAsync(newBook, cancellationToken);
                 await _context.SaveChangesAsync(cancellationToken);
@@ -86,10 +87,9 @@ namespace Bookstore.Application.Services.BookServices
             }
         }
 
-
         private async Task<Book> AddOrUpdateBook(Book bookFromView, Book bookFromDb = null!)
         {
-            var newBook = bookFromDb is not null ? bookFromDb : new Book();
+            var newBook = bookFromDb is null ? new Book() : bookFromDb;
 
             foreach (var author in bookFromView.Authors)
             {
@@ -107,7 +107,7 @@ namespace Bookstore.Application.Services.BookServices
 
             newBook.Title = bookFromView.Title;
             newBook.PublicationDate = bookFromView.PublicationDate;
-            newBook.ImagePath = bookFromView.ImagePath;
+            newBook.ImagePath = bookFromView.ImagePath?.ToLower();
             newBook.Price = bookFromView.Price;
             newBook.Description = bookFromView.Description;
 
@@ -116,7 +116,7 @@ namespace Bookstore.Application.Services.BookServices
 
         private void AddCategoryToBook(Book newBook, Category category, Category? categoryFromDb)
         {
-            if(categoryFromDb is null)
+            if (categoryFromDb is null)
             {
                 newBook.Categories.Add(category);
                 return;

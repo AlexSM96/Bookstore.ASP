@@ -8,11 +8,12 @@ namespace Bookstore.DAL.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<Order> builder)
         {
-            builder.HasKey(o => o.Id);
+            builder
+                .HasKey(o => o.Id);
 
             builder
-                .HasIndex(o => o.Id)
-                .IsUnique();
+                .Property(o => o.CreationDate)
+                .IsRequired();
 
             builder
                 .HasOne(o => o.User)

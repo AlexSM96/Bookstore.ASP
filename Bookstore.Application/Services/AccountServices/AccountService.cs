@@ -20,7 +20,7 @@ namespace Bookstore.Application.Services.AccountServices
             try
             {
                 var user = await _context.Users
-                    .FirstOrDefaultAsync(x=>x.Email == model.Email);
+                    .FirstOrDefaultAsync(x => x.Email == model.Email);
 
                 if (user == null)
                 {
@@ -29,10 +29,10 @@ namespace Bookstore.Application.Services.AccountServices
                         Id = Guid.NewGuid(),
                         Email = model.Email,
                         Login = model.Login,
-                        Password = model.Password
+                        Password = model.Password,
                     };
 
-                    AddRole(user);
+                    user.Role = AddRole(user);
                     await _context.Users.AddAsync(user);
                     await _context.SaveChangesAsync(cancellationToken);
                     return AuthenticateUser(user);
@@ -52,9 +52,9 @@ namespace Bookstore.Application.Services.AccountServices
             try
             {
                 var user = await _context.Users
-                    .FirstOrDefaultAsync(u => u.Email == model.Email 
+                    .FirstOrDefaultAsync(u => u.Email == model.Email
                         && u.Password == model.Password);
-                if(user is null)
+                if (user is null)
                 {
                     throw new ArgumentNullException(nameof(user));
                 }
@@ -67,10 +67,10 @@ namespace Bookstore.Application.Services.AccountServices
             }
         }
 
-        private void AddRole(User user)
+        private Role AddRole(User user)
         {
-            var role = user.Login == "salexm74@gmail.com"
-                ? user.Role = Role.Admin : Role.User;
+            return user.Email == "salexm74@gmail.com"
+                ?  Role.Admin : Role.User;
         }
 
         private ClaimsIdentity AuthenticateUser(User user)
@@ -81,7 +81,7 @@ namespace Bookstore.Application.Services.AccountServices
                 new Claim(ClaimsIdentity.DefaultRoleClaimType, user.Role.ToString())
             };
 
-            return new ClaimsIdentity(claims, "ApplicationCookies", 
+            return new ClaimsIdentity(claims, "ApplicationCookies",
                 ClaimsIdentity.DefaultNameClaimType, ClaimsIdentity.DefaultRoleClaimType);
         }
     }

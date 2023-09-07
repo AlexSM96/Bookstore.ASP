@@ -14,12 +14,12 @@ namespace Bookstore.Domain.Entities
 
         public string? ImagePath { get; set; }
 
-        public IList<Author> Authors { get; set; }
+        public IList<Author> Authors { get; set; } = new List<Author>();
 
-        public IList<Category> Categories { get; set; }
+        public IList<Category> Categories { get; set; } = new List<Category>();
 
-        public IList<Review>? Reviews { get; set; }
+        public IList<Review>? Reviews { get; set; } = new List<Review>();
 
-        public IList<Order>? Orders { get; set; }
+        public IList<Order>? Orders { get; set; } = new List<Order>();
     }
 }

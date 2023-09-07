@@ -1,3 +1,10 @@
+using Bookstore.Application.Mapping.CategoryDto;
+using Bookstore.Application.Mapping.ReviewDto;
+using Bookstore.Application.Mapping.UserDto;
+using Bookstore.Application.Services.CategoryServices;
+using Bookstore.Application.Services.OrderServices;
+using Bookstore.Application.Services.ReviewServices;
+
 var builder = WebApplication.CreateBuilder(args);
 
 ConfigureServices(builder);
@@ -47,12 +54,16 @@ void ConfigureServices(WebApplicationBuilder builder)
         });
 
     builder.Services
-        .AddAutoMapper(typeof(BookViewModel),
-            typeof(AuthorViewModel));
+        .AddAutoMapper(typeof(BookViewModel), typeof(AuthorViewModel), 
+            typeof(CategoryViewModel), typeof(ReviewViewModel),
+            typeof(UserViewModel));
 
     builder.Services
         .AddScoped<IBaseDbContext, BookstoreDbContext>()
         .AddScoped<IBaseService<Book>, BookService>()
         .AddScoped<IBaseService<Author>, AuthorService>()
+        .AddScoped<IBaseService<Category>, CategoryService>()
+        .AddScoped<IBaseService<Order>, OrderService>()
+        .AddScoped<IBaseService<Review>, ReviewService>()
         .AddScoped<IAccountService, AccountService>();
 }

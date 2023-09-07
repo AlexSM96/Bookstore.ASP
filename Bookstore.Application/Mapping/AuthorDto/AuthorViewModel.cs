@@ -8,9 +8,7 @@ namespace Bookstore.Application.Mapping.AuthorDto
     {
         public AuthorViewModel()
         {
-            CreateMap<AuthorViewModel, Author>()
-                .ForMember(a => a.Id, opt => opt.MapFrom(authorVm => Guid.NewGuid()))
-                .ForMember(a => a.Name, opt => opt.MapFrom(authorVm => authorVm.Name))
+            CreateMap<Author, AuthorViewModel>()
                 .ReverseMap();
         }
 

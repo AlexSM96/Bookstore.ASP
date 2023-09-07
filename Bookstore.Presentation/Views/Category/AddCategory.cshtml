@@ -1,0 +1,16 @@
+﻿@model CategoryViewModel
+
+<div class="form-container">
+    <h3>Добавить новую категорию для книг</h3>
+    <form class="form-text" asp-controller="Category" asp-action="AddCategory" method="post">
+        <div align="left">
+            <label asp-for="Name">Название категории</label>
+            <input class="form-control" asp-for="Name" type="text" />
+            <span asp-validation-for="Name" class="validation-message"></span>
+        </div>
+        <br />
+        <div>
+            <button class="btn btn-outline-dark btn-lg" type="submit">Добавить</button>
+        </div>
+    </form>
+</div>

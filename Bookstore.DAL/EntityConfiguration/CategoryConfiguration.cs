@@ -10,9 +10,11 @@ namespace Bookstore.DAL.EntityConfiguration
         {
             builder
                 .HasKey(c => c.Id);
+
             builder
                 .Property(c => c.Name)
                 .IsRequired();
+
             builder
                 .HasMany(c => c.Books)
                 .WithMany(x => x.Categories);

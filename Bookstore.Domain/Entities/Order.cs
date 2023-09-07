@@ -4,10 +4,12 @@ namespace Bookstore.Domain.Entities
 {
     public class Order : BaseEntity
     {
+        public DateTime CreationDate { get; set; } = DateTime.Today;
+
         public Guid UserId { get; set; }
 
         public User User { get; set; }
 
-        public IList<Book> Books { get; set; }
+        public IList<Book> Books { get; set; } = new List<Book>();
     }
 }

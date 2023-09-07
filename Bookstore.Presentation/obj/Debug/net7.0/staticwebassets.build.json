@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "+aHNyAgDNS0iAGQEFkTe6igzQEmWA9wNwPH0a03SH4w=",
+  "Hash": "m/TDJ2KFWG5vjm2D2Jfd82+Z+sAzpEyAevJAYS8DE0Y=",
   "Source": "Bookstore.Presentation",
   "BasePath": "_content/Bookstore.Presentation",
   "Mode": "Default",
@@ -136,12 +136,12 @@
       "OriginalItemSpec": "wwwroot\\img\\search-ico.png"
     },
     {
-      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Башня ласточки.jpg",
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\башня ласточки.jpg",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
       "BasePath": "_content/Bookstore.Presentation",
-      "RelativePath": "img/Башня ласточки.jpg",
+      "RelativePath": "img/башня ласточки.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -150,15 +150,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Башня ласточки.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\башня ласточки.jpg"
     },
     {
-      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Владычица озера.jpg",
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\владычица озера.jpg",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
       "BasePath": "_content/Bookstore.Presentation",
-      "RelativePath": "img/Владычица озера.jpg",
+      "RelativePath": "img/владычица озера.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -167,15 +167,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Владычица озера.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\владычица озера.jpg"
     },
     {
-      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Крещение огнём.jpg",
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\крещение огнём.jpg",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
       "BasePath": "_content/Bookstore.Presentation",
-      "RelativePath": "img/Крещение огнём.jpg",
+      "RelativePath": "img/крещение огнём.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -184,15 +184,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Крещение огнём.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\крещение огнём.jpg"
     },
     {
-      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Кровь эльфов.jpg",
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\кровь эльфов.jpg",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
       "BasePath": "_content/Bookstore.Presentation",
-      "RelativePath": "img/Кровь эльфов.jpg",
+      "RelativePath": "img/кровь эльфов.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -201,15 +201,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Кровь эльфов.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\кровь эльфов.jpg"
     },
     {
-      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Меч предназначения.jpg",
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\меч предназначения.jpg",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
       "BasePath": "_content/Bookstore.Presentation",
-      "RelativePath": "img/Меч предназначения.jpg",
+      "RelativePath": "img/меч предназначения.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -218,15 +218,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Меч предназначения.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\меч предназначения.jpg"
     },
     {
-      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Последнее желание.jpg",
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\последнее желание.jpg",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
       "BasePath": "_content/Bookstore.Presentation",
-      "RelativePath": "img/Последнее желание.jpg",
+      "RelativePath": "img/последнее желание.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -235,15 +235,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Последнее желание.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\последнее желание.jpg"
     },
     {
-      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Сезон гроз.jpg",
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\сезон гроз.jpg",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
       "BasePath": "_content/Bookstore.Presentation",
-      "RelativePath": "img/Сезон гроз.jpg",
+      "RelativePath": "img/сезон гроз.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -252,15 +252,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Сезон гроз.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\сезон гроз.jpg"
     },
     {
-      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Час презрения.jpg",
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\час презрения.jpg",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
       "BasePath": "_content/Bookstore.Presentation",
-      "RelativePath": "img/Час презрения.jpg",
+      "RelativePath": "img/час презрения.jpg",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -269,15 +269,15 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Час презрения.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\час презрения.jpg"
     },
     {
-      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\Язык Программирования.jpg",
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\язык программирования.JPG",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
       "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
       "BasePath": "_content/Bookstore.Presentation",
-      "RelativePath": "img/Язык Программирования.jpg",
+      "RelativePath": "img/язык программирования.JPG",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Primary",
@@ -286,7 +286,7 @@
       "AssetTraitValue": "",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\img\\Язык Программирования.jpg"
+      "OriginalItemSpec": "wwwroot\\img\\язык программирования.JPG"
     },
     {
       "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\js\\carousel.js",

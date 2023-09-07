@@ -11,22 +11,34 @@
             <li class="list-group-item">
                 <div class="row">
                     <div class="col-md-3" align="center">
-                        <img src="~/img/@book.ImagePath" width="150" />
+                        <img src="~/img/@book.ImagePath" width="150" title="@book.Title" alt="img:@book.Title" />
                     </div>
-                    <div class="col-md-9">
+                    <div class="col-md-7">
                         <h3>@book.Title</h3>
                         <p>Дата издания: @book.PublicationDate.ToShortDateString()</p>
-                        <span>
+                        <div>
                             @{
                                 var text = book.Authors.Count > 1 ? "Авторы:" : "Автор:";
                             }
                             @text
                             @foreach (var author in book.Authors)
                             {
-                                <small>@author.Name</small>
+                                <span>|@author.Name|</span>
                             }
-                        </span>
-                        <button class="btn btn-outline-primary">Преобрести: @book.Price &#8381;</button>
+                        </div>
+                        @foreach (var category in book.Categories)
+                        {
+                            <span class="genre-tag">@category.Name</span>
+                        }
+                    </div>
+                    <div class="col-md-2">
+
+                        <a asp-controller="Book" asp-action="GetBook" 
+                           asp-route-id="@book.Id" class="btn btn-outline-primary">Подробнее</a>
+                        <a class="btn btn-outline-success">
+                            <img src="~/img/bag-add.png" width="50px" /> 
+                            <p>@book.Price &#8381;</p>
+                        </a>
                     </div>
                 </div>
             </li>

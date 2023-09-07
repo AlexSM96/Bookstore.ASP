@@ -1,0 +1,44 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "GetBook";
+}
+
+<div class="container row">
+    <div class="col-md-4" align="center">
+        <img src="~/img/@Model?.ImagePath" width="300" style="margin-bottom:10px;" />
+        <button class="btn btn-outline-success btn-lg">Преобрести: @Model?.Price &#8381;</button>
+    </div>
+    <div class="col-md-8">
+        <h2>@Model?.Title</h2>
+        <span>
+            Авторы:
+            @foreach (var author in Model.Authors)
+            {
+                <span>@author.Name</span>
+            }
+        </span>
+        <br />
+        @foreach (var category in Model.Categories)
+        {
+            <span class="genre-tag">@category.Name</span>
+        }
+        <br />
+        <textarea class="form-control" placeholder="Описание" readonly="readonly" style="height:220px;resize:none;">@Model.Description</textarea>
+    </div>
+</div>
+<br />
+<div>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <div class="container-fluid">
+            <form class="form-control" asp-controller="Review" asp-action="AddComment" asp-route-bookid="@Model.Id" method="post">
+                <textarea class="comment-input" placeholder="Оставить комментарий" name="Text"></textarea>
+                <br />
+                <button class="btn btn-outline-primary" type="submit">Отправить</button>
+            </form>
+        </div>
+    }
+    <br />
+</div>
+<div class="container-fluid" id="comment-container" data-book-id="@Model.Id"></div>
+

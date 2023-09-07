@@ -1,4 +1,7 @@
 ﻿using AutoMapper;
+using Bookstore.Application.Mapping.AuthorDto;
+using Bookstore.Application.Mapping.CategoryDto;
+using Bookstore.Application.Mapping.ReviewDto;
 using Bookstore.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
@@ -8,7 +11,7 @@ namespace Bookstore.Application.Mapping.BookDto
     {
         public BookViewModel()
         {
-            CreateMap<BookViewModel, Book>()
+            CreateMap<Book, BookViewModel>()
                 .ReverseMap();
         }
 
@@ -30,10 +33,12 @@ namespace Bookstore.Application.Mapping.BookDto
         public string? ImagePath { get; set; }
 
         [Required(ErrorMessage = "Выберете авторов книги")]
-        public IList<Author> Authors { get; set; }
+        public IList<AuthorViewModel> Authors { get; set; }
 
         [Required(ErrorMessage = "Выберете жанры к которым относится книга")]
-        public IList<Category> Categories { get; set; }
+        public IList<CategoryViewModel> Categories { get; set; }
+
+        public IList<ReviewViewModel>? Reviews { get; set; }
     }
 
 }

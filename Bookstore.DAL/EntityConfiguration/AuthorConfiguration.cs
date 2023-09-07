@@ -8,11 +8,8 @@ namespace Bookstore.DAL.EntityConfiguration
     {
         public void Configure(EntityTypeBuilder<Author> builder)
         {
-            builder.HasKey(a => a.Id);
-
             builder
-                .HasIndex(a => a.Id)
-                .IsUnique();
+                .HasKey(a => a.Id);
 
             builder
                 .Property(a => a.Name)

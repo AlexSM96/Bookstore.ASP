@@ -6,7 +6,7 @@ namespace Bookstore.Domain.Entities
     {
         public string Text { get; set; }
 
-        public DateTime CommentDate { get; set; } 
+        public DateTime CreationDate { get; set; } = DateTime.Today;
 
         public Guid UserId { get; set; }
 

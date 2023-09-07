@@ -140,3 +140,28 @@ body {
         .logo-container > div:last-child {
             text-align: right;
         }
+
+
+.genre-tag {
+    display: inline-block;
+    background-color: #FF8C00;
+    font-size:13px;
+    color: #222;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+
+.comment-input {
+    border:hidden;
+    width:inherit;
+    height: 120px;
+    padding: 5px;
+}
+.comment-area {
+    background-color: lightblue;
+    padding-left:10px;
+    border-radius: 20px;
+}
