@@ -1,46 +1,48 @@
 ﻿<header>
+
     <div class="logo-container">
         <div>
             <a class="navbar-brand text-dark"
                asp-area=""
                asp-controller="Home"
                asp-action="Index" style="font-size: 30px;">
-                <img src="~/img/logo.png" width="100" />
+                <img src="~/img/logo.png" width="100" title="Главная страница" alt="logo.ico" />
                 <strong>BOOK</strong>STORE
             </a>
         </div>
         <div>
-            <div class="input-group rounded">
-                <input type="search" class="form-control rounded" 
-                    placeholder="Поиск книги или автора" aria-label="Search" 
-                    aria-describedby="search-addon" />
-                <span class="input-group-text border-0">
-                    <a asp-controller="Book" asp-action="GetBook"><img src="~/img/search-ico.png" width="30" /></a>
+            <form asp-controller="Book" asp-action="GetFilteredBooks" method="post">
+                <span class="input-group rounded">
+                    <input id="search-books" type="search" name="key" class="form-control rounded"
+                           placeholder="Введите название книги или автора" style="min-width:360px;" />
+                    <button type="submit">
+                        <img src="~/img/search-ico.png" width="30" title="Поиск" alt="search.ico" />
+                    </button>
                 </span>
-            </div>
+            </form>
         </div>
         <div>
-            <ul class="nav">
-                @if (User.Identity.IsAuthenticated)
+            @if (User.Identity.IsAuthenticated)
+            {
+                @if (User.IsInRole("Admin"))
                 {
-                    @if (User.IsInRole("Admin"))
-                    {
-                        <li>
-                            <a asp-controller="Admin" asp-action="Index" 
-                               class="nav-link text-decoration-underline" 
-                               title="Личный кабинет">
-                                <img src="~/img/admin-ico.jpg" width="50" title="Личный кабинет"/>
-                            </a>
-                        </li>
-                    }
-                    else
-                    {
-                        <li>
-                            <a class="nav-link text-decoration-underline">Личный кабинет</a>
-                        </li>
-                    }
-                    
+                    <a class="personal-account" asp-controller="Admin" asp-action="Index"
+                       title="Личный кабинет">
+                        <img src="~/img/admin-ico.jpg" width="50" title="Личный кабинет" />
+                    </a>
+
                 }
+                else
+                {
+                    <a class="nav-link text-decoration-underline">Личный кабинет</a>
+                }
+            }
+        </div>
+        <div>
+            <a><img src="~/img/shoppingcart_77968.png" width="50" title="Корзина" /></a>
+        </div>
+        <div>
+            <ul class="account-list">
                 <li>
                     <a class="nav-link text-decoration-underline"
                        asp-controller="Account" asp-action="RegisterUser">Регистрация</a>
@@ -52,35 +54,37 @@
                 @if (User.Identity.IsAuthenticated)
                 {
                     <li>
-                        <a class="btn btn-outline-danger"
+                        <a class="nav-link text-decoration-underline"
                            asp-controller="Account" asp-action="SignOut">Выход</a>
                     </li>
-                }    
+                }
             </ul>
         </div>
     </div>
-    <nav class="nav-container color">
-        <div class="container-fluid">
-            <button class="navbar-toggler"
-                    type="button"
-                    data-bs-toggle="collapse"
-                    data-bs-target=".navbar-collapse"
-                    aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                <ul class="nav">
-                    <li>
-                        <a class="nav-link text-dark" asp-area=""
-                           asp-controller="Book" asp-action="Index">Книги</a>
-                    </li>
-                    <li>
-                        <a class="nav-link text-dark" asp-area=""
-                           asp-controller="Author" asp-action="Index">Авторы</a>
-                    </li>
-                </ul>
+    <div class="container-fluid">
+        <nav class="nav-container color">
+            <div class="container-fluid">
+                <button class="navbar-toggler"
+                        type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                    <ul class="nav">
+                        <li>
+                            <a class="nav-link text-dark" asp-area=""
+                               asp-controller="Book" asp-action="Index">Книги</a>
+                        </li>
+                        <li>
+                            <a class="nav-link text-dark" asp-area=""
+                               asp-controller="Author" asp-action="Index">Авторы</a>
+                        </li>
+                    </ul>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
+    </div>
 </header>

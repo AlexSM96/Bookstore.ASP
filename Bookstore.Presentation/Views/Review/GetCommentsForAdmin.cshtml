@@ -1,37 +1,46 @@
 ﻿@model IList<ReviewViewModel>
 
-<table class="table table-info table-hover">
-    <thead>
-        <tr>
-            <td>Пользователь</td>
-            <td>Книга</td>
-            <td>Комментарий</td>
-            <td>Дата создания</td>
-            <td></td>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var comment in Model)
-        {
+<h2>Комментарии</h2>
+@if (Model.Any())
+{
+    <table class="table table-info table-hover">
+        <thead>
             <tr>
-                <th>
-                    <p>UserID:@comment.UserId</p>
-                    <p>Login:@comment.User.Login</p>
-                    <p>Email:@comment.User.Email</p>
-                </th>
-                <th>
-                    <p>BookId:@comment.BookId</p>
-                </th>
-                <th>
-                    <p>@comment.Text</p>
-                </th>
-                <th>
-                    <p>@comment.CreationDate.ToShortDateString()</p>
-                </th>
-                <th>
-                    <a asp-controller="Review" asp-action="DeleteReview" asp-route-id="@comment.Id" class="btn btn-outline-danger">x</a>
-                </th>
+                <th>Пользователь</th>
+                <th>Книга</th>
+                <th>Комментарий</th>
+                <th>Дата создания</th>
+                <th></th>
             </tr>
-        }       
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var comment in Model)
+            {
+                <tr>
+                    <td>
+                        UserID:@comment.UserId
+                        Login:@comment.User.Login
+                        Email:@comment.User.Email
+                    </td>
+                    <td>
+                        BookId:@comment.BookId
+                    </td>
+                    <td>
+                        @comment.Text
+                    </td>
+                    <td>
+                        @comment.CreationDate.ToShortDateString()
+                    </td>
+                    <td>
+                        <a asp-controller="Review" asp-action="DeleteReview" asp-route-id="@comment.Id" class="btn btn-outline-danger">x</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Комментариев пока нет...</p>
+}
+

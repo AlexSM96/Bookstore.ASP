@@ -23,7 +23,10 @@
             <span class="genre-tag">@category.Name</span>
         }
         <br />
-        <textarea class="form-control" placeholder="Описание" readonly="readonly" style="height:220px;resize:none;">@Model.Description</textarea>
+        <div>
+            <p>О товаре:</p>
+            <p class="text-wrap">@Model.Description</p>
+        </div>
     </div>
 </div>
 <br />

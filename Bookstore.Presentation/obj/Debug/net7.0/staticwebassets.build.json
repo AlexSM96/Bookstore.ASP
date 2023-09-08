@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "m/TDJ2KFWG5vjm2D2Jfd82+Z+sAzpEyAevJAYS8DE0Y=",
+  "Hash": "qlw1Hz5FFpfbDpzF3qwHbycSHHMiq/EhyVAlcTwAwWM=",
   "Source": "Bookstore.Presentation",
   "BasePath": "_content/Bookstore.Presentation",
   "Mode": "Default",
@@ -102,6 +102,23 @@
       "OriginalItemSpec": "wwwroot\\img\\admin-ico.jpg"
     },
     {
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\bag-add.png",
+      "SourceId": "Bookstore.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bookstore.Presentation",
+      "RelativePath": "img/bag-add.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\bag-add.png"
+    },
+    {
       "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\logo.png",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
@@ -136,6 +153,23 @@
       "OriginalItemSpec": "wwwroot\\img\\search-ico.png"
     },
     {
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\shoppingcart_77968.png",
+      "SourceId": "Bookstore.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bookstore.Presentation",
+      "RelativePath": "img/shoppingcart_77968.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\shoppingcart_77968.png"
+    },
+    {
       "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\башня ласточки.jpg",
       "SourceId": "Bookstore.Presentation",
       "SourceType": "Discovered",
@@ -168,6 +202,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\владычица озера.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\дорога без возврата.jpg",
+      "SourceId": "Bookstore.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bookstore.Presentation",
+      "RelativePath": "img/дорога без возврата.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\дорога без возврата.jpg"
     },
     {
       "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\крещение огнём.jpg",
@@ -219,6 +270,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\img\\меч предназначения.jpg"
+    },
+    {
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\обломов.jpg",
+      "SourceId": "Bookstore.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bookstore.Presentation",
+      "RelativePath": "img/обломов.jpg",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\img\\обломов.jpg"
     },
     {
       "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\последнее желание.jpg",

@@ -1,0 +1,35 @@
+﻿@model IList<OrderViewModel>
+
+<h2>Заказы</h2>
+
+<div>
+    @if (Model.Any())
+    {
+        <ul class="list-group-flush">
+            @foreach (var order in Model)
+            {
+                <li class="list-group-item">
+                    <p>@order.Id</p>
+                    <p>@order.User.Email</p>
+                    @foreach (var book in order.Books)
+                    {
+                        <div class="row">
+                            <div class="col-md-3">
+                                <img src="~/img/@book.ImagePath" width="50" />
+                            </div>
+                            <div class="col-md-9">
+                                <p>@book.Id</p>
+                                <p>@book.Title</p>
+                                <p>@book.Price</p>
+                            </div>
+                        </div>
+                    }
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <p>Заказов пока нет...</p>
+    }
+</div>

@@ -1,10 +1,3 @@
-using Bookstore.Application.Mapping.CategoryDto;
-using Bookstore.Application.Mapping.ReviewDto;
-using Bookstore.Application.Mapping.UserDto;
-using Bookstore.Application.Services.CategoryServices;
-using Bookstore.Application.Services.OrderServices;
-using Bookstore.Application.Services.ReviewServices;
-
 var builder = WebApplication.CreateBuilder(args);
 
 ConfigureServices(builder);
@@ -65,5 +58,6 @@ void ConfigureServices(WebApplicationBuilder builder)
         .AddScoped<IBaseService<Category>, CategoryService>()
         .AddScoped<IBaseService<Order>, OrderService>()
         .AddScoped<IBaseService<Review>, ReviewService>()
+        .AddScoped<IBaseService<User>, UserService>()
         .AddScoped<IAccountService, AccountService>();
 }

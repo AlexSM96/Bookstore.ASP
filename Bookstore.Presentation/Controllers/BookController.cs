@@ -27,6 +27,48 @@ namespace Bookstore.Presentation.Controllers
             return PartialView(_mapper.Map<IList<BookViewModel>>(books));
         }
 
+        [HttpPost]
+        public async Task<IActionResult> GetFilteredBooks(string key)
+        {
+            if (string.IsNullOrWhiteSpace(key))
+            {
+                return RedirectToAction("Index", "Book");
+            }
+
+            var books = await _service
+                .GetAllAsync(CancellationToken.None);
+
+            var filteredBooks = books
+                .SelectMany(b => b.Authors, (book, author) => new
+                { Book = book, Author = author })
+                .GroupBy(x => x.Author.Name, x => x.Book)
+                .ToDictionary(x => x.Key, x => x.ToList(),
+                    StringComparer.OrdinalIgnoreCase);
+
+            bool isContains = false;
+            string newKey = "";
+            foreach (var item in filteredBooks)
+            {
+                if (item.Key.Contains(key, StringComparison.OrdinalIgnoreCase))
+                {
+                    isContains = true;
+                    newKey = item.Key;
+                    break;
+                }
+            }
+
+            if (filteredBooks.ContainsKey(key) || isContains)
+            {
+                return View(_mapper.Map<IList<BookViewModel>>(filteredBooks[newKey]));
+            }
+            else
+            {
+                filteredBooks[key] = books.Where(x => x.Title.Contains(key, StringComparison.OrdinalIgnoreCase)).ToList();
+                return View(_mapper.Map<IList<BookViewModel>>(filteredBooks[key]));
+            }
+
+        }
+
         [HttpGet]
         public async Task<IActionResult> GetBook(Guid id)
         {
@@ -37,7 +79,8 @@ namespace Bookstore.Presentation.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> AddBook() => PartialView(new BookViewModel());
+        public async Task<IActionResult> AddBook() =>
+            PartialView(new BookViewModel());
 
         [HttpPost]
         public async Task<IActionResult> AddBook(BookViewModel model)
@@ -46,13 +89,13 @@ namespace Bookstore.Presentation.Controllers
 
             await _service
                 .CreateAsync(_mapper.Map<Book>(model), CancellationToken.None);
-            return RedirectToAction("Index","Admin");
+            return RedirectToAction("Index", "Admin");
         }
 
         public async Task<IActionResult> DeleteBook(Guid id)
         {
             await _service.DeleteAsync(id, CancellationToken.None);
             return RedirectToAction("Index", "Admin");
-        } 
+        }
     }
 }

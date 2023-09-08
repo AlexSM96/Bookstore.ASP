@@ -13,8 +13,10 @@ namespace Bookstore.Application.Services.OrderServices
 
         public async Task<IList<Order>> GetAllAsync(CancellationToken cancellationToken)
         {
-            return await _context.Orders.ToListAsync()
-                ?? throw new ArgumentNullException();
+            return await _context.Orders
+                .Include(o=>o.User)
+                .Include(o => o.Books)
+                .ToListAsync();
         }
 
         public async Task CreateAsync(Order model, CancellationToken cancellationToken)

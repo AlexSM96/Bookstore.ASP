@@ -42,9 +42,10 @@ function getCategoryHTML(index) {
         `
 }
 
-$(document).ready(function(){
+$(document).ready(function () {
     const commentContainer = document.querySelector('#comment-container')
     const { bookId } = commentContainer.dataset
+
     $.ajax({
         type: 'POST',
         url: '/Review/GetComments',
@@ -53,13 +54,13 @@ $(document).ready(function(){
         error: (response) => console.log(response)
     })
 })
-    
 
 
 
-    
 
-    
+
+
+
 
 
 

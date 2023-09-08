@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bookstore.Application.Mapping.OrderDto;
 using Bookstore.Application.Mapping.ReviewDto;
 using Bookstore.Domain.Entities;
 
@@ -22,6 +23,6 @@ namespace Bookstore.Application.Mapping.UserDto
 
         public IList<ReviewViewModel>? Reviews { get; set; }
 
-        public IList<Order>? Orders { get; set; }
+        public IList<OrderViewModel>? Orders { get; set; }
     }
 }

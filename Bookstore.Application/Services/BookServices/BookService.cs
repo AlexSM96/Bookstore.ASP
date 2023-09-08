@@ -18,8 +18,7 @@ namespace Bookstore.Application.Services.BookServices
             return await _context.Books
                 .Include(x => x.Authors)
                 .Include(x => x.Categories)
-                .ToListAsync(cancellationToken)
-                ?? throw new ArgumentNullException(nameof(IList<Book>));
+                .ToListAsync(cancellationToken);
         }
 
         public async Task CreateAsync(Book book,

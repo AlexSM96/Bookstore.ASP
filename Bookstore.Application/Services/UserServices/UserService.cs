@@ -16,7 +16,7 @@ namespace Bookstore.Application.Services.UserServices
             return await _context.Users
                 .Include(x => x.Reviews)
                 .Include(x => x.Orders)
-                .ToListAsync() ?? throw new ArgumentNullException();
+                .ToListAsync(cancellationToken);
         }
 
         public Task CreateAsync(User model, CancellationToken cancellationToken)

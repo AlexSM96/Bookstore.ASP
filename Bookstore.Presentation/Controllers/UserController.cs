@@ -1,26 +1,27 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.Presentation.Controllers
 {
     public class UserController : Controller
     {
         private readonly IBaseService<User> _service;
+        private readonly IMapper _mapper;
 
-        public UserController(IBaseService<User> service) =>
-            _service = service;
+        public UserController(IBaseService<User> service, IMapper mapper) =>
+            (_service, _mapper) = (service, mapper);
 
         public IActionResult Index()
         {
             return View();
         }
 
-        public async Task<IActionResult> GetUser(Guid id)
+        [HttpGet]
+        public async Task<IActionResult> GetUsers()
         {
             var users = await _service
                 .GetAllAsync(CancellationToken.None);
-            var user = users
-                .FirstOrDefault(u => u.Id == id);
-            return Json(user);
+            return PartialView(_mapper.Map<IList<UserViewModel>>(users));
         }
     }
 }

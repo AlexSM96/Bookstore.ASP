@@ -109,6 +109,7 @@ body {
     margin-bottom: 20px;
     border-radius: 40px;
     box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
+    align-self:center;
 }
 
 .nav {
@@ -128,19 +129,10 @@ body {
 .logo-container {
     display: flex;
     justify-content: space-between;
-    padding: initial;
-    margin: 15px;
+    align-items: center;
+    min-width:768px;
+    margin:15px;
 }
-
-    .logo-container > div {
-        width: 50%;
-        margin: auto;
-    }
-
-        .logo-container > div:last-child {
-            text-align: right;
-        }
-
 
 .genre-tag {
     display: inline-block;
@@ -164,4 +156,28 @@ body {
     background-color: lightblue;
     padding-left:10px;
     border-radius: 20px;
+}
+
+.search-button {
+    background: none;
+    border: none;
+}
+
+    .search-button:hover img {
+        width: auto;
+        height: 29px;
+    }
+
+.account-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.account-list li {
+    position: relative; /* доделать список регистрации*/
+}
+
+.personal-account:hover {
+    opacity:0.8;
 }

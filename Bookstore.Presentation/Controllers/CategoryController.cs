@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Bookstore.Application.Mapping.CategoryDto;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Bookstore.Presentation.Controllers

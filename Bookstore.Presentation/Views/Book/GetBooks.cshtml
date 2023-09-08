@@ -1,39 +1,38 @@
 ﻿@model IList<BookViewModel>
 
-<table class="table table-primary">
+<table class="table table-info table-hover">
     <thead>
         <tr>
-            <td>Название книги</td>
-            <td>Авторы</td>
-            <td>Дата издания</td>
-            <td>Категории</td>
-            <td>Путь к изображению</td>
-            <td></td>
+            <th>Название книги</th>
+            <th>Авторы</th>
+            <th>Дата издания</th>
+            <th>Категории</th>
+            <th>Путь к изображению</th>
+            <th></th>
         </tr>
     </thead>
     <tbody>
-
         @foreach (var book in Model)
         {
             <tr>
-                <th>@book.Title</th>
-                <th>
+                <td>@book.Title</td>
+                <td>
                     @foreach (var author in book.Authors)
                     {
                         <p>@author.Name</p>
                     }
-                </th>
-                <th>@book.PublicationDate.ToShortDateString()</th>
-                <th>
+                </td>
+                <td>@book.PublicationDate.ToShortDateString()</td>
+                <td>
                     @foreach (var category in book.Categories)
                     {
                         <p>@category.Name</p>
                     }
-                </th>
-                <th>@book.ImagePath</th>
-                <th>
+                </td>
+                <td>@book.ImagePath</td>
+                <td>
                     <a asp-controller="Book" asp-action="DeleteBook" asp-route-id="@book.Id" class="btn btn-outline-danger">x</a>
-                </th>
+                </td>
             </tr>
         }
 

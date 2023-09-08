@@ -17,6 +17,10 @@
       "PackagePath": "staticwebassets\\img\\admin-ico.jpg"
     },
     {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\bag-add.png",
+      "PackagePath": "staticwebassets\\img\\bag-add.png"
+    },
+    {
       "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
     },
@@ -25,12 +29,20 @@
       "PackagePath": "staticwebassets\\img\\search-ico.png"
     },
     {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\shoppingcart_77968.png",
+      "PackagePath": "staticwebassets\\img\\shoppingcart_77968.png"
+    },
+    {
       "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\башня ласточки.jpg",
       "PackagePath": "staticwebassets\\img\\башня ласточки.jpg"
     },
     {
       "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\владычица озера.jpg",
       "PackagePath": "staticwebassets\\img\\владычица озера.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\дорога без возврата.jpg",
+      "PackagePath": "staticwebassets\\img\\дорога без возврата.jpg"
     },
     {
       "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\крещение огнём.jpg",
@@ -43,6 +55,10 @@
     {
       "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\меч предназначения.jpg",
       "PackagePath": "staticwebassets\\img\\меч предназначения.jpg"
+    },
+    {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\обломов.jpg",
+      "PackagePath": "staticwebassets\\img\\обломов.jpg"
     },
     {
       "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\последнее желание.jpg",
