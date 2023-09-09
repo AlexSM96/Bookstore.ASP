@@ -46,18 +46,28 @@ $(document).ready(function () {
     const commentContainer = document.querySelector('#comment-container')
     const { bookId } = commentContainer.dataset
 
-    $.ajax({
+   $.ajax({
         type: 'POST',
         url: '/Review/GetComments',
         data: { bookId },
         success: (response) => commentContainer.innerHTML = response,
         error: (response) => console.log(response)
-    })
+   })
 })
 
 
-
-
+function createOrder(data) {
+    $.ajax({
+        type: 'POST',
+        url: '/Order/CreateOrder',
+        data: {
+            userId: '12e2ad01-deb0-44e6-9e28-3c36e67661e1',
+            bookId: data
+        },
+        success: (response) => console.log('ok'),
+        error: (response) => console.log(response)
+    })
+}
 
 
 

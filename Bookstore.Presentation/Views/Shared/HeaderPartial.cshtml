@@ -1,22 +1,25 @@
 ﻿<header>
-
     <div class="logo-container">
         <div>
             <a class="navbar-brand text-dark"
                asp-area=""
                asp-controller="Home"
                asp-action="Index" style="font-size: 30px;">
-                <img src="~/img/logo.png" width="100" title="Главная страница" alt="logo.ico" />
+                <img src="~/img/logo.png" width="100" 
+                     title="Главная страница" alt="logo.ico" />
                 <strong>BOOK</strong>STORE
             </a>
         </div>
         <div>
             <form asp-controller="Book" asp-action="GetFilteredBooks" method="post">
                 <span class="input-group rounded">
-                    <input id="search-books" type="search" name="key" class="form-control rounded"
-                           placeholder="Введите название книги или автора" style="min-width:360px;" />
-                    <button type="submit">
-                        <img src="~/img/search-ico.png" width="30" title="Поиск" alt="search.ico" />
+                    <input id="search-books" type="search" name="key" 
+                           class="form-control rounded"
+                           placeholder="Введите название книги или автора" 
+                           style="min-width:360px;" />
+                    <button class="search-button" type="submit">
+                        <img src="~/img/search-ico.png" width="30" 
+                             title="Поиск" alt="search.ico" />
                     </button>
                 </span>
             </form>
@@ -34,7 +37,8 @@
                 }
                 else
                 {
-                    <a class="nav-link text-decoration-underline">Личный кабинет</a>
+                    <a asp-controller="User" asp-action="GetUser" asp-route-id="12e2ad01-deb0-44e6-9e28-3c36e67661e1"
+                       class="nav-link text-decoration-underline" title="Личный кабинет" >Личный кабинет</a>
                 }
             }
         </div>
@@ -64,14 +68,6 @@
     <div class="container-fluid">
         <nav class="nav-container color">
             <div class="container-fluid">
-                <button class="navbar-toggler"
-                        type="button"
-                        data-bs-toggle="collapse"
-                        data-bs-target=".navbar-collapse"
-                        aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
                 <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
                     <ul class="nav">
                         <li>

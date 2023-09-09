@@ -48,25 +48,24 @@ body {
 
 .ad-carousel {
     position: relative;
-    width: 600px;
-    height: 400px;
+    width: 850px;
+    height: 495px;
     margin: 0 auto;
     overflow: hidden;
-    background-color: fuchsia;
+    background-color: coral;
     border-radius: 25px;
     box-shadow: 4px 4px 14px rgba(0,0,0,0.25);
 }
 
 .slider {
-    display: flex;
+    display: inline-flex;
     transition: transform 0.5s ease-in-out;
 }
 
     .slider img {
-        width: 40%;
-        height: 90%;
+        width: 100%;
+        height: auto;
         object-fit: cover;
-        margin: 20px 45px;
         border-radius: 5px;
     }
 
@@ -161,9 +160,10 @@ body {
 .search-button {
     background: none;
     border: none;
+    
 }
 
-    .search-button:hover img {
+    .search-button:hover img:hover {
         width: auto;
         height: 29px;
     }
@@ -172,10 +172,6 @@ body {
     list-style: none;
     margin: 0;
     padding: 0;
-}
-
-.account-list li {
-    position: relative; /* доделать список регистрации*/
 }
 
 .personal-account:hover {

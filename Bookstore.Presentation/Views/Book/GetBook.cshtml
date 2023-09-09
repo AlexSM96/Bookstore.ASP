@@ -6,7 +6,10 @@
 <div class="container row">
     <div class="col-md-4" align="center">
         <img src="~/img/@Model?.ImagePath" width="300" style="margin-bottom:10px;" />
-        <button class="btn btn-outline-success btn-lg">Преобрести: @Model?.Price &#8381;</button>
+        <button class="btn btn-outline-success btn-lg" 
+                onclick="createOrder('@Model?.Id')">
+                Преобрести: @Model?.Price &#8381;
+        </button>
     </div>
     <div class="col-md-8">
         <h2>@Model?.Title</h2>
@@ -25,7 +28,14 @@
         <br />
         <div>
             <p>О товаре:</p>
-            <p class="text-wrap">@Model.Description</p>
+            @if (string.IsNullOrWhiteSpace(Model.Description))
+            {
+                <p>Здесь пока нет описания...</p>
+            }
+            else
+            {
+                <p class="text-wrap">@Model.Description</p>
+            }        
         </div>
     </div>
 </div>

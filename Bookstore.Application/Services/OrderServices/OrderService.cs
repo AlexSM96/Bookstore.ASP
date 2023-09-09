@@ -24,19 +24,19 @@ namespace Bookstore.Application.Services.OrderServices
             try
             {
                 var user = await _context.Users
-                    .FirstOrDefaultAsync(u => u.Id == model.UserId);
+                .FirstOrDefaultAsync(x => x.Id == model.UserId);
 
                 if (user is null)
                 {
                     throw new ArgumentNullException();
                 }
 
-                await _context.Orders.AddAsync(model);
+                var order = await AddOrUpdateOrder(model);
+                await _context.Orders.AddAsync(order);
                 await _context.SaveChangesAsync(cancellationToken);
             }
             catch (Exception)
             {
-
                 throw;
             }
 
@@ -46,15 +46,16 @@ namespace Bookstore.Application.Services.OrderServices
         {
             try
             {
-                var order = await _context.Orders
+                var orderFromDb = await _context.Orders
                     .FirstOrDefaultAsync(o => o.Id == model.Id);
 
-                if(order is null)
+                if(orderFromDb is null)
                 {
                     throw new ArgumentNullException();
                 }
 
-                _context.Orders.Update(model);
+                var newOrder = await AddOrUpdateOrder(model, orderFromDb);
+                _context.Orders.Update(newOrder);
                 await _context.SaveChangesAsync(cancellationToken);
             }
             catch (Exception)
@@ -83,5 +84,35 @@ namespace Bookstore.Application.Services.OrderServices
                 throw;
             }
         }
+
+        private async Task<Order> AddOrUpdateOrder(Order model, Order orderFromDb = null)
+        {
+            var order = orderFromDb is null ? new Order() : orderFromDb;
+
+            foreach (var book in model.Books)
+            {
+                var bookFromDb = await _context.Books
+                    .FirstOrDefaultAsync(x=>x.Id == book.Id);
+                AddBookToOrder(order, book, bookFromDb);
+            }
+
+            order.CreationDate = model.CreationDate;
+            order.UserId = model.UserId;
+            order.User = model.User;
+
+            return order;
+        }
+
+        private void AddBookToOrder(Order order, Book book, Book? bookFromDb)
+        {
+            if(bookFromDb is null)
+            {
+                order.Books.Add(book);
+                return;
+            }
+
+            order.Books.Add(bookFromDb);
+        }
+
     }
 }

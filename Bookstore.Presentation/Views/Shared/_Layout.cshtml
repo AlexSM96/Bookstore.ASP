@@ -11,6 +11,15 @@
             @RenderBody()
         </main>
     </div>
+    <div class="modal">
+        <div class="modal-header">
+            <p>Сделать заказ</p>
+        </div>
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+            <button class="btn btn-outline-danger" data-bs-dismis="close">Закрыть</button>
+        </div>
+    </div>
     @await Html.PartialAsync("FooterPartial")
     @await Html.PartialAsync("ScriptPartial")
     @await RenderSectionAsync("Scripts", required: false)

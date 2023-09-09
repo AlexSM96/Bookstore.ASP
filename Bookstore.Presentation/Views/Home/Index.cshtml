@@ -1,18 +1,14 @@
-﻿@model IEnumerable<BookViewModel>
-@{
+﻿@{
     ViewData["Title"] = "Home Page";
 }
 
 <div class="container">
     <div class="ad-carousel">
         <div class="slider">
-            @foreach (var book in Model)
-            {
-                <img src="~/img/@book.ImagePath" />
-            }
+            <a asp-controller="Book" asp-action="Index"><img src="~/img/banner-witcher.jpg" /></a>
         </div>
-        <button class="prev-button" aria-label="Посмотреть предыдущий слайд">&lang;</button>
-        <button class="next-button" aria-label="Посмотреть следующий слайд">&rang;</button>
+        <button class="prev-button" title="Посмотреть предыдущий слайд">&lang;</button>
+        <button class="next-button" title="Посмотреть следующий слайд">&rang;</button>
     </div>
 </div>
 

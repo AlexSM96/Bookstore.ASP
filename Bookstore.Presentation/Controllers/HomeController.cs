@@ -11,11 +11,9 @@ namespace Bookstore.Presentation.Controllers
         public HomeController(IBaseService<Book> service, IMapper mapper) =>
             (_service,_mapper) =(service, mapper);
         
-        public async Task<IActionResult> Index()
+        public IActionResult Index()
         {
-            var response = await _service.GetAllAsync(CancellationToken.None);
-            var books = response.TakeLast(4);
-            return View(_mapper.Map<IList<BookViewModel>>(books));
+            return View();
         }
     }
 }

@@ -21,6 +21,6 @@ namespace Bookstore.Application.Mapping.OrderDto
 
         public UserViewModel User { get; set; }
 
-        public IList<BookViewModel> Books { get; set; }
+        public List<BookViewModel> Books { get; set; } = new List<BookViewModel>(); 
     }
 }

@@ -16,6 +16,7 @@ namespace Bookstore.Application.Services.UserServices
             return await _context.Users
                 .Include(x => x.Reviews)
                 .Include(x => x.Orders)
+                .ThenInclude(x => x.Books)
                 .ToListAsync(cancellationToken);
         }
 

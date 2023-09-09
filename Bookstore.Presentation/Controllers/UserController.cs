@@ -23,5 +23,12 @@ namespace Bookstore.Presentation.Controllers
                 .GetAllAsync(CancellationToken.None);
             return PartialView(_mapper.Map<IList<UserViewModel>>(users));
         }
+
+        public async Task<IActionResult> GetUser(Guid id)
+        {
+            var users = await _service.GetAllAsync(CancellationToken.None);
+            var user = users.FirstOrDefault(x => x.Id == id);
+            return View(_mapper.Map<UserViewModel>(user));
+        }
     }
 }
