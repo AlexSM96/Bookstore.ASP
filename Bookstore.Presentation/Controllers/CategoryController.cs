@@ -17,6 +17,13 @@ namespace Bookstore.Presentation.Controllers
         }
 
         [HttpGet]
+        public async Task<IActionResult> GetCategories()
+        {
+            var categories = await _service.GetAllAsync(CancellationToken.None);
+            return PartialView(_mapper.Map<IList<CategoryViewModel>>(categories));
+        }
+
+        [HttpGet]
         public async Task<IActionResult> AddCategory()
             => PartialView(new CategoryViewModel());
 

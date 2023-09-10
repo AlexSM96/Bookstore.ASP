@@ -27,6 +27,19 @@ namespace Bookstore.Presentation.Controllers
             return PartialView(_mapper.Map<IList<BookViewModel>>(books));
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetBooksByCategory(string category)
+        {
+            var books = await _service
+               .GetAllAsync(CancellationToken.None);
+            var filteredBooks = books
+                .SelectMany(x => x.Categories, (book, category) => new
+                { Book = book, Category = category })
+                .GroupBy(x => x.Category.Name, x => x.Book)
+                .ToDictionary(x => x.Key, x => x.ToList());
+            return View(_mapper.Map<IList<BookViewModel>>(filteredBooks[category]));
+        }
+
         [HttpPost]
         public async Task<IActionResult> GetFilteredBooks(string key)
         {

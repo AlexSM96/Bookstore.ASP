@@ -68,8 +68,17 @@
     <div class="container-fluid">
         <nav class="nav-container color">
             <div class="container-fluid">
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
+                <div>
                     <ul class="nav">
+                        <li>
+                            <div class="dropdown">
+                                <a class="nav-link text-dark dropdown-toggle" 
+                                   data-bs-toggle="dropdown" href="#">
+                                    Категории
+                                </a>
+                                <ul class="dropdown-menu"></ul>
+                            </div>
+                        </li>
                         <li>
                             <a class="nav-link text-dark" asp-area=""
                                asp-controller="Book" asp-action="Index">Книги</a>

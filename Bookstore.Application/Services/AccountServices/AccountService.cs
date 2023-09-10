@@ -54,6 +54,7 @@ namespace Bookstore.Application.Services.AccountServices
                 var user = await _context.Users
                     .FirstOrDefaultAsync(u => u.Email == model.Email
                         && u.Password == model.Password);
+
                 if (user is null)
                 {
                     throw new ArgumentNullException(nameof(user));
@@ -69,8 +70,7 @@ namespace Bookstore.Application.Services.AccountServices
 
         private Role AddRole(User user)
         {
-            return user.Email == "salexm74@gmail.com"
-                ?  Role.Admin : Role.User;
+            return user.Email == "salexm74@gmail.com" ? Role.Admin : Role.User;
         }
 
         private ClaimsIdentity AuthenticateUser(User user)

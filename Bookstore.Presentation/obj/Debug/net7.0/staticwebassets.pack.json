@@ -21,6 +21,10 @@
       "PackagePath": "staticwebassets\\img\\bag-add.png"
     },
     {
+      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\banner-witcher.jpg",
+      "PackagePath": "staticwebassets\\img\\banner-witcher.jpg"
+    },
+    {
       "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\img\\logo.png",
       "PackagePath": "staticwebassets\\img\\logo.png"
     },

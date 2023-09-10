@@ -26,9 +26,26 @@ namespace Bookstore.Presentation.Controllers
 
         public async Task<IActionResult> GetUser(Guid id)
         {
-            var users = await _service.GetAllAsync(CancellationToken.None);
-            var user = users.FirstOrDefault(x => x.Id == id);
+            var users = await _service
+                .GetAllAsync(CancellationToken.None);
+            var user = users
+                .FirstOrDefault(x => x.Id == id);
             return View(_mapper.Map<UserViewModel>(user));
+        }
+
+        public async Task<IActionResult> GetCurrentUser()
+        {
+            if (User.Identity.IsAuthenticated)
+            {
+                var users = await _service
+                .GetAllAsync(CancellationToken.None);
+                var user = users
+                    .FirstOrDefault(x => x.Login == User.Identity.Name);
+
+                return Json(new {UserId = user?.Id, UserEmail = user?.Email});
+            }
+
+            return Json(default);
         }
     }
 }

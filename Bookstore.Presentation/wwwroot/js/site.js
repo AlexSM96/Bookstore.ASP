@@ -46,25 +46,46 @@ $(document).ready(function () {
     const commentContainer = document.querySelector('#comment-container')
     const { bookId } = commentContainer.dataset
 
-   $.ajax({
+    $.ajax({
         type: 'POST',
         url: '/Review/GetComments',
         data: { bookId },
         success: (response) => commentContainer.innerHTML = response,
         error: (response) => console.log(response)
-   })
+    })
+})
+
+$(document).ready(function () {
+    const dropdownList = document.querySelector('.dropdown-menu') 
+
+    $.ajax({
+        type: 'GET',
+        url: '/Category/GetCategories',
+        success: (response) => dropdownList.innerHTML = response,
+        error: (response) => console.log(response)
+    })
+})
+
+let currentUser;
+$(document).ready(async function () {
+    const data = await fetch('/User/GetCurrentUser')
+    currentUser = await data.json()
 })
 
 
 function createOrder(data) {
+    if (currentUser === null || currentUser === undefined) {
+        alert("Чтобы совершить покупку необходимо войти в аккаунт или зарегистрироваться");
+        return
+    }
     $.ajax({
         type: 'POST',
         url: '/Order/CreateOrder',
         data: {
-            userId: '12e2ad01-deb0-44e6-9e28-3c36e67661e1',
+            userId: currentUser.userId,
             bookId: data
         },
-        success: (response) => console.log('ok'),
+        success: () => alert("Заказ создан. Спаибо за покупку!"),
         error: (response) => console.log(response)
     })
 }
