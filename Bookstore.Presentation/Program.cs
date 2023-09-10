@@ -1,4 +1,11 @@
-using Bookstore.Application.Mapping.OrderDto;
+using Bookstore.Application.Books.Commands.AddBook;
+using Bookstore.Application.Books.Commands.DeleteBook;
+using Bookstore.Application.Books.Commands.UpdateBook;
+using Bookstore.Application.Books.Queries.GetBook;
+using Bookstore.Application.Books.Queries.GetBooks;
+using Bookstore.Application.Books.Queries.GetBooksByInput;
+using MediatR;
+using System.Reflection;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -30,6 +37,9 @@ app.Run();
 
 void ConfigureServices(WebApplicationBuilder builder)
 {
+    builder.Services.AddMediatR(option => option
+       .RegisterServicesFromAssemblies(Assembly.GetExecutingAssembly()));
+
     builder.Services
         .AddControllersWithViews()
         .AddRazorRuntimeCompilation();
@@ -55,11 +65,16 @@ void ConfigureServices(WebApplicationBuilder builder)
 
     builder.Services
         .AddScoped<IBaseDbContext, BookstoreDbContext>()
-        .AddScoped<IBaseService<Book>, BookService>()
         .AddScoped<IBaseService<Author>, AuthorService>()
         .AddScoped<IBaseService<Category>, CategoryService>()
         .AddScoped<IBaseService<Order>, OrderService>()
         .AddScoped<IBaseService<Review>, ReviewService>()
         .AddScoped<IBaseService<User>, UserService>()
-        .AddScoped<IAccountService, AccountService>();
+        .AddScoped<IAccountService, AccountService>()
+        .AddScoped<IRequestHandler<AddBookCommand, Book>, AddBookCommandHandler>()
+        .AddScoped<IRequestHandler<UpdateBookCommand, Book>, UpdateBookCommandHandler>()
+        .AddScoped<IRequestHandler<DeleteBookCommand, Unit>, DeleteBookCommandHandler>()
+        .AddScoped<IRequestHandler<GetBooksQuery, IList<Book>>, GetBooksQueryHandler>()
+        .AddScoped<IRequestHandler<GetBooksByInputQuery, IList<Book>>, GetBooksByInputQueryHandler>()
+        .AddScoped<IRequestHandler<GetBookByIdQuery, Book>, GetBookByIdQueryHandler>();
 }

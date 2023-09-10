@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "cR8UErct3cthkS+Z0FcJRMGmkgGjPU0FcFIj/9unKiZCGGrlldrYNn8Xe4RPTjkbdYO1ed1ioajZLAiYUMdT3A==",
+  "dgSpecHash": "HQMKqgIsfiT+Fy80YGtmXi6ZKjKp2ahNBDlcxjRigR8Nn6iMp5mqxcIyf9dj5SuYKaWeqC/EgDqF6Ca68ZBiOA==",
   "success": true,
   "projectFilePath": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\Bookstore.Presentation.csproj",
   "expectedPackageFiles": [
@@ -58,6 +58,8 @@
     "C:\\Users\\Professional\\.nuget\\packages\\humanizer.core.zh-cn\\2.14.1\\humanizer.core.zh-cn.2.14.1.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\humanizer.core.zh-hans\\2.14.1\\humanizer.core.zh-hans.2.14.1.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\humanizer.core.zh-hant\\2.14.1\\humanizer.core.zh-hant.2.14.1.nupkg.sha512",
+    "C:\\Users\\Professional\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\Professional\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.runtimecompilation\\7.0.10\\microsoft.aspnetcore.mvc.razor.runtimecompilation.7.0.10.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\microsoft.aspnetcore.razor.language\\6.0.11\\microsoft.aspnetcore.razor.language.6.0.11.nupkg.sha512",

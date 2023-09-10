@@ -1,10 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "ndiVNgAcOEu76ssGQBcDIHCuywqs8lJk7OEl0+mGAijW94El7LpUEcctvw7vc6JpkQQJC4Vxip1QlL7DfGh0CQ==",
+  "dgSpecHash": "zY1/tlOqcc97pN7VxVvQdf3Em4WvV/eg6PsMmc/1o2S/pyRqWPVsrFdrMEDmqvxwxbnDVbnGrHD1s5a6YyuIOw==",
   "success": true,
   "projectFilePath": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Application\\Bookstore.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Professional\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
+    "C:\\Users\\Professional\\.nuget\\packages\\mediatr\\12.1.1\\mediatr.12.1.1.nupkg.sha512",
+    "C:\\Users\\Professional\\.nuget\\packages\\mediatr.contracts\\2.0.1\\mediatr.contracts.2.0.1.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\microsoft.entityframeworkcore\\7.0.10\\microsoft.entityframeworkcore.7.0.10.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\microsoft.entityframeworkcore.abstractions\\7.0.10\\microsoft.entityframeworkcore.abstractions.7.0.10.nupkg.sha512",
