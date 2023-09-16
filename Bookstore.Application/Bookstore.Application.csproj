@@ -16,4 +16,8 @@
     <ProjectReference Include="..\Bookstore.Domain\Bookstore.Domain.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="CommandAndQuery\Users\Commands\" />
+  </ItemGroup>
+
 </Project>

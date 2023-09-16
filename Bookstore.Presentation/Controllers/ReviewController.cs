@@ -1,48 +1,40 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Bookstore.Presentation.Controllers
+﻿namespace Bookstore.Presentation.Controllers
 {
     public class ReviewController : Controller
     {
-        private readonly IBaseService<Review> _service;
+        private readonly IMediator _mediator;
         private readonly IMapper _mapper;
-        private readonly IBaseDbContext _context;
 
-        public ReviewController(IBaseService<Review> service,
-            IMapper mapper, IBaseDbContext context) =>
-            (_service, _mapper, _context) = (service, mapper, context);
+        public ReviewController(IMediator mediator, IMapper mapper) =>
+            (_mediator, _mapper) = (mediator, mapper);
 
         [HttpGet]
         public async Task<IActionResult> GetCommentsForAdmin()
         {
-            var reviews = await _service
-                .GetAllAsync(CancellationToken.None);
-            return PartialView(_mapper.Map<IList<ReviewViewModel>>(reviews));
+            var reviews = await _mediator.Send(new GetReviewsQuery());
+            var reviewsVM = _mapper.Map<IList<ReviewViewModel>>(reviews);
+            return PartialView(reviewsVM);
         }
 
         [HttpPost]
         public async Task<IActionResult> GetComments(Guid bookId)
         {
-            var reviews = await _service
-                .GetAllAsync(CancellationToken.None);
-            var comments = reviews
-                .Where(r => r.BookId == bookId)
-                .ToList();
+            var reviews = await _mediator
+                .Send(new GetReviewsByBookIdQuery(bookId));
 
-            return PartialView(_mapper.Map<IList<ReviewViewModel>>(comments));
+            var reviewsVM = _mapper.Map<IList<ReviewViewModel>>(reviews);
+            return PartialView(reviewsVM);
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddComment(ReviewViewModel model)
+        public async Task<IActionResult> AddComment(AddReviewCommand model)
         {
-            var user = await _context.Users
-                .FirstOrDefaultAsync(u => u.Login == User.Identity.Name);
+            var user = await _mediator
+                .Send(new GetUserQuery<string>(User.Identity.Name));
+
             model.UserId = user.Id;
-            var review = _mapper.Map<Review>(model);
-            await _service.CreateAsync(review, CancellationToken.None);
+            var review = await _mediator.Send(model);
             return Ok(model);
         }
-
     }
 }

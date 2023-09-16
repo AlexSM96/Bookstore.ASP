@@ -1,28 +1,27 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Bookstore.Presentation.Controllers
+﻿namespace Bookstore.Presentation.Controllers
 {
     public class AuthorController : Controller
     {
-        private readonly IBaseService<Author> _service;
+        private readonly IMediator _mediator;
         private readonly IMapper _mapper;
 
-        public AuthorController(IBaseService<Author> service, IMapper mapper) =>
-            (_service, _mapper) = (service, mapper);
+        public AuthorController(IMediator mediator, IMapper mapper) =>
+            (_mediator, _mapper) = (mediator, mapper);
 
         [HttpGet]
         public async Task<IActionResult> Index()
         {
-            var authors = await _service.GetAllAsync(CancellationToken.None);
-            return View(_mapper.Map<IList<AuthorViewModel>>(authors));
+            var authors = await _mediator.Send(new GetAuthorsQuery());
+            var authorsVM = _mapper.Map<IList<AuthorViewModel>>(authors);
+            return View(authorsVM);
         }
 
         [HttpGet]
         public async Task<IActionResult> GetJsonListAuthors()
         {
-            var authors = await _service.GetAllAsync(CancellationToken.None);
-            return Json(_mapper.Map<AuthorViewModel>(authors));
+            var authors = await _mediator.Send(new GetAuthorsQuery());
+            var authorsVM = _mapper.Map<IList<AuthorViewModel>>(authors);
+            return Json(authorsVM);
         }
 
 
@@ -30,13 +29,17 @@ namespace Bookstore.Presentation.Controllers
         public async Task<IActionResult> AddAuthor() => PartialView(new AuthorViewModel());
 
         [HttpPost]
-        public async Task<IActionResult> AddAuthor(AuthorViewModel model)
+        public async Task<IActionResult> AddAuthor(AddAuthorCommand model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            await _service
-                .CreateAsync(_mapper.Map<Author>(model), CancellationToken.None);
-            return Ok();
+            var author = await _mediator.Send(model);
+            if (author != null)
+            {
+                return Ok();
+            }
+
+            return BadRequest(model);
         }
     }
 }

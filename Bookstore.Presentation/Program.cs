@@ -1,12 +1,3 @@
-using Bookstore.Application.Books.Commands.AddBook;
-using Bookstore.Application.Books.Commands.DeleteBook;
-using Bookstore.Application.Books.Commands.UpdateBook;
-using Bookstore.Application.Books.Queries.GetBook;
-using Bookstore.Application.Books.Queries.GetBooks;
-using Bookstore.Application.Books.Queries.GetBooksByInput;
-using MediatR;
-using System.Reflection;
-
 var builder = WebApplication.CreateBuilder(args);
 
 ConfigureServices(builder);
@@ -65,16 +56,24 @@ void ConfigureServices(WebApplicationBuilder builder)
 
     builder.Services
         .AddScoped<IBaseDbContext, BookstoreDbContext>()
-        .AddScoped<IBaseService<Author>, AuthorService>()
-        .AddScoped<IBaseService<Category>, CategoryService>()
-        .AddScoped<IBaseService<Order>, OrderService>()
-        .AddScoped<IBaseService<Review>, ReviewService>()
-        .AddScoped<IBaseService<User>, UserService>()
-        .AddScoped<IAccountService, AccountService>()
         .AddScoped<IRequestHandler<AddBookCommand, Book>, AddBookCommandHandler>()
         .AddScoped<IRequestHandler<UpdateBookCommand, Book>, UpdateBookCommandHandler>()
         .AddScoped<IRequestHandler<DeleteBookCommand, Unit>, DeleteBookCommandHandler>()
         .AddScoped<IRequestHandler<GetBooksQuery, IList<Book>>, GetBooksQueryHandler>()
         .AddScoped<IRequestHandler<GetBooksByInputQuery, IList<Book>>, GetBooksByInputQueryHandler>()
-        .AddScoped<IRequestHandler<GetBookByIdQuery, Book>, GetBookByIdQueryHandler>();
+        .AddScoped<IRequestHandler<GetBookByIdQuery, Book>, GetBookByIdQueryHandler>()
+        .AddScoped<IRequestHandler<GetCategoriesQuery, IList<Category>>, GetCategoriesQueryHandler>()
+        .AddScoped<IRequestHandler<AddCategoryCommand, Category>, AddCategoryCommandHandler>()
+        .AddScoped<IRequestHandler<RegisterAccountCommand, ClaimsIdentity>, RegisterAccountCommandHandler>()
+        .AddScoped<IRequestHandler<LogInCommand, ClaimsIdentity>, LogInCommandHandler>()
+        .AddScoped<IRequestHandler<AddAuthorCommand,Author>, AddAuthorCommandHandler>()
+        .AddScoped<IRequestHandler<GetAuthorsQuery, IList<Author>>, GetAuthorsQueryHandler>()
+        .AddScoped<IRequestHandler<AddReviewCommand, Review>, AddReviewCommandHandler>()
+        .AddScoped<IRequestHandler<GetReviewsQuery, IList<Review>>, GetReviewsQueryHandler>()
+        .AddScoped<IRequestHandler<GetReviewsByBookIdQuery, IList<Review>>, GetReviewsByBookIdQueryHandler>()
+        .AddScoped<IRequestHandler<AddOrderCommand, Order>, AddOrderCommandHandler>()
+        .AddScoped<IRequestHandler<GetOrdersQuery, IList<Order>>, GetOrdersQueryHandler>()
+        .AddScoped<IRequestHandler<GetUserQuery<Guid>, User>,GetUserQueryHandler<Guid>>()
+        .AddScoped<IRequestHandler<GetUserQuery<string>, User>, GetUserQueryHandler<string>>()
+        .AddScoped<IRequestHandler<GetUsersQuery, IList<User>>, GetUsersQueryHandler>();
 }

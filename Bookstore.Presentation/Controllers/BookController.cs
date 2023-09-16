@@ -1,13 +1,4 @@
-﻿using AutoMapper;
-using Bookstore.Application.Books.Commands.AddBook;
-using Bookstore.Application.Books.Commands.DeleteBook;
-using Bookstore.Application.Books.Queries.GetBook;
-using Bookstore.Application.Books.Queries.GetBooks;
-using Bookstore.Application.Books.Queries.GetBooksByInput;
-using MediatR;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Bookstore.Presentation.Controllers
+﻿namespace Bookstore.Presentation.Controllers
 {
     public class BookController : Controller
     {

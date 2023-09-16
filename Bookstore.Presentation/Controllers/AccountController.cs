@@ -1,32 +1,26 @@
-﻿using Bookstore.Application.Mapping.AccountDto;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Mvc;
-using System.Security.Claims;
-
-namespace Bookstore.Presentation.Controllers
+﻿namespace Bookstore.Presentation.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IAccountService _service;
+        private readonly IMediator _mediator;
 
-        public AccountController(IAccountService service) => _service = service;
+        public AccountController(IMediator mediator) => _mediator = mediator;
         
         [HttpGet]
         public IActionResult RegisterUser() => View(new RegistrationViewModel());
 
         [HttpPost]
-        public async Task<IActionResult> RegisterUser(RegistrationViewModel model)
+        public async Task<IActionResult> RegisterUser(RegisterAccountCommand model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            var claimsIdentity = await _service
-                .RegisterAccountAsync(model, CancellationToken.None);
+            var identity = await _mediator.Send(model);
 
-            if(claimsIdentity is not null)
+            if(identity is not null)
             {
                 await HttpContext
                     .SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(claimsIdentity));
+                        new ClaimsPrincipal(identity));
                 return RedirectToAction("Index", "Home");
             }
 
@@ -37,18 +31,17 @@ namespace Bookstore.Presentation.Controllers
         public IActionResult SignIn() => View(new LoginViewModel());
 
         [HttpPost]
-        public async Task<IActionResult> SignIn(LoginViewModel model)
+        public async Task<IActionResult> SignIn(LogInCommand model)
         {
             if (!ModelState.IsValid) return View(model);
 
-            var claimsIdentity = await _service
-                .LogInAsync(model, CancellationToken.None);
+            var identity = await _mediator.Send(model);
 
-            if (claimsIdentity is not null)
+            if (identity is not null)
             {
                 await HttpContext
                     .SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(claimsIdentity));
+                        new ClaimsPrincipal(identity));
                 return RedirectToAction("Index", "Home");
             }
 

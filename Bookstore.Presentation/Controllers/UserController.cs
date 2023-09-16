@@ -1,15 +1,12 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Bookstore.Presentation.Controllers
+﻿namespace Bookstore.Presentation.Controllers
 {
     public class UserController : Controller
     {
-        private readonly IBaseService<User> _service;
+        private readonly IMediator _mediator;
         private readonly IMapper _mapper;
 
-        public UserController(IBaseService<User> service, IMapper mapper) =>
-            (_service, _mapper) = (service, mapper);
+        public UserController(IMediator mediator, IMapper mapper) =>
+            (_mediator, _mapper) = (mediator, mapper);
 
         public IActionResult Index()
         {
@@ -19,28 +16,24 @@ namespace Bookstore.Presentation.Controllers
         [HttpGet]
         public async Task<IActionResult> GetUsers()
         {
-            var users = await _service
-                .GetAllAsync(CancellationToken.None);
-            return PartialView(_mapper.Map<IList<UserViewModel>>(users));
+            var users = await _mediator.Send(new GetUsersQuery());
+            var usersVM = _mapper.Map<IList<UserViewModel>>(users);
+            return PartialView(usersVM);
         }
 
         public async Task<IActionResult> GetUser(Guid id)
         {
-            var users = await _service
-                .GetAllAsync(CancellationToken.None);
-            var user = users
-                .FirstOrDefault(x => x.Id == id);
-            return View(_mapper.Map<UserViewModel>(user));
+            var user = await _mediator.Send(new GetUserQuery<Guid>(id));
+            var userVM = _mapper.Map<UserViewModel>(user);
+            return View(userVM);
         }
 
         public async Task<IActionResult> GetCurrentUser()
         {
             if (User.Identity.IsAuthenticated)
             {
-                var users = await _service
-                .GetAllAsync(CancellationToken.None);
-                var user = users
-                    .FirstOrDefault(x => x.Login == User.Identity.Name);
+                var user = await _mediator
+                    .Send(new GetUserQuery<string>(User.Identity.Name));
 
                 return Json(new {UserId = user?.Id, UserEmail = user?.Email});
             }

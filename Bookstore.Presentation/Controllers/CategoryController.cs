@@ -1,15 +1,12 @@
-﻿using AutoMapper;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Bookstore.Presentation.Controllers
+﻿namespace Bookstore.Presentation.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly IBaseService<Category> _service;
+        private readonly IMediator _mediator;
         private readonly IMapper _mapper;
 
-        public CategoryController(IBaseService<Category> service, IMapper mapper) =>
-            (_service, _mapper) = (service, mapper);
+        public CategoryController(IMediator mediator, IMapper mapper) =>
+            (_mediator, _mapper) = (mediator, mapper);
 
         public IActionResult Index()
         {
@@ -19,8 +16,9 @@ namespace Bookstore.Presentation.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCategories()
         {
-            var categories = await _service.GetAllAsync(CancellationToken.None);
-            return PartialView(_mapper.Map<IList<CategoryViewModel>>(categories));
+            var categories = await _mediator.Send(new GetCategoriesQuery());
+            var categoriesVM = _mapper.Map<IList<CategoryViewModel>>(categories);
+            return PartialView(categoriesVM);
         }
 
         [HttpGet]
@@ -28,12 +26,11 @@ namespace Bookstore.Presentation.Controllers
             => PartialView(new CategoryViewModel());
 
         [HttpPost]
-        public async Task<IActionResult> AddCategory(CategoryViewModel model)
+        public async Task<IActionResult> AddCategory(AddCategoryCommand model)
         {
             if (ModelState.IsValid)
             {
-                var category = _mapper.Map<Category>(model);
-                await _service.CreateAsync(category,CancellationToken.None);
+                var category = await _mediator.Send(model);
                 return Ok();
             }
 

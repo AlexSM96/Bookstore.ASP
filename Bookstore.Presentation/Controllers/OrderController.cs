@@ -1,18 +1,12 @@
-﻿using AutoMapper;
-using Bookstore.Application.Mapping.OrderDto;
-using Microsoft.AspNetCore.Mvc;
-
-namespace Bookstore.Presentation.Controllers
+﻿namespace Bookstore.Presentation.Controllers
 {
     public class OrderController : Controller
     {
-        private readonly IBaseService<Order> _service;
+        private readonly IMediator _mediator;
         private readonly IMapper _mapper;
-        private readonly IBaseDbContext _context;
 
-        public OrderController(IBaseService<Order> service, IMapper mapper, 
-            IBaseDbContext context) =>
-            (_service, _mapper, _context) = (service, mapper, context);
+        public OrderController(IMediator mediator, IMapper mapper) =>
+            (_mediator, _mapper) = (mediator, mapper);
         
         public IActionResult Index()
         {
@@ -21,23 +15,15 @@ namespace Bookstore.Presentation.Controllers
 
         public async Task<IActionResult> GetOrders()
         {
-            var orders = await _service.GetAllAsync(CancellationToken.None);
-            return PartialView(_mapper.Map<IList<OrderViewModel>>(orders));
+            var orders = await _mediator.Send(new GetOrdersQuery());
+            var ordersVM = _mapper.Map<IList<OrderViewModel>>(orders);
+            return PartialView(ordersVM);
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateOrder(CreateOrderViewModel model)
+        public async Task<IActionResult> CreateOrder(AddOrderCommand model)
         {
-            var book = await _context.Books
-                .AsNoTracking()
-                .FirstOrDefaultAsync(x => x.Id == model.BookId);
-            var vm = new OrderViewModel();
-            vm.UserId = model.UserId;
-            vm.CreationDate = model.CteationDate;
-            vm.Books.Add(_mapper.Map<BookViewModel>(book));
-
-            var order = _mapper.Map<Order>(vm);
-            await _service.CreateAsync(order, CancellationToken.None);
+            var order = await _mediator.Send(model);
             return Ok(model);
         }
     }
