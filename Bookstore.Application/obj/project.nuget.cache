@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "QkEEHFAD+FDplXfxBE5/qRmehrsIm2ww6rki9iS3itCJdSbSPMQa7cAyrk/qa0nuzIb2n1QUwV32QkpprrZ1EA==",
+  "dgSpecHash": "JlS94HZgowfSbcxB9FKIbINYy9bpZDSV+7pGWfXz4J4odXZ3dMHhSdvmPasCdplz7hJtQr5izrxY7EEglW1omA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Application\\Bookstore.Application.csproj",
+  "projectFilePath": "C:\\Users\\Professional\\source\\repos\\Bookstore.ASP\\Bookstore.ASP.NET\\Bookstore.Application\\Bookstore.Application.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Professional\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\bouncycastle.cryptography\\2.2.1\\bouncycastle.cryptography.2.2.1.nupkg.sha512",

@@ -9,3 +9,14 @@ C:\Users\Professional\source\repos\Bookstore\Bookstore.Domain\obj\Debug\net7.0\B
 C:\Users\Professional\source\repos\Bookstore\Bookstore.Domain\obj\Debug\net7.0\refint\Bookstore.Domain.dll
 C:\Users\Professional\source\repos\Bookstore\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.pdb
 C:\Users\Professional\source\repos\Bookstore\Bookstore.Domain\obj\Debug\net7.0\ref\Bookstore.Domain.dll
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\bin\Debug\net7.0\Bookstore.Domain.deps.json
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\bin\Debug\net7.0\Bookstore.Domain.dll
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\bin\Debug\net7.0\Bookstore.Domain.pdb
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.AssemblyInfoInputs.cache
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.AssemblyInfo.cs
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.dll
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\obj\Debug\net7.0\refint\Bookstore.Domain.dll
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.pdb
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Domain\obj\Debug\net7.0\ref\Bookstore.Domain.dll

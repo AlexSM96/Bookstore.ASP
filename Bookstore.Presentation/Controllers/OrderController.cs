@@ -24,12 +24,12 @@ namespace Bookstore.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> CreateOrder(AddOrderCommand model)
+        public async Task<IActionResult> CreateOrder(AddOrderCommand model, string bodyHtml)
         {
             var order = await _mediator.Send(model);
 
             await _service
-                .SendEmailAsync(order.User.Email, "Тест", "Тест");
+                .SendEmailAsync(order.User.Email, "Подтверждение заказа", $"""<ul class="list-group">{bodyHtml}<ul>""");
 
             return Ok();
         }

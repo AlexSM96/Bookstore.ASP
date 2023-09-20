@@ -1,4 +1,6 @@
-﻿namespace Bookstore.Presentation.Controllers
+﻿using Microsoft.EntityFrameworkCore.Metadata.Internal;
+
+namespace Bookstore.Presentation.Controllers
 {
     public class AccountController : Controller
     {
@@ -12,19 +14,20 @@
         [HttpPost]
         public async Task<IActionResult> RegisterUser(RegisterAccountCommand model)
         {
-            if (!ModelState.IsValid) return View(model);
-
-            var identity = await _mediator.Send(model);
-
-            if(identity is not null)
+            if (ModelState.IsValid) 
             {
-                await HttpContext
-                    .SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(identity));
-                return RedirectToAction("Index", "Home");
-            }
+                var identity = await _mediator.Send(model);
 
-            return BadRequest(model);
+                if (identity is not null)
+                {
+                    await HttpContext
+                        .SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                            new ClaimsPrincipal(identity));
+                    return RedirectToAction("Index", "Home");
+                }
+            } 
+            
+            return View();    
         }
 
         [HttpGet]
@@ -33,19 +36,20 @@
         [HttpPost]
         public async Task<IActionResult> SignIn(LogInCommand model)
         {
-            if (!ModelState.IsValid) return View(model);
-
-            var identity = await _mediator.Send(model);
-
-            if (identity is not null)
+            if (ModelState.IsValid)
             {
-                await HttpContext
-                    .SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                        new ClaimsPrincipal(identity));
-                return RedirectToAction("Index", "Home");
+                var identity = await _mediator.Send(model);
+
+                if (identity is not null)
+                {
+                    await HttpContext
+                        .SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
+                            new ClaimsPrincipal(identity));
+                    return RedirectToAction("Index", "Home");
+                }
             }
 
-            return BadRequest(model);
+            return View();
         }
 
         public async Task<IActionResult> SignOut()

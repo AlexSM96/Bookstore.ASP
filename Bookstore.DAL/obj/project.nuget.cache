@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4+lH0rSx6T79NzmjLRxfFk+GmK0WuNtwgO4+O8/mYofpR8WylcY1NzFmBGkox6JPLD2OPeXnxoqkUo7W6i0koQ==",
+  "dgSpecHash": "8O3CPSIMLd0QbFB0kb+YaTwTnDQxbw4eQCWitJsmeWfaD0YTnaxop351t9Ml6a0jg9gVv4tu7GLHLIVQR9qngQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.DAL\\Bookstore.DAL.csproj",
+  "projectFilePath": "C:\\Users\\Professional\\source\\repos\\Bookstore.ASP\\Bookstore.ASP.NET\\Bookstore.DAL\\Bookstore.DAL.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Professional\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\Professional\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",

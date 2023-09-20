@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "drN4XPspPjGgbpziLQMWtr5SY7XFRVvwdXrob/RNlGz2nre59NQ73Y3UHceDkzaU1RDgOBTnLPyjSjAzVONgyw==",
+  "dgSpecHash": "7BMs0HhUfEkhJ5IrT/5hAX2D9VmHHNactIMVWgipLZbzYJqSKWpKDO5CZ/jctm22jiex1gFO/1C1wsBUQySbKQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Domain\\Bookstore.Domain.csproj",
+  "projectFilePath": "C:\\Users\\Professional\\source\\repos\\Bookstore.ASP\\Bookstore.ASP.NET\\Bookstore.Domain\\Bookstore.Domain.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

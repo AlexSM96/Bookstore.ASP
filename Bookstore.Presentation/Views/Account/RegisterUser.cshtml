@@ -4,7 +4,7 @@
 }
 
 <div class="registration-container">
-    <h3>Регистрация на сайте</h3>
+    <h3>РЕГИСТРАЦИЯ</h3>
     <form asp-controller="Accont" asp-action="RegisterUser" method="post">
         <div align="left">
             <label class="form-label" asp-for="Login">Введите ваше имя</label>
@@ -23,10 +23,11 @@
         </div>
         <br />
         <div>
-            <button class="nav-link text-decoration-underline" 
-                asp-controller="Account" asp-action="RegisterUser" 
-                type="submit">Зарегистрироваться</button>
-            <a class="nav-link text-decoration-underline"
+            <button class="btn btn-outline-dark btn-lg" 
+                    asp-controller="Account" asp-action="RegisterUser" 
+                    type="submit">Зарегистрироваться</button>
+
+            <a class="btn btn-outline-dark"
                asp-controller="Account" asp-action="SignIn">Войти</a>
         </div>
     </form>

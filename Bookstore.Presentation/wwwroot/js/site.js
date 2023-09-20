@@ -44,18 +44,41 @@ function createOrder(data) {
         alert("Чтобы совершить покупку необходимо войти в аккаунт или зарегистрироваться");
         return
     }
+
     let books = JSON.parse(data)
+    let price = 0
+    let totalPrice = books.reduce((acc, book) => acc + book.Price, price)
+    let body = books.map(toHtml).join(' ')
+    body = body + priceHtml(totalPrice)
 
     $.ajax({
         type: 'POST',
         url: '/Order/CreateOrder',
         data: {
-            userId: currentUser.userId,
-            books: books 
+            model: {
+                userId: currentUser.userId,
+                books: books,
+            },
+            bodyHtml: body
         },
-        success: () => alert("Заказ создан. Спаибо за покупку!"),
+        success: () => alert("Заказ создан.Вам на почту отправлены информация по заказу. Спаибо за покупку!"),
         error: (response) => console.log(response)
     })
+}
+
+function priceHtml(totalPrice) {
+    return `
+        <li class="list-group-item">
+            <p>Общая стоимость заказа:</p>
+            <h2>${totalPrice} Руб.</h2>
+        </li>`
+}
+
+function toHtml(book) {
+    return `
+        <li class="list-group-item">
+            <h3>Название: ${book.Title}</h3>
+        </li>`
 }
 
 let booksId = []
@@ -64,7 +87,6 @@ function getBooksId(id) {
         booksId.push(id)
     }
 }
-
 
 function addToBasket() {
     let basketContainer = document.querySelector('#main-container')
