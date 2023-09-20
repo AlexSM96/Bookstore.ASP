@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "pj/XXIyT/2C1YZY8ehELfY/hfvQODlH8wgCMgaFbimE=",
+  "Hash": "h9xx7KgJ1shFwpZ9bw5E7FzVwzEeTOyAg28wIPGawPU=",
   "Source": "Bookstore.Presentation",
   "BasePath": "_content/Bookstore.Presentation",
   "Mode": "Default",
@@ -389,6 +389,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\carousel.js"
+    },
+    {
+      "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\js\\forms.js",
+      "SourceId": "Bookstore.Presentation",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\",
+      "BasePath": "_content/Bookstore.Presentation",
+      "RelativePath": "js/forms.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\forms.js"
     },
     {
       "Identity": "C:\\Users\\Professional\\source\\repos\\Bookstore\\Bookstore.Presentation\\wwwroot\\js\\site.js",

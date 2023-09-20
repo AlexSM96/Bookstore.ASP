@@ -6,7 +6,7 @@
 </head>
 <body>
     @await Html.PartialAsync("HeaderPartial")
-    <div class="container">
+    <div id="main-container" class="container">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>
@@ -17,7 +17,8 @@
         </div>
         <div class="modal-body"></div>
         <div class="modal-footer">
-            <button class="btn btn-outline-danger" data-bs-dismis="close">Закрыть</button>
+            <button class="btn btn-outline-danger" 
+                data-bs-dismis="close">Закрыть</button>
         </div>
     </div>
     @await Html.PartialAsync("FooterPartial")

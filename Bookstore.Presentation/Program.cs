@@ -1,4 +1,5 @@
 using Bookstore.Application.Extensions;
+using Bookstore.DAL.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +11,6 @@ if (!app.Environment.IsDevelopment())
 {
     app.UseHsts();
 }
-
-using var scope = app.Services.CreateScope();
-var context = scope.ServiceProvider.GetRequiredService<BookstoreDbContext>();
-context.Database.EnsureCreated();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -37,12 +34,6 @@ void ConfigureServices(WebApplicationBuilder builder)
         .AddControllersWithViews()
         .AddRazorRuntimeCompilation();
 
-    string connetionString = builder.Configuration.GetConnectionString("MSSQL")!;
-    builder.Services.AddDbContext<BookstoreDbContext>(option =>
-    {
-        option.UseSqlServer(connetionString);
-    });
-
     builder.Services
         .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(option =>
@@ -57,6 +48,7 @@ void ConfigureServices(WebApplicationBuilder builder)
             typeof(UserViewModel));
 
     builder.Services
+           .AddDataAccessLayer(builder.Configuration)
            .AddScoped<IBaseDbContext, BookstoreDbContext>()
            .AddApplication();
 }

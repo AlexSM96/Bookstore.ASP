@@ -20,13 +20,9 @@ namespace Bookstore.Application.CommandAndQuery.Orders.Commands.AddOrder
             try
             {
                 var user = await _context.Users
-                .FirstOrDefaultAsync(x => x.Id == request.UserId);
+                    .FirstOrDefaultAsync(x => x.Id == request.UserId);
 
-                var book = await _context.Books
-                    .AsNoTracking()
-                    .FirstOrDefaultAsync(x => x.Id == request.BookId);
-
-                if (user is null || book is null)
+                if (user is null)
                 {
                     throw new ArgumentNullException();
                 }
@@ -36,7 +32,7 @@ namespace Bookstore.Application.CommandAndQuery.Orders.Commands.AddOrder
                     CreationDate = request.CteationDate,
                     User = user,
                     UserId = request.UserId,
-                    Books = new List<Book> { book }
+                    Books = request.Books
                 };
 
                 var newOrder = await AddOrUpdateOrder(order);

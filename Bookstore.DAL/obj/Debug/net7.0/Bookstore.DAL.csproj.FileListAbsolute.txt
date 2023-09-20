@@ -15,3 +15,5 @@ C:\Users\Professional\source\repos\Bookstore\Bookstore.DAL\obj\Debug\net7.0\Book
 C:\Users\Professional\source\repos\Bookstore\Bookstore.DAL\obj\Debug\net7.0\ref\Bookstore.DAL.dll
 C:\Users\Professional\source\repos\Bookstore\Bookstore.DAL\bin\Debug\net7.0\Bookstore.Application.dll
 C:\Users\Professional\source\repos\Bookstore\Bookstore.DAL\bin\Debug\net7.0\Bookstore.Application.pdb
+C:\Users\Professional\source\repos\Bookstore\Bookstore.DAL\bin\Debug\net7.0\Bookstore.DAL.runtimeconfig.json
+C:\Users\Professional\source\repos\Bookstore\Bookstore.DAL\obj\Debug\net7.0\Bookstore.DAL.genruntimeconfig.cache

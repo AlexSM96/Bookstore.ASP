@@ -7,6 +7,7 @@ using Bookstore.Application.CommandAndQuery.Books.Commands.DeleteBook;
 using Bookstore.Application.CommandAndQuery.Books.Commands.UpdateBook;
 using Bookstore.Application.CommandAndQuery.Books.Queries.GetBook;
 using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooks;
+using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooksById;
 using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooksByInput;
 using Bookstore.Application.CommandAndQuery.Categories.Commands.AddCategory;
 using Bookstore.Application.CommandAndQuery.Categories.Queries.GetCategories;
@@ -17,7 +18,9 @@ using Bookstore.Application.CommandAndQuery.Reviews.Queries.GetReviews;
 using Bookstore.Application.CommandAndQuery.Reviews.Queries.GetReviewsByBookId;
 using Bookstore.Application.CommandAndQuery.Users.Queries.GetUser;
 using Bookstore.Application.CommandAndQuery.Users.Queries.GetUsers;
+using Bookstore.Application.Services.Email;
 using Bookstore.Domain.Entities;
+using MailKit.Net.Smtp;
 using MediatR;
 using Microsoft.Extensions.DependencyInjection;
 using System.Security.Claims;
@@ -48,7 +51,10 @@ namespace Bookstore.Application.Extensions
                 .AddScoped<IRequestHandler<GetOrdersQuery, IList<Order>>, GetOrdersQueryHandler>()
                 .AddScoped<IRequestHandler<GetUserQuery<Guid>, User>, GetUserQueryHandler<Guid>>()
                 .AddScoped<IRequestHandler<GetUserQuery<string>, User>, GetUserQueryHandler<string>>()
-                .AddScoped<IRequestHandler<GetUsersQuery, IList<User>>, GetUsersQueryHandler>();
+                .AddScoped<IRequestHandler<GetUsersQuery, IList<User>>, GetUsersQueryHandler>()
+                .AddScoped<IRequestHandler<GetBooksByIdQuery, IList<Book>>, GetBooksByIdQueryHandler>()
+                .AddScoped<ISmtpClient, SmtpClient>()
+                .AddScoped<IEmailService, EmailService>();
         }
     }
 }

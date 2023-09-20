@@ -177,3 +177,12 @@ body {
 .personal-account:hover {
     opacity:0.8;
 }
+
+.basket{
+    cursor: pointer;
+}
+
+    .basket img:hover {
+        width: 49px;
+        height: auto;
+    }

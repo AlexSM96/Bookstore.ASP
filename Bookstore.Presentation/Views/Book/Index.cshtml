@@ -34,8 +34,8 @@
 
                         <a asp-controller="Book" asp-action="GetBook" 
                            asp-route-id="@book.Id" class="btn btn-outline-primary">Подробнее</a>
-                        <a class="btn btn-outline-success">
-                            <img src="~/img/bag-add.png" width="50px" /> 
+                        <a class="btn btn-outline-success" onclick="getBooksId('@book.Id')">
+                            <img src="~/img/bag-add.png" width="50px"  title="Добавить в корзину"/> 
                             <p>@book.Price &#8381;</p>
                         </a>
                     </div>

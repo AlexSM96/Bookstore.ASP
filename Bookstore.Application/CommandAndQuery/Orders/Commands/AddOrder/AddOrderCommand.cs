@@ -9,6 +9,6 @@ namespace Bookstore.Application.CommandAndQuery.Orders.Commands.AddOrder
 
         public Guid UserId { get; set; }
 
-        public Guid BookId { get; set; }
+        public List<Book> Books { get; set; }
     }
 }

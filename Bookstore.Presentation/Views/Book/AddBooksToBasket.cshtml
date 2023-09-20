@@ -1,0 +1,45 @@
+﻿@model IList<BookViewModel>
+@{
+    decimal totalPrice = 0;
+    Model.Aggregate(totalPrice, (acc, book) => totalPrice += book.Price);
+    var json = Json.Serialize(Model);
+}
+
+<div class="container-fluid">
+    @if (Model.Any())
+    {
+        <p>Товары:</p>
+        <ul class="list-group">
+            @foreach (var book in Model)
+            {
+                <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-md-1">
+                            <img src="~/img/@book.ImagePath" width="80" />
+                        </div>
+                        <div class="col-md-10">
+                            <h6>Название: @book.Title</h6>
+                            <p>Цена: @book.Price Руб.</p>
+                        </div>
+                        <div class="col-md-1">
+                            <button class="btn btn-outline-danger">X</button>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>
+
+        <div class="container">
+            <p>Общая стоимость заказа:</p>
+            <h2>@totalPrice Руб.</h2>
+            <span>
+                <button onclick="createOrder('@ViewBag.BooksJson')" class="btn btn-outline-success btn-lg">Оформить</button>
+            </span>
+        </div>
+        <br />
+    }
+    else
+    {
+        <h3>Пока корзина пуста</h3>
+    }
+</div>

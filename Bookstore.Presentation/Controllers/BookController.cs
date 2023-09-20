@@ -1,4 +1,8 @@
-﻿namespace Bookstore.Presentation.Controllers
+﻿using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooksById;
+using Microsoft.AspNetCore.Mvc.Rendering;
+using NuGet.Protocol;
+
+namespace Bookstore.Presentation.Controllers
 {
     public class BookController : Controller
     {
@@ -19,7 +23,8 @@
         public async Task<IActionResult> GetBooks()
         {
             var books = await _mediator.Send(new GetBooksQuery());
-            return PartialView(_mapper.Map<IList<BookViewModel>>(books));
+            var booksVM = _mapper.Map<IList<BookViewModel>>(books);
+            return PartialView(booksVM);
         }
 
         [HttpGet]
@@ -73,6 +78,19 @@
         {
             await _mediator.Send(model, CancellationToken.None);
             return RedirectToAction("Index", "Admin");
+        }
+
+        [HttpGet]
+        public IActionResult AddToBasket() => View();
+
+        [HttpPost]
+        public async Task<IActionResult> AddBooksToBasket(List<Guid> BooksId)
+        {
+            var books = await _mediator
+                .Send(new GetBooksByIdQuery(BooksId));
+            ViewBag.BooksJson = books.ToJson();
+
+            return PartialView(_mapper.Map<IList<BookViewModel>>(books));
         }
     }
 }
