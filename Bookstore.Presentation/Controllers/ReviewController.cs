@@ -34,7 +34,8 @@
 
             model.UserId = user.Id;
             var review = await _mediator.Send(model);
-            return Ok(model);
+
+            return RedirectToAction("GetBook", "Book", new { review.BookId });
         }
     }
 }

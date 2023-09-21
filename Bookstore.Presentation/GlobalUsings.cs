@@ -33,3 +33,5 @@ global using Microsoft.AspNetCore.Mvc;
 global using Microsoft.EntityFrameworkCore;
 global using System.Reflection;
 global using System.Security.Claims;
+global using Bookstore.Application.Extensions;
+global using Bookstore.DAL.Extensions;

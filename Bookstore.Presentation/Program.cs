@@ -1,5 +1,4 @@
-using Bookstore.Application.Extensions;
-using Bookstore.DAL.Extensions;
+using Humanizer;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -38,10 +37,10 @@ void ConfigureServices(WebApplicationBuilder builder)
         .AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme)
         .AddCookie(option =>
         {
-            option.LoginPath = new PathString("/Account/SignIn");
-            option.AccessDeniedPath = new PathString("/Account/SignIn");
+            option.LoginPath = new PathString("/Account/Login");
+            option.AccessDeniedPath = new PathString("/Account/Login");
         });
-
+       
     builder.Services
         .AddAutoMapper(typeof(BookViewModel), typeof(AuthorViewModel), 
             typeof(CategoryViewModel), typeof(ReviewViewModel),

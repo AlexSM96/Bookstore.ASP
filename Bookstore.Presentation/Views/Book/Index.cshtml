@@ -8,7 +8,7 @@
         @foreach (var book in Model)
         {
             <li class="list-group-item">
-                <div class="row">
+                <div class="row mb-0">
                     <div class="col-md-3" align="center">
                         <img src="~/img/@book.ImagePath" width="150" title="@book.Title" alt="img:@book.Title" />
                     </div>
@@ -17,9 +17,9 @@
                         <p>Дата издания: @book.PublicationDate.ToShortDateString()</p>
                         <div>
                             @{
-                                var text = book.Authors.Count > 1 ? "Авторы:" : "Автор:";
+                                var authorTitle = book.Authors.Count > 1 ? "Авторы:" : "Автор:";
                             }
-                            @text
+                            @authorTitle
                             @foreach (var author in book.Authors)
                             {
                                 <span>@author.Name</span>
@@ -30,11 +30,10 @@
                             <span class="genre-tag">@category.Name</span>
                         }
                     </div>
-                    <div class="col-md-2">
-
+                    <div class="col-md-2" align="center">
                         <a asp-controller="Book" asp-action="GetBook" 
-                           asp-route-id="@book.Id" class="btn btn-outline-primary">Подробнее</a>
-                        <a class="btn btn-outline-success" onclick="getBooksId('@book.Id')">
+                           asp-route-bookid="@book.Id" class="btn btn-outline-primary">Подробнее</a>
+                        <a class="btn btn-outline-success mt-5" onclick="getBooksId('@book.Id')">
                             <img src="~/img/bag-add.png" width="50px"  title="Добавить в корзину"/> 
                             <p>@book.Price &#8381;</p>
                         </a>

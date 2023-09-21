@@ -1,5 +1,4 @@
 ﻿using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooksById;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using NuGet.Protocol;
 
 namespace Bookstore.Presentation.Controllers
@@ -52,9 +51,9 @@ namespace Bookstore.Presentation.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> GetBook(Guid id)
+        public async Task<IActionResult> GetBook(Guid bookId)
         {
-            var book = await _mediator.Send(new GetBookByIdQuery(id));
+            var book = await _mediator.Send(new GetBookByIdQuery(bookId));
             return View(_mapper.Map<BookViewModel>(book));
         }
 

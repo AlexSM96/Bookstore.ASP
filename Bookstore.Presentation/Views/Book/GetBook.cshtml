@@ -7,25 +7,31 @@
     <div class="col-md-4" align="center">
         <img src="~/img/@Model?.ImagePath" width="300" style="margin-bottom:10px;" />
         <button class="btn btn-outline-success btn-lg" 
-                onclick="createOrder('@Model?.Id')">
+                onclick="createOrder('@Model.Id')">
                 Преобрести: @Model?.Price &#8381;
         </button>
     </div>
     <div class="col-md-8">
         <h2>@Model?.Title</h2>
-        <span>
-            Авторы:
-            @foreach (var author in Model.Authors)
-            {
-                <span>@author.Name</span>
-            }
-        </span>
-        <br />
-        @foreach (var category in Model.Categories)
+        @if (Model.Authors.Any())
         {
-            <span class="genre-tag">@category.Name</span>
+            <span>
+                Авторы:
+                @foreach (var author in Model.Authors)
+                {
+                    <span>@author.Name</span>
+                }
+            </span>
+            <br />
         }
-        <br />
+        @if (Model.Categories.Any())
+        {
+            @foreach (var category in Model.Categories)
+            {
+                <span class="genre-tag">@category.Name</span>
+            }
+            <br />
+        }    
         <div>
             <p>О товаре:</p>
             @if (string.IsNullOrWhiteSpace(Model.Description))
