@@ -21,9 +21,11 @@
             return PartialView(usersVM);
         }
 
-        public async Task<IActionResult> GetUser(Guid id)
+        public async Task<IActionResult> GetUser()
         {
-            var user = await _mediator.Send(new GetUserQuery<Guid>(id));
+            var user = await _mediator
+                .Send(new GetUserQuery<string>(User.Identity.Name));
+
             var userVM = _mapper.Map<UserViewModel>(user);
             return View(userVM);
         }

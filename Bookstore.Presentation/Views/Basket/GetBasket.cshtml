@@ -1,7 +1,8 @@
 ﻿@model IList<BookViewModel>
 @{
-    decimal totalPrice = 0; 
-    Model.Aggregate(totalPrice, (acc, book) => totalPrice += book.Price);
+    ViewData["Title"] = "GetBasket";
+    decimal totalPrice = 0;
+    Model.Aggregate(totalPrice, (acc, book) => totalPrice+=book.Price);
 }
 
 <div class="container-fluid">
@@ -21,19 +22,17 @@
                             <p>Цена: @book.Price Руб.</p>
                         </div>
                         <div class="col-md-1">
-                            <button class="btn btn-outline-danger">X</button>
+                            <a asp-controller="Basket" asp-action="DeleteFromBasket" asp-route-bookId="@book.Id" class="btn btn-outline-danger">X</a>
                         </div>
                     </div>
                 </li>
             }
         </ul>
-
         <div class="container">
             <p>Общая стоимость заказа:</p>
             <h2>@totalPrice Руб.</h2>
             <span>
-                <button onclick="createOrder('@ViewBag.BooksJson')" 
-                        class="btn btn-outline-success btn-lg">Оформить</button>
+                <button class="btn btn-outline-success btn-lg">Оформить</button>
             </span>
         </div>
         <br />
@@ -43,3 +42,4 @@
         <h3>Пока корзина пуста</h3>
     }
 </div>
+

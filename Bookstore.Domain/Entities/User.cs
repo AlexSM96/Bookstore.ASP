@@ -13,6 +13,8 @@ namespace Bookstore.Domain.Entities
 
         public Role Role { get; set; }
 
+        public Basket Basket { get; set; }
+
         public IList<Review>? Reviews { get; set; }
 
         public IList<Order>? Orders { get; set; }

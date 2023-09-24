@@ -14,6 +14,8 @@ namespace Bookstore.Domain.Entities
 
         public string? ImagePath { get; set; }
 
+        public IList<Basket> Baskets { get; set; } = new List<Basket>();
+
         public IList<Author> Authors { get; set; } = new List<Author>();
 
         public IList<Category> Categories { get; set; } = new List<Category>();

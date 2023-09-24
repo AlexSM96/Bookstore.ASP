@@ -5,8 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace Bookstore.DAL
 {
-    public sealed class BookstoreDbContext 
-        : DbContext, IBaseDbContext
+    public sealed class BookstoreDbContext : DbContext, IBaseDbContext
     {
         public BookstoreDbContext(DbContextOptions<BookstoreDbContext> option)
             : base(option) { }
@@ -23,6 +22,8 @@ namespace Bookstore.DAL
 
         public DbSet<Category> Categories { get; set; }
 
+        public DbSet<Basket> Baskets { get; set; }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder
@@ -31,7 +32,8 @@ namespace Bookstore.DAL
                 .ApplyConfiguration(new OrderConfiguration())
                 .ApplyConfiguration(new ReviewConfiguration())
                 .ApplyConfiguration(new UserConfiguration())
-                .ApplyConfiguration(new CategoryConfiguration());
+                .ApplyConfiguration(new CategoryConfiguration())
+                .ApplyConfiguration(new BasketConfiguration());
 
             base.OnModelCreating(modelBuilder);
         }

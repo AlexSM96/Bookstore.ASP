@@ -2,7 +2,6 @@
 using Bookstore.Application.Mapping.AuthorDto;
 using Bookstore.Application.Mapping.CategoryDto;
 using Bookstore.Application.Mapping.ReviewDto;
-using Bookstore.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bookstore.Application.Mapping.BookDto

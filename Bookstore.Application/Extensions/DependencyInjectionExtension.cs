@@ -1,29 +1,4 @@
-﻿using Bookstore.Application.CommandAndQuery.Accounts.Commands.LogIn;
-using Bookstore.Application.CommandAndQuery.Accounts.Commands.Registration;
-using Bookstore.Application.CommandAndQuery.Authors.Commands.AddAuthor;
-using Bookstore.Application.CommandAndQuery.Authors.Queries.GetAuthors;
-using Bookstore.Application.CommandAndQuery.Books.Commands.AddBook;
-using Bookstore.Application.CommandAndQuery.Books.Commands.DeleteBook;
-using Bookstore.Application.CommandAndQuery.Books.Commands.UpdateBook;
-using Bookstore.Application.CommandAndQuery.Books.Queries.GetBook;
-using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooks;
-using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooksById;
-using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooksByInput;
-using Bookstore.Application.CommandAndQuery.Categories.Commands.AddCategory;
-using Bookstore.Application.CommandAndQuery.Categories.Queries.GetCategories;
-using Bookstore.Application.CommandAndQuery.Orders.Commands.AddOrder;
-using Bookstore.Application.CommandAndQuery.Orders.Queries.GetOrders;
-using Bookstore.Application.CommandAndQuery.Reviews.Commands.AddReview;
-using Bookstore.Application.CommandAndQuery.Reviews.Queries.GetReviews;
-using Bookstore.Application.CommandAndQuery.Reviews.Queries.GetReviewsByBookId;
-using Bookstore.Application.CommandAndQuery.Users.Queries.GetUser;
-using Bookstore.Application.CommandAndQuery.Users.Queries.GetUsers;
-using Bookstore.Application.Services.Email;
-using Bookstore.Domain.Entities;
-using MailKit.Net.Smtp;
-using MediatR;
-using Microsoft.Extensions.DependencyInjection;
-using System.Security.Claims;
+﻿using Bookstore.Application.CommandAndQuery.Baskets.Commands.DeleteFromBasket;
 
 namespace Bookstore.Application.Extensions
 {
@@ -53,6 +28,9 @@ namespace Bookstore.Application.Extensions
                 .AddScoped<IRequestHandler<GetUserQuery<string>, User>, GetUserQueryHandler<string>>()
                 .AddScoped<IRequestHandler<GetUsersQuery, IList<User>>, GetUsersQueryHandler>()
                 .AddScoped<IRequestHandler<GetBooksByIdQuery, IList<Book>>, GetBooksByIdQueryHandler>()
+                .AddScoped<IRequestHandler<AddToBasketCommand, Basket>, AddToBasketCommandHandler>()
+                .AddScoped<IRequestHandler<GetBasketQuery, Basket>, GetBasketQueryHandler>()
+                .AddScoped<IRequestHandler<DeleteFromBasketCommand, Unit>, DeleteFromBasketCommandHandler>()
                 .AddScoped<ISmtpClient, SmtpClient>()
                 .AddScoped<IEmailService, EmailService>();
         }

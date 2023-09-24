@@ -1,9 +1,4 @@
-﻿using Bookstore.Application.Interfaces;
-using Bookstore.Domain.Entities;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-
-namespace Bookstore.Application.CommandAndQuery.Books.Commands.AddBook
+﻿namespace Bookstore.Application.CommandAndQuery.Books.Commands.AddBook
 {
     public class AddBookCommandHandler : IRequestHandler<AddBookCommand, Book>
     {

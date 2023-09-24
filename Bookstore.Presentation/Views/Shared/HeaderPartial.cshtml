@@ -33,17 +33,16 @@
                        title="Личный кабинет">
                         <img src="~/img/admin-ico.jpg" width="50" title="Личный кабинет" />
                     </a>
-
                 }
                 else
                 {
-                    <a asp-controller="User" asp-action="GetUser" asp-route-id="12e2ad01-deb0-44e6-9e28-3c36e67661e1"
+                    <a asp-controller="User" asp-action="GetUser"
                        class="nav-link text-decoration-underline" title="Личный кабинет" >Личный кабинет</a>
                 }
             }
         </div>
         <div>
-            <a class="basket" onclick="addToBasket()"><img src="~/img/shoppingcart_77968.png" width="50" title="Корзина" /></a>
+            <a class="basket" asp-controller="Basket" asp-action="GetBasket"><img src="~/img/shoppingcart_77968.png" width="50" title="Корзина" /></a>
         </div>
         <div>
             <ul class="account-list">

@@ -1,7 +1,4 @@
-﻿using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooksById;
-using NuGet.Protocol;
-
-namespace Bookstore.Presentation.Controllers
+﻿namespace Bookstore.Presentation.Controllers
 {
     public class BookController : Controller
     {
@@ -77,19 +74,6 @@ namespace Bookstore.Presentation.Controllers
         {
             await _mediator.Send(model, CancellationToken.None);
             return RedirectToAction("Index", "Admin");
-        }
-
-        [HttpGet]
-        public IActionResult AddToBasket() => View();
-
-        [HttpPost]
-        public async Task<IActionResult> AddBooksToBasket(List<Guid> BooksId)
-        {
-            var books = await _mediator
-                .Send(new GetBooksByIdQuery(BooksId));
-            ViewBag.BooksJson = books.ToJson();
-
-            return PartialView(_mapper.Map<IList<BookViewModel>>(books));
-        }
+        }     
     }
 }

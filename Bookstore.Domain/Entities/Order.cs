@@ -6,6 +6,8 @@ namespace Bookstore.Domain.Entities
     {
         public DateTime CreationDate { get; set; } = DateTime.Today;
 
+        public decimal TotalPrice { get; set; }
+
         public Guid UserId { get; set; }
 
         public User User { get; set; }

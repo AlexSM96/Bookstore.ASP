@@ -1,7 +1,4 @@
-﻿using MailKit.Net.Smtp;
-using MimeKit;
-
-namespace Bookstore.Application.Services.Email
+﻿namespace Bookstore.Application.Services.Email
 {
     public class EmailService : IEmailService
     {

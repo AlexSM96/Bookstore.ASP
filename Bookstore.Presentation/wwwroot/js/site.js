@@ -88,14 +88,13 @@ function getBooksId(id) {
     }
 }
 
-function addToBasket() {
-    let basketContainer = document.querySelector('#main-container')
+function addToBasket(id) {
+    getBooksId(id)
 
     $.ajax({
         type: 'POST',
-        url: '/Book/AddBooksToBasket',
+        url: '/Basket/AddToBasket',
         data: { booksId },
-        success: (response) => basketContainer.innerHTML = response,
         error: (response) => console.log(response)
     })
 }

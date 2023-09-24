@@ -33,7 +33,7 @@
                     <div class="col-md-2" align="center">
                         <a asp-controller="Book" asp-action="GetBook" 
                            asp-route-bookid="@book.Id" class="btn btn-outline-primary">Подробнее</a>
-                        <a class="btn btn-outline-success mt-5" onclick="getBooksId('@book.Id')">
+                        <a class="btn btn-outline-success mt-5" onclick="addToBasket('@book.Id')">
                             <img src="~/img/bag-add.png" width="50px"  title="Добавить в корзину"/> 
                             <p>@book.Price &#8381;</p>
                         </a>

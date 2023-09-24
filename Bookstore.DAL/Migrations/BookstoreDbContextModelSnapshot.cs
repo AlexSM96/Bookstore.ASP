@@ -37,6 +37,21 @@ namespace Bookstore.DAL.Migrations
                     b.ToTable("AuthorBook");
                 });
 
+            modelBuilder.Entity("BasketBook", b =>
+                {
+                    b.Property<Guid>("BasketsId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("BooksId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("BasketsId", "BooksId");
+
+                    b.HasIndex("BooksId");
+
+                    b.ToTable("BasketBook");
+                });
+
             modelBuilder.Entity("BookCategory", b =>
                 {
                     b.Property<Guid>("BooksId")
@@ -81,6 +96,23 @@ namespace Bookstore.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Authors");
+                });
+
+            modelBuilder.Entity("Bookstore.Domain.Entities.Basket", b =>
+                {
+                    b.Property<Guid>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId")
+                        .IsUnique();
+
+                    b.ToTable("Baskets");
                 });
 
             modelBuilder.Entity("Bookstore.Domain.Entities.Book", b =>
@@ -136,6 +168,9 @@ namespace Bookstore.DAL.Migrations
 
                     b.Property<DateTime>("CreationDate")
                         .HasColumnType("datetime2");
+
+                    b.Property<decimal>("TotalPrice")
+                        .HasColumnType("decimal(18,2)");
 
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
@@ -220,6 +255,21 @@ namespace Bookstore.DAL.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("BasketBook", b =>
+                {
+                    b.HasOne("Bookstore.Domain.Entities.Basket", null)
+                        .WithMany()
+                        .HasForeignKey("BasketsId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Bookstore.Domain.Entities.Book", null)
+                        .WithMany()
+                        .HasForeignKey("BooksId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
             modelBuilder.Entity("BookCategory", b =>
                 {
                     b.HasOne("Bookstore.Domain.Entities.Book", null)
@@ -248,6 +298,17 @@ namespace Bookstore.DAL.Migrations
                         .HasForeignKey("OrdersId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+                });
+
+            modelBuilder.Entity("Bookstore.Domain.Entities.Basket", b =>
+                {
+                    b.HasOne("Bookstore.Domain.Entities.User", "User")
+                        .WithOne("Basket")
+                        .HasForeignKey("Bookstore.Domain.Entities.Basket", "UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Bookstore.Domain.Entities.Order", b =>
@@ -287,6 +348,9 @@ namespace Bookstore.DAL.Migrations
 
             modelBuilder.Entity("Bookstore.Domain.Entities.User", b =>
                 {
+                    b.Navigation("Basket")
+                        .IsRequired();
+
                     b.Navigation("Orders");
 
                     b.Navigation("Reviews");
