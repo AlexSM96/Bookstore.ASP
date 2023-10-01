@@ -2,11 +2,14 @@
 @{
     ViewData["Title"] = "GetBasket";
     decimal totalPrice = 0;
-    Model.Aggregate(totalPrice, (acc, book) => totalPrice+=book.Price);
+    if (Model is not null)
+    {
+        Model.Aggregate(totalPrice, (acc, book) => totalPrice += book.Price);
+    }
 }
 
 <div class="container-fluid">
-    @if (Model.Any())
+    @if (Model is not null && Model.Any())
     {
         <p>Товары:</p>
         <ul class="list-group">

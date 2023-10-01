@@ -1,7 +1,7 @@
 ﻿@model IList<ReviewViewModel>
 
 <h2>Комментарии</h2>
-@if (Model.Any())
+@if (Model is not null && Model.Any())
 {
     <table class="table table-info table-hover">
         <thead>
@@ -26,13 +26,13 @@
                         BookId:@comment.BookId
                     </td>
                     <td>
-                        @comment.Text
+                        <textarea class="form-text" readonly="readonly" rows="4">@comment.Text</textarea>
                     </td>
                     <td>
                         @comment.CreationDate.ToShortDateString()
                     </td>
                     <td>
-                        <a asp-controller="Review" asp-action="DeleteReview" asp-route-id="@comment.Id" class="btn btn-outline-danger">x</a>
+                        <a asp-controller="Review" asp-action="DeleteComment" asp-route-reviewid="@comment.Id" class="btn btn-outline-danger">x</a>
                     </td>
                 </tr>
             }

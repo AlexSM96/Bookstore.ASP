@@ -1,4 +1,6 @@
-﻿namespace Bookstore.Presentation.Controllers
+﻿using Bookstore.Application.CommandAndQuery.Reviews.Commands.DeleteReview;
+
+namespace Bookstore.Presentation.Controllers
 {
     public class ReviewController : Controller
     {
@@ -36,6 +38,12 @@
             var review = await _mediator.Send(model);
 
             return RedirectToAction("GetBook", "Book", new { review.BookId });
+        }
+
+        public async Task<IActionResult> DeleteComment(DeleteReviewCommand model)
+        {
+            await _mediator.Send(model);
+            return RedirectToAction("Index", "Admin");
         }
     }
 }

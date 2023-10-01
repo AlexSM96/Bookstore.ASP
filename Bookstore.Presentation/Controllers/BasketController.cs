@@ -28,7 +28,7 @@ namespace Bookstore.Presentation.Controllers
                 return View(vm);
             }
 
-            return BadRequest();
+            return View();
         }
 
         [HttpPost]

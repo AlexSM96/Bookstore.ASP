@@ -3,7 +3,7 @@
 <h2>Заказы</h2>
 
 <div>
-    @if (Model.Any())
+    @if (Model is not null && Model.Any())
     {
         <ul class="list-group">
             @foreach (var order in Model)

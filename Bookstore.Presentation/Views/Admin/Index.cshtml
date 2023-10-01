@@ -2,7 +2,7 @@
     ViewData["Title"] = "Index";
 }
 
-<div class="row">
+<div class="row justify-content-between">
     <div class="col-md-3">
         <ul class="list-group-flush">
             <li class="list-group-item">
@@ -10,31 +10,32 @@
                    onclick="showPatial('@Url.Action("GetBooks","Book")')">Книги</a>
             </li>
             <li class="list-group-item">
-                <a class="btn btn-link text-dark text-decoration-none" 
+                <a class="btn btn-link text-dark text-decoration-none"
                    onclick="showPatial('@Url.Action("AddBook","Book")')">Добавить книгу</a>
             </li>
             <li class="list-group-item">
-                <a class="btn btn-link text-dark text-decoration-none" 
+                <a class="btn btn-link text-dark text-decoration-none"
                    onclick="showPatial('@Url.Action("AddAuthor","Author")')">Добавить автора</a>
             </li>
             <li class="list-group-item">
-                <a class="btn btn-link text-dark text-decoration-none" 
+                <a class="btn btn-link text-dark text-decoration-none"
                    onclick="showPatial('@Url.Action("AddCategory","Category")')">Добавить категорю</a>
             </li>
             <li class="list-group-item">
-                <a class="btn btn-link text-dark text-decoration-none" 
+                <a class="btn btn-link text-dark text-decoration-none"
                    onclick="showPatial('@Url.Action("GetOrders","Order")')">Заказы</a>
             </li>
             <li class="list-group-item">
-                <a class="btn btn-link text-dark text-decoration-none" 
+                <a class="btn btn-link text-dark text-decoration-none"
                    onclick="showPatial('@Url.Action("GetUsers","User")')">Пользователи</a>
             </li>
             <li class="list-group-item">
-                <a class="btn btn-link text-dark text-decoration-none" 
+                <a class="btn btn-link text-dark text-decoration-none"
                    onclick="showPatial('@Url.Action("GetCommentsForAdmin","Review")')">Комментарии</a>
             </li>
         </ul>
     </div>
-    <div class="col-md-8" id="div-admin" align="center"></div>
+    <div class="col-md-9" id="div-admin" align="center"></div>
 </div>
+
 
