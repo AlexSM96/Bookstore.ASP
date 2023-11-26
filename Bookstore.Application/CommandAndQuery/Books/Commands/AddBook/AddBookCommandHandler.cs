@@ -3,56 +3,47 @@
     public class AddBookCommandHandler : IRequestHandler<AddBookCommand, Book>
     {
         private readonly IBaseDbContext _context;
+        public AddBookCommandHandler(IBaseDbContext context) => _context = context;
 
-        public AddBookCommandHandler(IBaseDbContext context) =>
-            _context = context;
-
-        public async Task<Book> Handle(AddBookCommand request,
-            CancellationToken cancellationToken)
+        public async Task<Book> Handle(AddBookCommand request, CancellationToken cancellationToken)
         {
-            var book = new Book
+            try
             {
-                Title = request.Title,
-                PublicationDate = request.PublicationDate,
-                Description = request.Description,
-                Price = request.Price,
-                ImagePath = request.ImagePath
-            };
-
-            foreach (var author in request.Authors)
-            {
-                var authorFromDb = await _context.Authors
-                    .FirstOrDefaultAsync(a => a.Name == author.Name);
-
-                if (authorFromDb is null)
+                var book = new Book();
+                if (request is not null)
                 {
-                    book.Authors.Add(author);
+                    book.Title = request.Title;
+                    book.PublicationDate = request.PublicationDate;
+                    book.Description = request.Description;
+                    book.Price = request.Price;
+                    book.ImagePath = request.ImagePath;
+
+                    foreach (var author in request.Authors)
+                    {
+                        var authorFromDb = await _context.Authors
+                            .FirstOrDefaultAsync(a => a.Name == author.Name);
+
+                        book.Authors.Add(authorFromDb is null ? author : authorFromDb);
+                    }
+
+                    foreach (var category in request.Categories)
+                    {
+                        var categoryFromDb = await _context.Categories
+                            .FirstOrDefaultAsync(c => c.Name == category.Name);
+
+                        book.Categories.Add(categoryFromDb is null ? category : categoryFromDb);
+                    }
+
+                    await _context.Books.AddAsync(book, cancellationToken);
+                    await _context.SaveChangesAsync(cancellationToken);
                 }
-                else
-                {
-                    book.Authors.Add(authorFromDb);
-                }
+
+                return book;
             }
-
-            foreach (var category in request.Categories)
+            catch (Exception e)
             {
-                var categoryFromDb = await _context.Categories
-                    .FirstOrDefaultAsync(c => c.Name == category.Name);
-
-                if (categoryFromDb is null)
-                {
-                    book.Categories.Add(category);
-                }
-                else
-                {
-                    book.Categories.Add(categoryFromDb);
-                }
+                throw e;
             }
-
-            await _context.Books.AddAsync(book, cancellationToken);
-            await _context.SaveChangesAsync(cancellationToken);
-
-            return book;
         }
     }
 }

@@ -7,15 +7,14 @@ namespace Bookstore.Presentation.Controllers
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
 
-        public ReviewController(IMediator mediator, IMapper mapper) =>
-            (_mediator, _mapper) = (mediator, mapper);
+        public ReviewController(IMediator mediator, IMapper mapper) => (_mediator, _mapper) = (mediator, mapper);
 
         [HttpGet]
         public async Task<IActionResult> GetCommentsForAdmin()
         {
             var reviews = await _mediator.Send(new GetReviewsQuery());
             var reviewsVM = _mapper.Map<IList<ReviewViewModel>>(reviews);
-            return PartialView(reviewsVM);
+            return View(reviewsVM);
         }
 
         [HttpPost]

@@ -18,7 +18,7 @@
         {
             var users = await _mediator.Send(new GetUsersQuery());
             var usersVM = _mapper.Map<IList<UserViewModel>>(users);
-            return PartialView(usersVM);
+            return View(usersVM);
         }
 
         public async Task<IActionResult> GetUser()

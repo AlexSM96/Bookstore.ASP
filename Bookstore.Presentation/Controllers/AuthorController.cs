@@ -26,7 +26,7 @@
 
 
         [HttpGet]
-        public async Task<IActionResult> AddAuthor() => PartialView(new AuthorViewModel());
+        public async Task<IActionResult> AddAuthor() => View(new AuthorViewModel());
 
         [HttpPost]
         public async Task<IActionResult> AddAuthor(AddAuthorCommand model)

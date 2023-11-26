@@ -10,27 +10,27 @@
         </div>
         <div id="author-container">
             <div class="form-group">
-                <label asp-for="Authors[0].Name">Автор<sup>*</sup></label>
+                <label asp-for="Authors[0].Name">Автор</label>
                 <input class="form-control" type="text" asp-for="Authors[0].Name" />
                 <span class="validation-message" asp-validation-for="Authors[0].Name"></span>
             </div>
         </div>
         <a id="add-author-button" class="link-primary" onclick="addAuthor()">Добавить автора</a>
         <div class="form-group">
-            <label asp-for="PublicationDate">Дата издания<sup>*</sup></label>
+            <label asp-for="PublicationDate">Дата издания</label>
             <input id="date" class="form-control" asp-for="PublicationDate" type="date" value="" />
             <span class="validation-message" asp-validation-for="PublicationDate"></span>
         </div>
         <div id="category-container">
             <div class="form-group">
-                <label asp-for="Categories[0].Name">Категория(жанр)<sup>*</sup></label>
+                <label asp-for="Categories[0].Name">Категория(жанр)</label>
                 <input class="form-control" type="text" asp-for="Categories[0].Name" />
                 <span class="validation-message" asp-validation-for="Categories[0].Name"></span>
             </div>
         </div>
         <a id="add-author-button" class="link-primary" onclick="addCategory()">Добавить категорию(жанр)</a>
         <div class="form-group">
-            <label asp-for="Price">Цена<sup>*</sup></label>
+            <label asp-for="Price">Цена</label>
             <input class="form-control" asp-for="Price" type="text" />
             <span class="validation-message" asp-validation-for="Price"></span>
         </div>

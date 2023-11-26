@@ -1,9 +1,11 @@
 ﻿@model IList<CategoryViewModel>
 
-@foreach (var category in Model)
-{
-    <li>
-        <a asp-controller="Book" asp-action="GetBooksByCategory" asp-route-category="@category.Name" class="dropdown-item">@category.Name</a>
-    </li>
+@if(Model != null && Model.Any())
+{  
+    @foreach (var category in Model)
+    {
+        <li>
+            <a asp-controller="Book" asp-action="GetBooksByCategory" asp-route-category="@category.Name" class="dropdown-item">@category.Name</a>
+        </li>
+    }
 }
-

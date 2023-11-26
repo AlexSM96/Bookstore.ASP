@@ -1,7 +1,8 @@
 const slider = document.querySelector('.slider');
 const prevButton = document.querySelector('.prev-button');
 const nextButton = document.querySelector('.next-button');
-const slides = Array.from(slider.querySelectorAll('img'));
+
+const slides = Array.from(slider !== undefined || slider !== null ? slider.querySelectorAll('img') : []);
 const slideCount = slides.length;
 let slideIndex = 0;
 
@@ -35,5 +36,6 @@ function nextSlide() {
     setInterval(showNextSlide, 3000)
     updateSlider();
 }
-
-nextSlide()
+if (slider !== undefined && slider !== null) {
+    nextSlide()
+}

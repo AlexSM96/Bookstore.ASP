@@ -10,44 +10,43 @@
         {
             try
             {
-                var user = await _context.Users
-                    .Include(u => u.Basket)
-                    .FirstOrDefaultAsync(b => b.Id == request.UserId);
-
-                if (user is null)
+                var user = new User();
+                var basket = new Basket();
+                if (request is not null)
                 {
-                    throw new ArgumentNullException(nameof(User));
-                }
+                    user = await _context.Users
+                        .Include(u => u.Basket)
+                        .FirstOrDefaultAsync(b => b.Id == request.UserId)
+                        ?? throw new ArgumentNullException(nameof(User));
+                    basket = await _context.Baskets
+                        .Include(b => b.Books)
+                        .FirstOrDefaultAsync(b => b.Id == user.Basket.Id);
 
-                var basket = await _context.Baskets
-                    .Include(b => b.Books)
-                    .FirstOrDefaultAsync(b => b.Id == user.Basket.Id);
-
-                if (basket is null)
-                {
-                    basket.Id = Guid.NewGuid();
-                    basket.UserId = user.Id;
-                    basket.Books = request.Books;
-                    await _context.Baskets.AddAsync(basket);
-                }
-                else
-                {
-                    foreach (var book in request.Books)
+                    if (basket is null)
                     {
-                        if (!basket.Books.Contains(book))
+                        basket = new Basket();
+                        basket.Id = Guid.NewGuid();
+                        basket.UserId = user.Id;
+                        basket.Books.Add(request.Book);
+                        await _context.Baskets.AddAsync(basket);
+                    }
+                    else
+                    {
+                        if (!basket.Books.Contains(request.Book))
                         {
-                            basket.Books.Add(book);
+                            basket.Books.Add(request.Book);
                         }
                     }
+
+                    await _context.SaveChangesAsync(cancellationToken);
                 }
 
-                await _context.SaveChangesAsync(cancellationToken);
 
                 return basket;
             }
-            catch (Exception)
+            catch (Exception e)
             {
-                throw;
+                throw e;
             }
         }
     }

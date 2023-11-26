@@ -1,7 +1,6 @@
 ﻿using Bookstore.Application.CommandAndQuery.Baskets.Commands.AddToBasket;
 using Bookstore.Application.CommandAndQuery.Baskets.Commands.DeleteFromBasket;
 using Bookstore.Application.CommandAndQuery.Baskets.Queries.GetBasket;
-using Bookstore.Application.CommandAndQuery.Books.Queries.GetBooksById;
 
 namespace Bookstore.Presentation.Controllers
 {
@@ -10,13 +9,13 @@ namespace Bookstore.Presentation.Controllers
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
 
-        public BasketController(IMediator mediator, IMapper mapper) =>
-            (_mediator, _mapper) = (mediator, mapper);
+        public BasketController(IMediator mediator, IMapper mapper) => (_mediator, _mapper) = (mediator, mapper);
 
         [HttpGet]
         public async Task<IActionResult> GetBasket()
         {
-            if (User.Identity.IsAuthenticated)
+            if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated
+                && !string.IsNullOrWhiteSpace(User.Identity.Name))
             {
                 var user = await _mediator
                     .Send(new GetUserQuery<string>(User.Identity.Name));
@@ -32,39 +31,46 @@ namespace Bookstore.Presentation.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> AddToBasket(List<Guid> BooksId)
+        public async Task<IActionResult> AddToBasket(Guid bookId)
         {
-            if (User.Identity.IsAuthenticated)
+            if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated 
+                && !string.IsNullOrWhiteSpace(User.Identity.Name))
             {
-                var books = await _mediator.Send(new GetBooksByIdQuery(BooksId));
+                var book = await _mediator.Send(new GetBookByIdQuery(bookId));
                 var user = await _mediator.Send(new GetUserQuery<string>(User.Identity.Name));
+
 
                 var basket = new AddToBasketCommand
                 {
                     UserId = user.Id,
-                    Books = books.ToList()
+                    Book = book
                 };
-
+                
                 var response = await _mediator.Send(basket);
 
-                return View(response);
+                return View();
             }
 
             return BadRequest();
         }
 
+
         public async Task<IActionResult> DeleteFromBasket(Guid bookId)
         {
-            var user = await _mediator
+            if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated 
+                && !string.IsNullOrWhiteSpace(User.Identity.Name))
+            {
+                var user = await _mediator
                 .Send(new GetUserQuery<string>(User.Identity.Name));
 
-            var deleteCommand = new DeleteFromBasketCommand()
-            {
-                UserId = user.Id,
-                BookId = bookId
-            };
+                var deleteCommand = new DeleteFromBasketCommand()
+                {
+                    UserId = user.Id,
+                    BookId = bookId
+                };
 
-            await _mediator.Send(deleteCommand);
+                await _mediator.Send(deleteCommand);
+            }
             return RedirectToAction("GetBasket");
         }
     }

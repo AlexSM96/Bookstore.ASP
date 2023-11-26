@@ -1,4 +1,6 @@
-﻿namespace Bookstore.Presentation.Controllers
+﻿using Microsoft.AspNetCore.Mvc.ModelBinding;
+
+namespace Bookstore.Presentation.Controllers
 {
     public class AccountController : Controller
     {
@@ -25,7 +27,7 @@
                 }
             } 
             
-            return View();    
+            return View(new RegistrationViewModel());    
         }
 
         [HttpGet]
@@ -37,7 +39,7 @@
             if (ModelState.IsValid)
             {
                 var identity = await _mediator.Send(model);
-
+                
                 if (identity is not null)
                 {
                     await HttpContext
@@ -45,9 +47,13 @@
                             new ClaimsPrincipal(identity));
                     return RedirectToAction("Index", "Home");
                 }
+                else
+                {
+                    ModelState.AddModelError("Email", "Ползователь с таким Email не зарегистрирован");
+                }
             }
 
-            return View();
+            return View(new LoginViewModel());
         }
 
         public async Task<IActionResult> SignOut()

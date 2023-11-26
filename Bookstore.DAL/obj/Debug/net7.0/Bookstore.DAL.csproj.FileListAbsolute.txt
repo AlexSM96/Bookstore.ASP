@@ -36,3 +36,4 @@ C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.DAL
 C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.DAL\obj\Debug\net7.0\Bookstore.DAL.pdb
 C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.DAL\obj\Debug\net7.0\Bookstore.DAL.genruntimeconfig.cache
 C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.DAL\obj\Debug\net7.0\ref\Bookstore.DAL.dll
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.DAL\obj\Debug\net7.0\Bookstore.DAL.sourcelink.json

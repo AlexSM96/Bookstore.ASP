@@ -1132,3 +1132,4 @@ C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Pre
 C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Presentation\obj\Debug\net7.0\Bookstore.Presentation.pdb
 C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Presentation\obj\Debug\net7.0\Bookstore.Presentation.genruntimeconfig.cache
 C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Presentation\obj\Debug\net7.0\ref\Bookstore.Presentation.dll
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Presentation\obj\Debug\net7.0\Bookstore.Presentation.sourcelink.json

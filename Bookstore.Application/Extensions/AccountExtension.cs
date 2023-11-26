@@ -1,7 +1,4 @@
-﻿using Bookstore.Domain.Entities;
-using System.Security.Claims;
-
-namespace Bookstore.Application.Extensions
+﻿namespace Bookstore.Application.Extensions
 {
     public static class AccountExtension
     {

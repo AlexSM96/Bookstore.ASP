@@ -20,7 +20,7 @@
         {
             var books = await _mediator.Send(new GetBooksQuery());
             var booksVM = _mapper.Map<IList<BookViewModel>>(books);
-            return PartialView(booksVM);
+            return View(booksVM);
         }
 
         [HttpGet]
@@ -32,7 +32,7 @@
             }
 
             var books = await _mediator.Send(new GetBooksByInputQuery(category));
-            return View(_mapper.Map<IList<BookViewModel>>(books));
+            return View("Index", _mapper.Map<IList<BookViewModel>>(books));
         }
 
         [HttpPost]
@@ -44,7 +44,7 @@
             }
 
             var books = await _mediator.Send(new GetBooksByInputQuery(key));
-            return View(_mapper.Map<IList<BookViewModel>>(books));
+            return View("Index", _mapper.Map<IList<BookViewModel>>(books));
         }
 
         [HttpGet]
@@ -55,8 +55,7 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> AddBook() =>
-            PartialView(new BookViewModel());
+        public async Task<IActionResult> AddBook() => View(new BookViewModel());
 
         [HttpPost]
         public async Task<IActionResult> AddBook(AddBookCommand model)
@@ -67,13 +66,13 @@
                 return BadRequest();
             }
 
-            return RedirectToAction("Index", "Admin");
+            return RedirectToAction("AddBook", "Book");
         }
 
         public async Task<IActionResult> DeleteBook(DeleteBookCommand model)
         {
             await _mediator.Send(model, CancellationToken.None);
-            return RedirectToAction("Index", "Admin");
+            return RedirectToAction("GetBooks", "Book");
         }     
     }
 }

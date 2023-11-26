@@ -4,42 +4,48 @@
 }
 
 <div class="container">
-    <ul class="list-group-flush">
-        @foreach (var book in Model)
-        {
-            <li class="list-group-item">
-                <div class="row mb-0">
-                    <div class="col-md-3" align="center">
-                        <img src="~/img/@book.ImagePath" width="150" title="@book.Title" alt="img:@book.Title" />
-                    </div>
-                    <div class="col-md-7">
-                        <h3>@book.Title</h3>
-                        <p>Дата издания: @book.PublicationDate.ToShortDateString()</p>
-                        <div>
-                            @{
-                                var authorTitle = book.Authors.Count > 1 ? "Авторы:" : "Автор:";
-                            }
-                            @authorTitle
-                            @foreach (var author in book.Authors)
+    @if(Model != null && Model.Any())
+    {     
+        <ul class="list-group-flush">
+            @foreach (var book in Model)
+            {
+                <li class="list-group-item">
+                    <div class="row mb-0">
+                        <div class="col-md-3" align="center">
+                            <img src="~/img/@book.ImagePath" width="150" title="@book.Title" alt="img:@book.Title" />
+                        </div>
+                        <div class="col-md-7">
+                            <h3>@book.Title</h3>
+                            <p>Дата издания: @book.PublicationDate.ToShortDateString()</p>
+                            <div>
+                                @{
+                                    var authorTitle = book.Authors.Count > 1 ? "Авторы:" : "Автор:";
+                                }
+                                @authorTitle
+                                @foreach (var author in book.Authors)
+                                {
+                                    <span>@author.Name</span>
+                                }
+                            </div>
+                            @foreach (var category in book.Categories)
                             {
-                                <span>@author.Name</span>
+                                <span class="genre-tag">@category.Name</span>
                             }
                         </div>
-                        @foreach (var category in book.Categories)
-                        {
-                            <span class="genre-tag">@category.Name</span>
-                        }
+                        <div class="col-md-2" align="center">
+                            <a asp-controller="Book" asp-action="GetBook" asp-route-bookid="@book.Id" class="btn btn-outline-primary">Подробнее</a>
+                            <a class="btn btn-outline-success mt-5" onclick="addToBasket('@book.Id')">
+                                <img src="~/img/bag-add.png" width="50px"  title="Добавить в корзину"/> 
+                                <p>@book.Price &#8381;</p>
+                            </a>
+                        </div>
                     </div>
-                    <div class="col-md-2" align="center">
-                        <a asp-controller="Book" asp-action="GetBook" 
-                           asp-route-bookid="@book.Id" class="btn btn-outline-primary">Подробнее</a>
-                        <a class="btn btn-outline-success mt-5" onclick="addToBasket('@book.Id')">
-                            <img src="~/img/bag-add.png" width="50px"  title="Добавить в корзину"/> 
-                            <p>@book.Price &#8381;</p>
-                        </a>
-                    </div>
-                </div>
-            </li>
-        }
-    </ul>
+                </li>
+            }
+        </ul>
+    }
+    else
+    {
+        <h5>Совпадений не найдено...</h5>
+    }
 </div>

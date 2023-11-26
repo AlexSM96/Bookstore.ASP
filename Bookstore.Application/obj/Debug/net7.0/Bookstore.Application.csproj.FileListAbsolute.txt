@@ -28,3 +28,4 @@ C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.App
 C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Application\obj\Debug\net7.0\refint\Bookstore.Application.dll
 C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Application\obj\Debug\net7.0\Bookstore.Application.pdb
 C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Application\obj\Debug\net7.0\ref\Bookstore.Application.dll
+C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Application\obj\Debug\net7.0\Bookstore.Application.sourcelink.json

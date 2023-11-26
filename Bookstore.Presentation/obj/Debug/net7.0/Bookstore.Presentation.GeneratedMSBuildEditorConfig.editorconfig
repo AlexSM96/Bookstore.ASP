@@ -10,6 +10,8 @@ build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Bookstore.Presentation
 build_property.RootNamespace = Bookstore.Presentation
 build_property.ProjectDir = C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Presentation\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
@@ -22,10 +24,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Account/SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduSW4uY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Admin/Index.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Author/AddAuthor.cshtml]
@@ -50,14 +48,6 @@ build_metadata.AdditionalFiles.CssScope =
 
 [C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Book/GetBooks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xHZXRCb29rcy5jc2h0bWw=
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Book/GetBooksByCategory.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xHZXRCb29rc0J5Q2F0ZWdvcnkuY3NodG1s
-build_metadata.AdditionalFiles.CssScope = 
-
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Book/GetFilteredBooks.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xHZXRGaWx0ZXJlZEJvb2tzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Book/Index.cshtml]

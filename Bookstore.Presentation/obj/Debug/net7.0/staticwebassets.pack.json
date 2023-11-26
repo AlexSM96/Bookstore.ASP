@@ -85,10 +85,6 @@
       "PackagePath": "staticwebassets\\js\\carousel.js"
     },
     {
-      "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore.ASP\\Bookstore.ASP.NET\\Bookstore.Presentation\\wwwroot\\js\\forms.js",
-      "PackagePath": "staticwebassets\\js\\forms.js"
-    },
-    {
       "Id": "C:\\Users\\Professional\\source\\repos\\Bookstore.ASP\\Bookstore.ASP.NET\\Bookstore.Presentation\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },

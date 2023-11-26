@@ -1,5 +1,3 @@
-using Humanizer;
-
 var builder = WebApplication.CreateBuilder(args);
 
 ConfigureServices(builder);

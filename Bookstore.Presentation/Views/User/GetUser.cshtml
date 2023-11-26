@@ -6,40 +6,43 @@
 <h3>Личный кабинет</h3>
 
 <div class="container-fluid">
-    <p>@Model.Login</p>
-    <p>@Model.Email</p>
-    <br />
-    <h3>Мои заказы</h3>
-    @if (Model.Orders.Any())
+    @if (Model != null)
     {
-        foreach (var order in Model.Orders)
+        <p>@Model.Login</p>
+        <p>@Model.Email</p>
+        <br />
+        <h3>Мои заказы</h3>
+        @if (Model.Orders != null && Model.Orders.Any())
         {
-            <div>
-                <ul class="list-group-flush">
-                    @foreach (var book in order.Books)
-                    {
-                        <li class="list-group-item">
-                            <div class="row">
-                                <div class="col-md-3">
-                                    <img src="~/img/@book.ImagePath" width="100"/>
+            foreach (var order in Model.Orders)
+            {
+                <div>
+                    <ul class="list-group-flush">
+                        @foreach (var book in order.Books)
+                        {
+                            <li class="list-group-item">
+                                <div class="row">
+                                    <div class="col-md-3">
+                                        <img src="~/img/@book.ImagePath" width="100" />
+                                    </div>
+                                    <div class="col-md-9">
+                                        <p>Номер заказа: @order.Id</p>
+                                        <p>Дата создания: @order.CreationDate.ToShortDateString()</p>
+                                        <p>Товар: @book.Title</p>
+                                        <span>Цена: @book.Price</span>
+                                    </div>
+
                                 </div>
-                                <div class="col-md-9">
-                                    <p>Номер заказа: @order.Id</p>
-                                    <p>Дата создания: @order.CreationDate.ToShortDateString()</p>
-                                    <p>Товар: @book.Title</p>
-                                    <span>Цена: @book.Price</span>
-                                </div>
-                                
-                            </div>
-                        </li>
-                    }
-                </ul>
-            </div>
+                            </li>
+                        }
+                    </ul>
+                </div>
+            }
         }
-    }
-    else
-    {
-        <p>Вы пока не сделали ни один заказ...</p>
+        else
+        {
+            <p>Вы пока не сделали ни один заказ...</p>
+        }
     }
 </div>
 

@@ -1,7 +1,4 @@
-﻿using Bookstore.Domain.Entities;
-using MediatR;
-
-namespace Bookstore.Application.CommandAndQuery.Books.Commands.AddBook
+﻿namespace Bookstore.Application.CommandAndQuery.Books.Commands.AddBook
 {
     public class AddBookCommand : IRequest<Book>
     {

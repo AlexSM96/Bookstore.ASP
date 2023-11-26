@@ -1,6 +1,4 @@
 ﻿using Bookstore.Domain.Enums;
-using MediatR;
-using System.Security.Claims;
 
 namespace Bookstore.Application.CommandAndQuery.Accounts.Commands.LogIn
 {

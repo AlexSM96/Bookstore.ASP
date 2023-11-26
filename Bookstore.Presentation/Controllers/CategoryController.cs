@@ -5,8 +5,7 @@
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
 
-        public CategoryController(IMediator mediator, IMapper mapper) =>
-            (_mediator, _mapper) = (mediator, mapper);
+        public CategoryController(IMediator mediator, IMapper mapper) => (_mediator, _mapper) = (mediator, mapper);
 
         public IActionResult Index()
         {
@@ -22,8 +21,7 @@
         }
 
         [HttpGet]
-        public async Task<IActionResult> AddCategory()
-            => PartialView(new CategoryViewModel());
+        public async Task<IActionResult> AddCategory() => View(new CategoryViewModel());
 
         [HttpPost]
         public async Task<IActionResult> AddCategory(AddCategoryCommand model)

@@ -20,7 +20,7 @@ namespace Bookstore.Presentation.Controllers
         {
             var orders = await _mediator.Send(new GetOrdersQuery());
             var ordersVM = _mapper.Map<IList<OrderViewModel>>(orders);
-            return PartialView(ordersVM);
+            return View(ordersVM);
         }
 
         [HttpPost]

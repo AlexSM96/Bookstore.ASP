@@ -1,7 +1,4 @@
-﻿using Bookstore.Domain.Entities;
-using MediatR;
-
-namespace Bookstore.Application.CommandAndQuery.Books.Commands.UpdateBook
+﻿namespace Bookstore.Application.CommandAndQuery.Books.Commands.UpdateBook
 {
     public class UpdateBookCommand : IRequest<Book>
     {
