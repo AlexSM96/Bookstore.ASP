@@ -1,0 +1,97 @@
+﻿@model BookViewModel
+@{
+    ViewData["Title"] = "GetBook";
+}
+
+@if (Model != null)
+{
+    <div class="container row">
+        <div class="col-md-4" align="center">
+            <img src="~/img/@Model.ImagePath" width="300" style="margin-bottom:10px;" />
+            <a class="btn btn-outline-success btn-lg" onclick="addToBasket('@Model.Id')">
+                Преобрести: @Model.Price &#8381;
+            </a>
+        </div>
+        <div class="col-md-8">
+            <form class="form-text" asp-area="" asp-controller="Book" asp-action="UpdateBook" asp-route-bookid="@Model.Id" method="post">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div>
+                            <label class="control-label" asp-for="Title">Название книги</label>
+                            <input class="form-control" asp-for="Title" type="text" />
+                            <span class="validation-message" asp-validation-for="Title"></span>
+                        </div>
+                        <div>
+                            <label asp-for="Price">Цена</label>
+                            <input class="form-control" asp-for="Price" type="text" />
+                            <span class="validation-message" asp-validation-for="Price"></span>
+                        </div>
+                        <div>
+                            <label asp-for="ImagePath">Путь до изображения</label>
+                            <input class="form-control" asp-for="ImagePath" type="file" value="@Model.ImagePath" />
+                            <span class="validation-message" asp-validation-for="ImagePath"></span>
+                        </div>
+                        <div>
+                            <label asp-for="PublicationDate">Дата издания</label>
+                            <input id="date" class="form-control" asp-for="PublicationDate" type="date" value="" />
+                            <span class="validation-message" asp-validation-for="PublicationDate"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div id="author-container">
+                            @for(int i = 0; i < Model.Authors.Count; i++)
+                            {
+                                <div>
+                                    <label asp-for="Authors[i].Name">Автор</label>
+                                    <input class="form-control" type="text" asp-for="Authors[i].Name" />
+                                    <span class="validation-message" asp-validation-for="Authors[i].Name"></span>
+                                </div>
+                            } 
+                        </div>
+                        <a id="add-author-button" class="link-primary" onclick="addAuthor()">Добавить автора</a>
+                        <div id="category-container">
+                            @for (int i = 0; i < Model.Categories.Count; i++)
+                            {
+                                <div>
+                                    <label asp-for="Categories[i].Name">Категория(жанр)</label>
+                                    <input class="form-control" type="text" asp-for="Categories[i].Name" />
+                                    <span class="validation-message" asp-validation-for="Categories[i].Name"></span>
+                                </div>
+                            }    
+                        </div>
+                        <a id="add-author-button" class="link-primary" onclick="addCategory()">Добавить категорию(жанр)</a>
+                    </div>
+                    <div>
+                        <label asp-for="Description">Описание</label>
+                        <textarea class="form-control" asp-for="Description" type="text"></textarea>
+                        <span class="validation-message" asp-validation-for="Description"></span>
+                    </div>
+                </div>
+                <br />
+                <div>
+                    <button class="btn btn-outline-dark btn-lg" type="submit">Сохранить</button>
+                </div>
+                <br />
+            </form>
+        </div>
+    </div>
+    <br />
+    <div>
+        @if (User != null && User.Identity != null && User.Identity.IsAuthenticated)
+        {
+            <div class="container-fluid">
+                <form class="form-control" asp-controller="Review" asp-action="AddComment" asp-route-bookid="@Model.Id" method="post">
+                    <textarea class="comment-input" placeholder="Оставить комментарий" name="Text"></textarea>
+                    <br />
+                    <button class="btn btn-outline-primary" type="submit">Отправить</button>
+                </form>
+            </div>
+        }
+        <br />
+    </div>
+    <div class="container-fluid" id="comment-container" data-book-id="@Model.Id"></div>
+}
+else
+{
+    <p>Нет информации</p>
+}
