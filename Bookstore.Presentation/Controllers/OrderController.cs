@@ -1,4 +1,5 @@
-﻿using Bookstore.Application.Services.Email;
+﻿using Bookstore.Application.CommandAndQuery.Orders.Commands.DeleteOrder;
+using Bookstore.Application.Services.Email;
 
 namespace Bookstore.Presentation.Controllers
 {
@@ -32,6 +33,12 @@ namespace Bookstore.Presentation.Controllers
                 .SendEmailAsync(order.User.Email, "Подтверждение заказа", $"""<ul class="list-group">{bodyHtml}<ul>""");
 
             return Ok();
+        }
+
+        public async Task<IActionResult> DeleteOrder(Guid orderId)
+        {
+            await _mediator.Send(new  DeleteOrderCommand(orderId));
+            return RedirectToAction("GetOrders");
         }
     }
 }

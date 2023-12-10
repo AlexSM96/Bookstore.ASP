@@ -1,45 +1,51 @@
 ﻿@model IList<OrderViewModel>
 
 <h2>Заказы</h2>
-
 <div>
     @if (Model is not null && Model.Any())
     {
-        <ul class="list-group">
+        <table class="table table-active table-hover" style="font-size:12px">
+            <tr>
+                <th>Номер заказа</th>
+                <th>Товары</th>
+                <th>Клиент</th>
+                <th>Дата создания</th>
+                <th>Выполнен</th>
+                <th>Цена</th>
+                
+                <th></th>
+            </tr>
             @foreach (var order in Model)
             {
-                <li class="list-group-item mb-3 align-content-between">
-                    <h5>Номер заказа: @order.Id</h5>
-                    @foreach (var book in order.Books)
-                    {
-                        <div class="row container-fluid">
-                            <div class="col-md-2">
-                                <img src="~/img/@book.ImagePath" width="80" />
-                            </div>
-                            <div class="col-md-10" align="left">
-                                <div>
-                                    <small>ID книги: @book.Id</small>
-                                </div>
-                                <div>
-                                    <small>Название: @book.Title</small>
-                                </div>
-                            </div>
-                        </div>
-                    }
-                    <div class="text-decoration-underline">
-                        <span>
-                            Email клиента: @order.User.Email
-                        </span>
-                        <span>Дата создания: @order.CreationDate.ToShortDateString()</span>
-                        @{
-                            var totalPrice = order.Books.Sum(book => book.Price);
+                var totalPrice = order.Books.Sum(book => book.Price); 
+                <tr>
+                    <td>@order.Id</td>
+                    <td>
+                        @foreach (var book in order.Books)
+                        {
+                            <p>
+                                <a asp-controller="Book" asp-action="GetBook" asp-route-bookid="@book.Id">@book.Title</a>
+                            </p>   
                         }
-                        <span>Цена: @totalPrice</span>
-                    </div>
-
-                </li>
+                    </td>
+                    <td>
+                        @order.User?.Email  
+                    </td>
+                    <td>
+                        @order.CreationDate.ToShortDateString()
+                    </td>
+                    <td>
+                        <input type="checkbox"/>
+                    </td>
+                    <td>
+                        @totalPrice
+                    </td>
+                    <td>
+                        <a asp-action="DeleteOrder" asp-controller="Order" asp-route-orderid="@order.Id" class="text-decoration-none" title="Удалить" alt="Удалить">&#10060;</a>
+                    </td>
+                </tr> 
             }
-        </ul>
+        </table>
     }
     else
     {

@@ -39,7 +39,7 @@ function createOrder(data) {
     }
 
     let price = 0
-    books = Array.from(data)
+    const books = JSON.parse(data)
     let totalPrice = books.reduce((acc, book) => acc + book.Price, price)
     let body = books.map(toHtml).join(' ')
     body = body + priceHtml(totalPrice)
@@ -92,6 +92,16 @@ function addAuthor() {
     $('#author-container').append(author)
 }
 
+function removeAuthor(index) {
+    const divAuthor = document.querySelector(`#Author-${index}`)
+    divAuthor.parentNode.removeChild(divAuthor)
+}
+
+function removeCategory(index) {
+    const divCategory = document.querySelector(`#Category-${index}`)
+    divCategory.parentNode.removeChild(divCategory)
+}
+
 function addCategory() {
     const category = getCategoryHTML(categoryIndex)
     $('#category-container').append(category)
@@ -100,9 +110,9 @@ function addCategory() {
 
 function getAuthorHTML(index) {
     return `
-        <div class="form-group">
-            <label asp-for="Authors[${index}].Name">Автор № ${index + 1}</label>
-            <input class="form-control" type="text" asp-for="Authors[${index}].Name" name="Authors[${index}].Name"/>
+        <div id="Author-${index}" class="form-group">
+            <label asp-for="Authors[${index}].Name">Автор<a class="text-decoration-none" title="Удалить" alt="Удалить" onclick="removeAuthor('${index}')">&#10060;</a></label>
+            <input class="form-control" type="text" asp-for="Authors[${index}].Name" name="Authors[${index}].Name" />
             <span class="validation-message" asp-validation-for="Authors[${index}].Name"></span>
         </div>
     `
@@ -110,12 +120,12 @@ function getAuthorHTML(index) {
 
 function getCategoryHTML(index) {
     return `
-        <div class="form-group">
-            <label asp-for="Categories[${index}].Name">Категория(жанр) № ${index + 1}</label>
+        <div id="Category-${index}" class="form-group">
+            <label asp-for="Categories[${index}].Name">Категория(жанр)<a class="text-decoration-none" title="Удалить" alt="Удалить" onclick="removeCategory('${index}')">&#10060;</a></label>
             <input class="form-control" type="text" asp-for="Categories[${index}].Name" name="Categories[${index}].Name"/>
             <span class="validation-message" asp-validation-for="Categories[${index}].Name"></span>
         </div>
-        `
+    `
 }
 
 

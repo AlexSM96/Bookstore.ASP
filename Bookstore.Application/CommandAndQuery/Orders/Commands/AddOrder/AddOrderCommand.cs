@@ -1,7 +1,4 @@
-﻿using Bookstore.Domain.Entities;
-using MediatR;
-
-namespace Bookstore.Application.CommandAndQuery.Orders.Commands.AddOrder
+﻿namespace Bookstore.Application.CommandAndQuery.Orders.Commands.AddOrder
 {
     public class AddOrderCommand : IRequest<Order>
     {

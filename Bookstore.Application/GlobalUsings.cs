@@ -29,3 +29,6 @@ global using Microsoft.EntityFrameworkCore;
 global using Microsoft.Extensions.DependencyInjection;
 global using MimeKit;
 global using System.Security.Claims;
+global using Bookstore.Application.CommandAndQuery.Orders.Commands.DeleteOrder;
+global using Bookstore.Application.CommandAndQuery.Reviews.Commands.DeleteReview;
+global using Bookstore.Application.CommandAndQuery.Baskets.Commands.DeleteFromBasket;

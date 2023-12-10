@@ -13,7 +13,9 @@
                 if (request is not null)
                 {
                     bookFromDb = await _context.Books
-                        .FindAsync(request.Id, cancellationToken);
+                        .Include(x=>x.Authors)
+                        .Include(x=>x.Categories)
+                        .FirstOrDefaultAsync(x=>x.Id == request.Id, cancellationToken);
 
                     if (bookFromDb is null)
                     {
@@ -26,18 +28,18 @@
                     bookFromDb.Title = request.Title;
                     bookFromDb.Description = request.Description;
 
-                    foreach (var author in request.Authors)
+                    foreach (var authorFromRequest in request.Authors)
                     {
                         var authorFromDb = await _context.Authors
-                            .FirstOrDefaultAsync(a => a.Name == author.Name);
-                        bookFromDb.Authors.Add(authorFromDb is null ? author : authorFromDb);
+                            .FirstOrDefaultAsync(a => a.Name == authorFromRequest.Name);
+                        bookFromDb.Authors.Add(authorFromDb is null ? authorFromRequest : authorFromDb);
                     }
 
-                    foreach (var category in request.Categories)
+                    foreach (var categoryFromRequest in request.Categories)
                     {
                         var categoryFromDb = await _context.Categories
-                            .FirstOrDefaultAsync(c => c.Name == category.Name);
-                        bookFromDb.Categories.Add(categoryFromDb is null ? category : categoryFromDb);
+                            .FirstOrDefaultAsync(c => c.Name == categoryFromRequest.Name);
+                        bookFromDb.Categories.Add(categoryFromDb is null ? categoryFromRequest : categoryFromDb);
                     }
 
                     _context.Books.Update(bookFromDb);
@@ -46,15 +48,10 @@
 
                 return bookFromDb;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
-
-
-
-
-
         }
     }
 }

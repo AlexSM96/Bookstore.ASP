@@ -7,7 +7,7 @@
 {
     <div class="container row">
         <div class="col-md-4" align="center">
-            <img src="~/img/@Model.ImagePath" width="300" style="margin-bottom:10px;" />
+            <img src="~/img/@Model.ImagePath" width="250" style="margin-bottom:10px;" />
             <a class="btn btn-outline-success btn-lg" onclick="addToBasket('@Model.Id')">
                 Преобрести: @Model.Price &#8381;
             </a>
@@ -28,12 +28,12 @@
                         </div>
                         <div>
                             <label asp-for="ImagePath">Путь до изображения</label>
-                            <input class="form-control" asp-for="ImagePath" type="file" value="@Model.ImagePath" />
+                            <input class="form-control" asp-for="ImagePath" type="file" />
                             <span class="validation-message" asp-validation-for="ImagePath"></span>
                         </div>
                         <div>
                             <label asp-for="PublicationDate">Дата издания</label>
-                            <input id="date" class="form-control" asp-for="PublicationDate" type="date" value="" />
+                            <input class="form-control" asp-for="PublicationDate" type="date" />
                             <span class="validation-message" asp-validation-for="PublicationDate"></span>
                         </div>
                     </div>
@@ -45,10 +45,10 @@
                                     <label asp-for="Authors[i].Name">Автор</label>
                                     <input class="form-control" type="text" asp-for="Authors[i].Name" />
                                     <span class="validation-message" asp-validation-for="Authors[i].Name"></span>
-                                </div>
-                            } 
+                                </div> 
+                            }
                         </div>
-                        <a id="add-author-button" class="link-primary" onclick="addAuthor()">Добавить автора</a>
+                        <a id="add-author-button" class="link-primary" onclick="addAuthor()">Добавить автора</a> 
                         <div id="category-container">
                             @for (int i = 0; i < Model.Categories.Count; i++)
                             {
@@ -57,7 +57,7 @@
                                     <input class="form-control" type="text" asp-for="Categories[i].Name" />
                                     <span class="validation-message" asp-validation-for="Categories[i].Name"></span>
                                 </div>
-                            }    
+                            }
                         </div>
                         <a id="add-author-button" class="link-primary" onclick="addCategory()">Добавить категорию(жанр)</a>
                     </div>

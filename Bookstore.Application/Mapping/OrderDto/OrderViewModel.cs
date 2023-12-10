@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using Bookstore.Application.Mapping.BookDto;
 using Bookstore.Application.Mapping.UserDto;
-using Bookstore.Domain.Entities;
 
 namespace Bookstore.Application.Mapping.OrderDto
 {

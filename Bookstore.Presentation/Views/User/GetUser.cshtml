@@ -14,34 +14,45 @@
         <h3>Мои заказы</h3>
         @if (Model.Orders != null && Model.Orders.Any())
         {
-            foreach (var order in Model.Orders)
-            {
-                <div>
-                    <ul class="list-group-flush">
-                        @foreach (var book in order.Books)
-                        {
-                            <li class="list-group-item">
-                                <div class="row">
-                                    <div class="col-md-3">
-                                        <img src="~/img/@book.ImagePath" width="100" />
-                                    </div>
-                                    <div class="col-md-9">
-                                        <p>Номер заказа: @order.Id</p>
-                                        <p>Дата создания: @order.CreationDate.ToShortDateString()</p>
-                                        <p>Товар: @book.Title</p>
-                                        <span>Цена: @book.Price</span>
-                                    </div>
-
-                                </div>
-                            </li>
-                        }
-                    </ul>
-                </div>
-            }
-        }
-        else
-        {
-            <p>Вы пока не сделали ни один заказ...</p>
+            <table class="table table-warning table-hover" style="font-size:12px">
+                <tr>
+                    <th>Номер заказа</th>
+                    <th>Товары</th>
+                    <th>Дата создания</th>
+                    <th>Цена</th>
+                </tr>
+                @foreach (var order in Model.Orders)
+                {
+                    if (order.Books != null && order.Books.Any())
+                    {
+                        var totalPrice = order.Books.Sum(book => book.Price);
+                        <tr>
+                            <td>@order.Id</td>
+                            <td>
+                                @foreach (var book in order.Books)
+                                {
+                                    <p>
+                                        <a asp-controller="Book" asp-action="GetBook" asp-route-bookid="@book.Id">@book.Title</a>
+                                    </p>
+                                    
+                                }
+                            </td>
+                            <td>
+                                @order.CreationDate.ToShortDateString()
+                            </td>
+                            <td>
+                                @totalPrice
+                            </td>
+                        </tr>
+                    }
+                    else
+                    {
+                        <tr>
+                            <td colspan="4">Вы пока не сделали ни один заказ...</td>
+                        </tr>
+                    }
+                }
+            </table>
         }
     }
 </div>

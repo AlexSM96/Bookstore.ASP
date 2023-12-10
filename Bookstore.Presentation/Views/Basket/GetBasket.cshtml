@@ -1,16 +1,14 @@
 ﻿@model IList<BookViewModel>
 @{
     ViewData["Title"] = "GetBasket";
-    decimal totalPrice = 0;
-
-    
+    decimal totalPrice = 0;  
 }
 
 <div class="container-fluid">
     @if (Model is not null && Model.Any())
     {
         Model.Aggregate(totalPrice, (acc, book) => totalPrice += book.Price);
-        var books = Model.Select(x => x).ToList();
+        var books = Json.Serialize(Model.Select(x=>x));
         <p>Товары:</p>
         <ul class="list-group">
             @foreach (var book in Model)
@@ -35,7 +33,7 @@
             <p>Общая стоимость заказа:</p>
             <h2>@totalPrice Руб.</h2>
             <span>
-                <button class="btn btn-outline-success btn-lg" onclick="createOrder('@books')" type="submit">Оформить заказ</button>
+                <a class="btn btn-outline-success btn-lg" onclick="createOrder('@books.ToString()')">Оформить заказ</a>
             </span>
         </div>
         <br />

@@ -1,7 +1,4 @@
-﻿using Bookstore.Application.CommandAndQuery.Baskets.Commands.DeleteFromBasket;
-using Bookstore.Application.CommandAndQuery.Reviews.Commands.DeleteReview;
-
-namespace Bookstore.Application.Extensions
+﻿namespace Bookstore.Application.Extensions
 {
     public static class DependencyInjectionExtension
     {
@@ -33,6 +30,7 @@ namespace Bookstore.Application.Extensions
                 .AddScoped<IRequestHandler<GetBasketQuery, Basket>, GetBasketQueryHandler>()
                 .AddScoped<IRequestHandler<DeleteFromBasketCommand, Unit>, DeleteFromBasketCommandHandler>()
                 .AddScoped<IRequestHandler<DeleteReviewCommand, Unit>, DeleteReviewCommandHandler>()
+                .AddScoped<IRequestHandler<DeleteOrderCommand, Unit>, DeleteOrderCommandHandler>()
                 .AddScoped<ISmtpClient, SmtpClient>()
                 .AddScoped<IEmailService, EmailService>();
         }

@@ -1,6 +1,5 @@
 ﻿using AutoMapper;
 using Bookstore.Application.Mapping.UserDto;
-using Bookstore.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bookstore.Application.Mapping.ReviewDto
@@ -23,6 +22,8 @@ namespace Bookstore.Application.Mapping.ReviewDto
         public Guid UserId { get; set; }
 
         public Guid BookId { get; set; }
+
+        public Book Book { get; set; }
 
         public UserViewModel User { get; set; }
     }

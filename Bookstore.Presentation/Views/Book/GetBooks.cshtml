@@ -1,39 +1,52 @@
 ﻿@model IList<BookViewModel>
 
-<table class="table table-info table-hover">
-    <thead>
-        <tr>
-            <th>Название книги</th>
-            <th>Авторы</th>
-            <th>Дата издания</th>
-            <th>Категории</th>
-            <th>Путь к изображению</th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var book in Model)
-        {
+@if(Model != null)
+{
+    <table class="table table-active table-hover" style="font-size:12px">
+        <thead>
             <tr>
-                <td>@book.Title</td>
-                <td>
-                    @foreach (var author in book.Authors)
-                    {
-                        <p>@author.Name</p>
-                    }
-                </td>
-                <td>@book.PublicationDate.ToShortDateString()</td>
-                <td>
-                    @foreach (var category in book.Categories)
-                    {
-                        <p>@category.Name</p>
-                    }
-                </td>
-                <td>@book.ImagePath</td>
-                <td>
-                    <a asp-controller="Book" asp-action="DeleteBook" asp-route-id="@book.Id" class="btn btn-outline-danger">x</a>
-                </td>
+                <th>Название книги</th>
+                <th>Авторы</th>
+                <th>Дата издания</th>
+                <th>Категории</th>
+                <th>Путь к изображению</th>
+                <th></th>
+                <th></th>
             </tr>
-        }
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var book in Model)
+            {
+                <tr>
+                    <td>
+                        <a asp-action="GetBook" asp-controller="Book" asp-route-bookid="@book.Id">@book.Title</a>
+                    </td>
+                    <td>
+                        @foreach (var author in book.Authors)
+                        {
+                            <p>@author.Name</p>
+                        }
+                    </td>
+                    <td>@book.PublicationDate.ToShortDateString()</td>
+                    <td>
+                        @foreach (var category in book.Categories)
+                        {
+                            <p>@category.Name</p>
+                        }
+                    </td>
+                    <td>@book.ImagePath</td>
+                    <td>
+                        <a class="text-decoration-none" asp-action="GetBook" asp-controller="Book" asp-route-bookid="@book.Id" title="Редактировать" alt="Редактировать">&#9997;</a>
+                    </td>
+                    <td>
+                        <a asp-controller="Book" asp-action="DeleteBook" asp-route-id="@book.Id" class="text-decoration-none" title="Удалить" alt="Удалить">&#10060;</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Нет информации</p>
+}

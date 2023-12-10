@@ -1,6 +1,4 @@
-﻿using MediatR;
-
-namespace Bookstore.Application.CommandAndQuery.Books.Commands.DeleteBook
+﻿namespace Bookstore.Application.CommandAndQuery.Books.Commands.DeleteBook
 {
     public class DeleteBookCommand : IRequest<Unit>
     {

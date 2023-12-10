@@ -3,47 +3,54 @@
 <div class="form-container">
     <h3>Добавить книгу</h3>
     <form class="form-text" asp-area="" asp-controller="Book" asp-action="AddBook" method="post">
-        <div class="form-group">
-            <label class="control-label" asp-for="Title">Название книги<sup>*</sup></label>
-            <input class="form-control" asp-for="Title" type="text" />
-            <span class="validation-message" asp-validation-for="Title"></span>
-        </div>
-        <div id="author-container">
-            <div class="form-group">
-                <label asp-for="Authors[0].Name">Автор</label>
-                <input class="form-control" type="text" asp-for="Authors[0].Name" />
-                <span class="validation-message" asp-validation-for="Authors[0].Name"></span>
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    <label class="control-label" asp-for="Title">Название книги</label>
+                    <input class="form-control" asp-for="Title" type="text" />
+                    <span class="validation-message" asp-validation-for="Title"></span>
+                </div>
+                <div>
+                    <label asp-for="Price">Цена</label>
+                    <input class="form-control" asp-for="Price" type="text" />
+                    <span class="validation-message" asp-validation-for="Price"></span>
+                </div>
+                <div>
+                    <label asp-for="ImagePath">Путь до изображения</label>
+                    <input class="form-control" asp-for="ImagePath" type="file" />
+                    <span class="validation-message" asp-validation-for="ImagePath"></span>
+                </div>
+                <div>
+                    <label asp-for="PublicationDate">Дата издания</label>
+                    <input id="date" class="form-control" asp-for="PublicationDate" type="date" value=""/>
+                    <span class="validation-message" asp-validation-for="PublicationDate"></span>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div id="author-container">
+                    <div>
+                        <label asp-for="Authors[0].Name">Автор</label>
+                        <input class="form-control" type="text" asp-for="Authors[0].Name" />
+                        <span class="validation-message" asp-validation-for="Authors[0].Name"></span>
+                    </div>
+                </div>
+                <a id="add-author-button" class="link-primary" onclick="addAuthor()">Добавить автора</a>
+                <div id="category-container">
+                    <div>
+                        <label asp-for="Categories[0].Name">Категория(жанр)</label>
+                        <input class="form-control" type="text" asp-for="Categories[0].Name" />
+                        <span class="validation-message" asp-validation-for="Categories[0].Name"></span>
+                    </div>
+                </div>
+                <a id="add-author-button" class="link-primary" onclick="addCategory()">Добавить категорию(жанр)</a>
+            </div>
+            <div>
+                <label asp-for="Description">Описание</label>
+                <textarea class="form-control" asp-for="Description" type="text"></textarea>
+                <span class="validation-message" asp-validation-for="Description"></span>
             </div>
         </div>
-        <a id="add-author-button" class="link-primary" onclick="addAuthor()">Добавить автора</a>
-        <div class="form-group">
-            <label asp-for="PublicationDate">Дата издания</label>
-            <input id="date" class="form-control" asp-for="PublicationDate" type="date" value="" />
-            <span class="validation-message" asp-validation-for="PublicationDate"></span>
-        </div>
-        <div id="category-container">
-            <div class="form-group">
-                <label asp-for="Categories[0].Name">Категория(жанр)</label>
-                <input class="form-control" type="text" asp-for="Categories[0].Name" />
-                <span class="validation-message" asp-validation-for="Categories[0].Name"></span>
-            </div>
-        </div>
-        <a id="add-author-button" class="link-primary" onclick="addCategory()">Добавить категорию(жанр)</a>
-        <div class="form-group">
-            <label asp-for="Price">Цена</label>
-            <input class="form-control" asp-for="Price" type="text" />
-            <span class="validation-message" asp-validation-for="Price"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="ImagePath">Путь до изображения</label>
-            <input class="form-control" asp-for="ImagePath" type="file" />
-            <span class="validation-message" asp-validation-for="ImagePath"></span>
-        </div>
-        <div class="form-group">
-            <label asp-for="Description">Описание</label>
-            <textarea class="form-control" asp-for="Description" type="text"></textarea>
-            <span class="validation-message" asp-validation-for="Description"></span>
-        </div>
+        
         <br />
         <div>
             <button class="btn btn-outline-dark btn-lg" type="submit">Добавить</button>

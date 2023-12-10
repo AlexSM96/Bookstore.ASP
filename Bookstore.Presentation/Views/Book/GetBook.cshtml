@@ -5,62 +5,78 @@
 
 @if(Model != null)
 {
-    <div class="container row">
-        <div class="col-md-4" align="center">
-            <img src="~/img/@Model.ImagePath" width="300" style="margin-bottom:10px;" />
-            <a class="btn btn-outline-success btn-lg" onclick="addToBasket('@Model.Id')">
-                Преобрести: @Model.Price &#8381;
-            </a>
-        </div>
-        <div class="col-md-8">
-            <h2>@Model.Title</h2>
-            @if (Model.Authors != null && Model.Authors.Any())
-            {
-                <span>
-                    Авторы:
-                    @foreach (var author in Model.Authors)
+    if(User != null && User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        @Html.EditorForModel("GetBookEditable")
+    }
+    else
+    {
+        <div class="container row">
+            <div class="col-md-4" align="center">
+                <img src="~/img/@Model.ImagePath" width="300" style="margin-bottom:10px;" />
+                <a class="btn btn-outline-success btn-lg" onclick="addToBasket('@Model.Id')">
+                    Преобрести: @Model.Price &#8381;
+                </a>
+            </div>
+            <div class="col-md-8">
+                <h2>@Model.Title</h2>
+                @if (Model.Authors != null && Model.Authors.Any())
+                {
+                    <span>
+                        Авторы:
+                        @foreach (var author in Model.Authors)
+                        {
+                            <span>@author.Name</span>
+                        }
+                    </span>
+                    @if (User != null && User.Identity != null && User.Identity.IsAuthenticated && User.IsInRole("Admin"))
                     {
-                        <span>@author.Name</span>
+                        <span>&#9997;</span>
                     }
-                </span>
-                <br />
-            }
-            @if (Model.Categories != null && Model.Categories.Any())
-            {
-                @foreach (var category in Model.Categories)
-                {
-                    <span class="genre-tag">@category.Name</span>
+
+                    <br />
                 }
-                <br />
-            }
-            <div class="container-fluid">
-                <p>О товаре:</p>
-                @if (string.IsNullOrWhiteSpace(Model.Description))
+                @if (Model.Categories != null && Model.Categories.Any())
                 {
-                    <p>Здесь пока нет описания...</p>
+                    @foreach (var category in Model.Categories)
+                    {
+                        <span class="genre-tag">@category.Name</span>
+                    }
+                    <br />
                 }
-                else
-                {
-                    <p class="text-wrap">@Model.Description</p>
-                }
+                <div class="container-fluid">
+                    <p>О товаре:</p>
+                    @if (string.IsNullOrWhiteSpace(Model.Description))
+                    {
+                        <p>Здесь пока нет описания...</p>
+                    }
+                    else
+                    {
+                        <p class="text-wrap">@Model.Description</p>
+                    }
+                </div>
             </div>
         </div>
-    </div>
-    <br />
-    <div>
-        @if (User != null && User.Identity != null && User.Identity.IsAuthenticated)
-        {
-            <div class="container-fluid">
-                <form class="form-control" asp-controller="Review" asp-action="AddComment" asp-route-bookid="@Model.Id" method="post">
-                    <textarea class="comment-input" placeholder="Оставить комментарий" name="Text"></textarea>
-                    <br />
-                    <button class="btn btn-outline-primary" type="submit">Отправить</button>
-                </form>
-            </div>
-        }
         <br />
-    </div>
-    <div class="container-fluid" id="comment-container" data-book-id="@Model.Id"></div>
+        <div>
+            @if (User != null && User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                <div class="container-fluid">
+                    <form class="form-control" asp-controller="Review" asp-action="AddComment" asp-route-bookid="@Model.Id" method="post">
+                        <textarea class="comment-input" placeholder="Оставить комментарий" name="Text"></textarea>
+                        <br />
+                        <button class="btn btn-outline-primary" type="submit">Отправить</button>
+                    </form>
+                </div>
+            }
+            <br />
+        </div>
+        <div class="container-fluid" id="comment-container" data-book-id="@Model.Id"></div>
+    } 
+}
+else
+{
+    <p>Нет информации</p>
 }
 
 

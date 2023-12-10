@@ -3,7 +3,7 @@
 <h2>Комментарии</h2>
 @if (Model is not null && Model.Any())
 {
-    <table class="table table-info table-hover">
+    <table class="table table-active table-hover" style="font-size:12px;">
         <thead>
             <tr>
                 <th>Пользователь</th>
@@ -18,21 +18,20 @@
             {
                 <tr>
                     <td>
-                        UserID:@comment.UserId
-                        Login:@comment.User.Login
-                        Email:@comment.User.Email
+                        <p>Login:@comment.User?.Login</p>
+                        <p>Email:@comment.User?.Email</p>
                     </td>
                     <td>
-                        BookId:@comment.BookId
+                        <a asp-action="GetBook" asp-controller="Book" asp-route-bookid="@comment.BookId">@comment.Book?.Title</a>
                     </td>
                     <td>
-                        <textarea class="form-text" readonly="readonly" rows="4">@comment.Text</textarea>
+                        <text class="text-secondary">@comment.Text</text>
                     </td>
                     <td>
                         @comment.CreationDate.ToShortDateString()
                     </td>
                     <td>
-                        <a asp-controller="Review" asp-action="DeleteComment" asp-route-reviewid="@comment.Id" class="btn btn-outline-danger">x</a>
+                        <a asp-controller="Review" asp-action="DeleteComment" asp-route-reviewid="@comment.Id" class="text-decoration-none" title="Удалить" alt="Удалить">&#10060;</a>
                     </td>
                 </tr>
             }

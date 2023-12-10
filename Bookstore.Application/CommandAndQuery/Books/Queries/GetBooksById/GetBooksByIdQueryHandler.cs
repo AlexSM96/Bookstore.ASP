@@ -24,12 +24,10 @@
              
                 return books;
             }
-            catch(Exception e)
+            catch(Exception)
             {
-                throw e;
+                throw;
             }
-            
-
         }
     }
 }

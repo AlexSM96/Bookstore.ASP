@@ -1,12 +1,13 @@
-﻿namespace Bookstore.Presentation.Controllers
+﻿using Bookstore.Application.CommandAndQuery.Books.Commands.UpdateBook;
+
+namespace Bookstore.Presentation.Controllers
 {
     public class BookController : Controller
     {
         private readonly IMapper _mapper;
         private readonly IMediator _mediator;
 
-        public BookController(IMapper mapper, IMediator mediator) =>
-             (_mapper, _mediator) = (mapper, mediator);
+        public BookController(IMapper mapper, IMediator mediator) => (_mapper, _mediator) = (mapper, mediator);
 
         [HttpGet]
         public async Task<IActionResult> Index()
@@ -67,6 +68,19 @@
             }
 
             return RedirectToAction("AddBook", "Book");
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> UpdateBook(Guid bookId, UpdateBookCommand model)
+        {
+            model.Id = bookId;
+            var book = await _mediator.Send(model, CancellationToken.None);
+            if(book == null)
+            {
+                return BadRequest();
+            }
+
+            return RedirectToAction("GetBook", "Book", new { BookId = book.Id });
         }
 
         public async Task<IActionResult> DeleteBook(DeleteBookCommand model)

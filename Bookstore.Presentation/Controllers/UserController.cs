@@ -5,8 +5,7 @@
         private readonly IMediator _mediator;
         private readonly IMapper _mapper;
 
-        public UserController(IMediator mediator, IMapper mapper) =>
-            (_mediator, _mapper) = (mediator, mapper);
+        public UserController(IMediator mediator, IMapper mapper) => (_mediator, _mapper) = (mediator, mapper);
 
         public IActionResult Index()
         {
@@ -21,21 +20,28 @@
             return View(usersVM);
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetUser()
         {
-            var user = await _mediator
-                .Send(new GetUserQuery<string>(User.Identity.Name));
+            if(User != null && User.Identity != null && User.Identity.IsAuthenticated)
+            {
+                var user = await _mediator
+                    .Send(new GetUserQuery<string>(User.Identity.Name));
 
-            var userVM = _mapper.Map<UserViewModel>(user);
-            return View(userVM);
+                var userVM = _mapper.Map<UserViewModel>(user);
+                return View(userVM);
+            }
+
+            return BadRequest();
         }
 
         public async Task<IActionResult> GetCurrentUser()
         {
-            if (User.Identity.IsAuthenticated)
+            if (User != null && User.Identity != null && User.Identity.IsAuthenticated)
             {
                 var user = await _mediator
                     .Send(new GetUserQuery<string>(User.Identity.Name));
+                
 
                 return Json(new {UserId = user?.Id, UserEmail = user?.Email});
             }

@@ -1,26 +1,33 @@
 ﻿@model IList<UserViewModel>
 
 <h2>Пользователи</h2>
-<table class="table table-info table-hover">
-    <thead>
-        <tr>
-            <th>Данные пользователя</th>
-            <th>Кол-во заказов</th>
-            <th>Кол-во комментариев</th>
-        </tr>
-    </thead>
-    <tbody>
-        @foreach (var user in Model)
-        {
+@if(Model != null)
+{
+    <table class="table table-active table-hover" style="font-size:12px">
+        <thead>
             <tr>
-                <td>
-                    <p>Login: @user?.Login</p>
-                    <p>Email: @user?.Email</p>
-                    <p>Password: @user?.Password</p>
-                </td>
-                <td>@user?.Orders?.Count()</td>
-                <td>@user?.Reviews?.Count()</td>
+                <th>Данные пользователя</th>
+                <th>Кол-во заказов</th>
+                <th>Кол-во комментариев</th>
             </tr>
-        }       
-    </tbody>
-</table>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>
+                        <p>Login: @user.Login</p>
+                        <p>Email: @user.Email</p>
+                    </td>
+                    <td>@user.Orders?.Count()</td>
+                    <td>@user.Reviews?.Count()</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>Нет информации</p>
+}
+
