@@ -4,12 +4,11 @@ using MediatR;
 
 namespace Bookstore.Application.CommandAndQuery.Reviews.Commands.AddReview
 {
-    public class AddReviewCommandHandler : IRequestHandler<AddReviewCommand, Review>
+    internal class AddReviewCommandHandler : IRequestHandler<AddReviewCommand, Review>
     {
         private readonly IBaseDbContext _context;
 
-        public AddReviewCommandHandler(IBaseDbContext context) =>
-            _context = context;
+        public AddReviewCommandHandler(IBaseDbContext context) => _context = context;
 
         public async Task<Review> Handle(AddReviewCommand request, CancellationToken cancellationToken)
         {

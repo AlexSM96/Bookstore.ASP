@@ -1,6 +1,6 @@
 ﻿namespace Bookstore.Application.CommandAndQuery.Orders.Commands.AddOrder
 {
-    public class AddOrderCommandHandler : IRequestHandler<AddOrderCommand, Order>
+    internal class AddOrderCommandHandler : IRequestHandler<AddOrderCommand, Order>
     {
         private readonly IBaseDbContext _context;
         public AddOrderCommandHandler(IBaseDbContext context) => _context = context;
@@ -21,7 +21,7 @@
 
                     var order = new Order
                     {
-                        CreationDate = request.CteationDate,
+                        CreationDate = request.CreationDate,
                         User = user,
                         UserId = request.UserId,
                         Books = request.Books
@@ -34,9 +34,9 @@
 
                 return newOrder;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
         }
 

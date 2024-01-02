@@ -1,3 +1,5 @@
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 ConfigureServices(builder);
@@ -29,6 +31,7 @@ void ConfigureServices(WebApplicationBuilder builder)
 
     builder.Services
         .AddControllersWithViews()
+        .AddJsonOptions(o => o.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.Preserve)
         .AddRazorRuntimeCompilation();
 
     builder.Services

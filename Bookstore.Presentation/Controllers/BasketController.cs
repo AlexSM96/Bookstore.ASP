@@ -61,7 +61,7 @@ namespace Bookstore.Presentation.Controllers
                 && !string.IsNullOrWhiteSpace(User.Identity.Name))
             {
                 var user = await _mediator
-                .Send(new GetUserQuery<string>(User.Identity.Name));
+                    .Send(new GetUserQuery<string>(User.Identity.Name));
 
                 var deleteCommand = new DeleteFromBasketCommand()
                 {

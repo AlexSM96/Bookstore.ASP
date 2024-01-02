@@ -8,7 +8,7 @@
     @if (Model is not null && Model.Any())
     {
         Model.Aggregate(totalPrice, (acc, book) => totalPrice += book.Price);
-        var books = Json.Serialize(Model.Select(x=>x));
+        var books = Json.Serialize(Model.Select(x=> new { x.Id, x.Title }));
         <p>Товары:</p>
         <ul class="list-group">
             @foreach (var book in Model)
@@ -31,7 +31,7 @@
         </ul>
         <div class="container">
             <p>Общая стоимость заказа:</p>
-            <h2>@totalPrice Руб.</h2>
+            <h2 id="totalPrice">@totalPrice Руб.</h2>
             <span>
                 <a class="btn btn-outline-success btn-lg" onclick="createOrder('@books.ToString()')">Оформить заказ</a>
             </span>

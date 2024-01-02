@@ -1,6 +1,6 @@
 ﻿namespace Bookstore.Application.CommandAndQuery.Reviews.Commands.DeleteReview
 {
-    public class DeleteReviewCommandHandler : IRequestHandler<DeleteReviewCommand, Unit>
+   internal class DeleteReviewCommandHandler : IRequestHandler<DeleteReviewCommand, Unit>
     {
         private readonly IBaseDbContext _context;
         public DeleteReviewCommandHandler(IBaseDbContext context) => _context = context;
@@ -16,15 +16,16 @@
                     {
                         throw new ArgumentNullException(nameof(Review));
                     }
+
                     _context.Reviews.Remove(reviewFromDb);
                     await _context.SaveChangesAsync(cancellationToken);
                 }
 
                 return Unit.Value;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
         }
     }

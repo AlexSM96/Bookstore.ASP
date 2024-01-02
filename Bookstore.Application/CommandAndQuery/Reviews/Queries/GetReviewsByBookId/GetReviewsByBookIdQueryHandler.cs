@@ -8,8 +8,6 @@
             => request is not null ? await _context.Reviews
                     .Include(x => x.User)
                     .Where(r => r.BookId == request.BookId)
-                    .ToListAsync(cancellationToken) : new List<Review>();       
-        
-        
+                    .ToListAsync(cancellationToken) : new List<Review>();           
     }
 }

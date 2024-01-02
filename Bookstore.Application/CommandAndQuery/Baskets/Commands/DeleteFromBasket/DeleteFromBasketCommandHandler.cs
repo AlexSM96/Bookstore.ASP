@@ -1,13 +1,11 @@
 ﻿namespace Bookstore.Application.CommandAndQuery.Baskets.Commands.DeleteFromBasket
 {
-    public class DeleteFromBasketCommandHandler : IRequestHandler<DeleteFromBasketCommand, Unit>
+    internal class DeleteFromBasketCommandHandler : IRequestHandler<DeleteFromBasketCommand, Unit>
     {
         private readonly IBaseDbContext _context;
 
-        public DeleteFromBasketCommandHandler(IBaseDbContext context) =>
-            _context = context;
+        public DeleteFromBasketCommandHandler(IBaseDbContext context) => _context = context;
         
-
         public async Task<Unit> Handle(DeleteFromBasketCommand request, CancellationToken cancellationToken)
         {
 			try
@@ -17,15 +15,13 @@
                     .FirstOrDefaultAsync(b => b.UserId == request.UserId);
 
                 var book = await _context.Books
-                    .FirstOrDefaultAsync(x=>x.Id == request.BookId);
+                    .FirstOrDefaultAsync(x => x.Id == request.BookId);
 
-                if(basket is null || book is null)
+                if(book is not null)
                 {
-                    throw new ArgumentNullException();
+                    basket?.Books?.Remove(book);
+                    await _context.SaveChangesAsync(cancellationToken);
                 }
-
-                basket.Books.Remove(book);
-                await _context.SaveChangesAsync(cancellationToken);
 
                 return Unit.Value;
 			}

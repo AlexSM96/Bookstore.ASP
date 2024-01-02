@@ -1,4 +1,5 @@
-﻿using Bookstore.Application.CommandAndQuery.Orders.Commands.DeleteOrder;
+﻿using Bookstore.Application.CommandAndQuery.Baskets.Commands.DeleteAll;
+using Bookstore.Application.CommandAndQuery.Orders.Commands.DeleteOrder;
 using Bookstore.Application.Services.Email;
 
 namespace Bookstore.Presentation.Controllers
@@ -27,12 +28,14 @@ namespace Bookstore.Presentation.Controllers
         [HttpPost]
         public async Task<IActionResult> CreateOrder(AddOrderCommand model, string bodyHtml)
         {
+            if(model is null) return BadRequest();
+            
             var order = await _mediator.Send(model);
+            await _service.SendEmailAsync(order.User.Email, "Подтверждение заказа", bodyHtml);
 
-            await _service
-                .SendEmailAsync(order.User.Email, "Подтверждение заказа", $"""<ul class="list-group">{bodyHtml}<ul>""");
+            await _mediator.Send(new DeleteAllFromBasketCommand(order.UserId));
 
-            return Ok();
+            return Ok();   
         }
 
         public async Task<IActionResult> DeleteOrder(Guid orderId)

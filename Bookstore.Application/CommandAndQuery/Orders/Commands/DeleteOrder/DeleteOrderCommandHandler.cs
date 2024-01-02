@@ -1,6 +1,6 @@
 ﻿namespace Bookstore.Application.CommandAndQuery.Orders.Commands.DeleteOrder
 {
-    public class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Unit>
+    internal class DeleteOrderCommandHandler : IRequestHandler<DeleteOrderCommand, Unit>
     {
         private readonly IBaseDbContext _context;
 

@@ -10,7 +10,8 @@
         {
             return await _context.Baskets
                 .Include(b => b.Books)
-                .FirstOrDefaultAsync(b => b.UserId == request.UserId);
+                .FirstOrDefaultAsync(b => request != null && b.UserId == request.UserId, cancellationToken)
+                 ?? throw new ArgumentNullException($"Корзина для пользователя c ID: [{request.UserId}] не найдена");
         }
     }
 }

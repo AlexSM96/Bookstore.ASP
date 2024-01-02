@@ -1,6 +1,6 @@
 ﻿namespace Bookstore.Application.CommandAndQuery.Books.Commands.AddBook
 {
-    public class AddBookCommandHandler : IRequestHandler<AddBookCommand, Book>
+    internal class AddBookCommandHandler : IRequestHandler<AddBookCommand, Book>
     {
         private readonly IBaseDbContext _context;
         public AddBookCommandHandler(IBaseDbContext context) => _context = context;
@@ -40,9 +40,9 @@
 
                 return book;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
         }
     }

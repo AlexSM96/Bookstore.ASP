@@ -23,9 +23,9 @@
 
                 return books.Any() ? books : new List<Book>();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
 
         }

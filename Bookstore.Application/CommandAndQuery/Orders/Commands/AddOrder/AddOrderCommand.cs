@@ -2,10 +2,10 @@
 {
     public class AddOrderCommand : IRequest<Order>
     {
-        public DateTime CteationDate { get; set; } = DateTime.Today;
+        public DateTime CreationDate { get; set; } = DateTime.Today;
 
         public Guid UserId { get; set; }
 
-        public List<Book> Books { get; set; }
+        public List<Book>? Books { get; set; }
     }
 }

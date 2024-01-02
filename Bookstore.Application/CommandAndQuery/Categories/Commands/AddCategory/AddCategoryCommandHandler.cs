@@ -2,7 +2,7 @@
 
 namespace Bookstore.Application.CommandAndQuery.Categories.Commands.AddCategory
 {
-    public class AddCategoryCommandHandler : IRequestHandler<AddCategoryCommand, Category>
+    internal class AddCategoryCommandHandler : IRequestHandler<AddCategoryCommand, Category>
     {
         private readonly IBaseDbContext _context;
         public AddCategoryCommandHandler(IBaseDbContext context) => _context = context;
@@ -28,9 +28,9 @@ namespace Bookstore.Application.CommandAndQuery.Categories.Commands.AddCategory
 
                 return category;
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
         }
     }

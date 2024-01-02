@@ -5,7 +5,6 @@
     }
     const { bookId } = commentContainer.dataset
 
-
     $.ajax({
         type: 'POST',
         url: '/Review/GetComments',
@@ -38,40 +37,41 @@ function createOrder(data) {
         return
     }
 
-    let price = 0
-    const books = JSON.parse(data)
-    let totalPrice = books.reduce((acc, book) => acc + book.Price, price)
-    let body = books.map(toHtml).join(' ')
-    body = body + priceHtml(totalPrice)
+    const order = JSON.parse(data)
+    const books = order.$values
+    const totalPrice = document.querySelector('#totalPrice')
+    let bodyHtml = books.map(book => toHtml(book)).join(' ')
+    bodyHtml = bodyHtml + priceHtml(totalPrice)
 
     $.ajax({
         type: 'POST',
         url: '/Order/CreateOrder',
         data: {
             model: {
-                userId: currentUser.userId,
+                userid: currentUser.userId,
                 books: books,
             },
-            bodyHtml: body
+            bodyHtml: bodyHtml
         },
-        success: () => alert("Заказ создан.Вам на почту отправлены информация по заказу. Спаибо за покупку!"),
+        success: () => {
+            location.reload()
+            alert("Заказ создан. Вам на почту отправлены информация по заказу. Спасибо за покупку!")
+        },
         error: (response) => console.log(response)
     })
 }
 
 function priceHtml(totalPrice) {
     return `
-        <li class="list-group-item">
+        <div>
             <p>Общая стоимость заказа:</p>
-            <h2>${totalPrice} Руб.</h2>
-        </li>`
+            <h2>${totalPrice.textContent}</h2>
+        </div>
+    `
 }
 
 function toHtml(book) {
-    return `
-        <li class="list-group-item">
-            <h3>Название: ${book.Title}</h3>
-        </li>`
+    return `<h3>${book.title}</h3>`
 }
 
 function addToBasket(bookId) {

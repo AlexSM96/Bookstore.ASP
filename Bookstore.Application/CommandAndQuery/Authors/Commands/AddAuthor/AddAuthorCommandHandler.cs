@@ -1,16 +1,10 @@
-﻿using Bookstore.Application.Interfaces;
-using Bookstore.Domain.Entities;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-
-namespace Bookstore.Application.CommandAndQuery.Authors.Commands.AddAuthor
+﻿namespace Bookstore.Application.CommandAndQuery.Authors.Commands.AddAuthor
 {
-    public class AddAuthorCommandHandler : IRequestHandler<AddAuthorCommand, Author>
+    internal class AddAuthorCommandHandler : IRequestHandler<AddAuthorCommand, Author>
     {
         private readonly IBaseDbContext _context;
 
-        public AddAuthorCommandHandler(IBaseDbContext context) =>
-            _context = context;
+        public AddAuthorCommandHandler(IBaseDbContext context) => _context = context;
 
         public async Task<Author> Handle(AddAuthorCommand request, CancellationToken cancellationToken)
         {

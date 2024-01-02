@@ -1,5 +1,4 @@
 ﻿using AutoMapper;
-using Bookstore.Domain.Entities;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bookstore.Application.Mapping.CategoryDto

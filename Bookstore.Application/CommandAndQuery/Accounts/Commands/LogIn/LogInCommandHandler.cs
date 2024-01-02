@@ -1,8 +1,6 @@
-﻿using Bookstore.Application.Extensions;
-
-namespace Bookstore.Application.CommandAndQuery.Accounts.Commands.LogIn
+﻿namespace Bookstore.Application.CommandAndQuery.Accounts.Commands.LogIn
 {
-    public class LogInCommandHandler : IRequestHandler<LogInCommand, ClaimsIdentity>
+    internal class LogInCommandHandler : IRequestHandler<LogInCommand, ClaimsIdentity>
     {
         private readonly IBaseDbContext _context;
 
@@ -18,9 +16,9 @@ namespace Bookstore.Application.CommandAndQuery.Accounts.Commands.LogIn
 
                 return user?.Authenticate();
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                throw e;
+                throw;
             }
         }
     }

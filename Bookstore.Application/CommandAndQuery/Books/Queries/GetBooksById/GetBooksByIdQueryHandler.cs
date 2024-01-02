@@ -8,7 +8,7 @@
         {
             try
             {
-                var books = new List<Book>();
+                var books = new List<Book>();              
                 if(request is not null)
                 {
                     foreach (var bookId in request.BooksId)
@@ -21,7 +21,7 @@
                         }
                     }
                 }
-             
+                    
                 return books;
             }
             catch(Exception)
