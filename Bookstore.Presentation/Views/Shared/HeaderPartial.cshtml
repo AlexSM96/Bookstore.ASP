@@ -57,8 +57,12 @@
                 }
             }
         </div>
-        <div>
-            <a class="basket" asp-controller="Basket" asp-action="GetBasket"><img src="~/img/shoppingcart_77968.png" width="50" title="Корзина" /></a>
+        <div class="basket">
+            <div id="order-indicator" class="order-indicator"></div>
+            <div> 
+                <a asp-controller="Basket" asp-action="GetBasket"><img src="~/img/shoppingcart_77968.png" width="50" title="Корзина" /></a>
+            </div>
+            
         </div>
         <div>
             <ul class="account-list">

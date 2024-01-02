@@ -129,6 +129,22 @@ function getCategoryHTML(index) {
 }
 
 
+async function setOrderIndicatorValue() {
+    const indicator = document.querySelector('#order-indicator')
+    const response = await fetch('/Basket/GetCountBooksInOrder')
+    let orders = await response.json()
+    if (orders.count == 0) {
+        indicator.style.display = 'none'
+    }
+    else {
+        indicator.style.display = 'block'
+        indicator.textContent = orders.count
+    }
+    
+}
+
+document.addEventListener('reset', setOrderIndicatorValue())
+
 
 
 

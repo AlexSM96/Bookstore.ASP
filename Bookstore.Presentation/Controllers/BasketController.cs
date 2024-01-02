@@ -18,7 +18,7 @@ namespace Bookstore.Presentation.Controllers
                 && !string.IsNullOrWhiteSpace(User.Identity.Name))
             {
                 var user = await _mediator
-                    .Send(new GetUserQuery<string>(User.Identity.Name));
+                   .Send(new GetUserQuery<string>(User.Identity.Name));
 
                 var basket = await _mediator
                     .Send(new GetBasketQuery(user.Id));
@@ -28,6 +28,18 @@ namespace Bookstore.Presentation.Controllers
             }
 
             return View();
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> GetCountBooksInOrder()
+        {
+            var user = await _mediator
+                    .Send(new GetUserQuery<string>(User.Identity.Name));
+
+            var basket = await _mediator
+                .Send(new GetBasketQuery(user.Id));
+
+            return Json(new { Count = basket?.Books?.Count() });
         }
 
         [HttpPost]
@@ -71,6 +83,7 @@ namespace Bookstore.Presentation.Controllers
 
                 await _mediator.Send(deleteCommand);
             }
+
             return RedirectToAction("GetBasket");
         }
     }

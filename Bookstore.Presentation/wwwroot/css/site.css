@@ -89,12 +89,12 @@ body {
 }
 
 .registration-container {
-    font-size: 25px;
+    font-size: 15px;
     text-align: center;
     margin: auto;
     padding: 10px;
     width: 500px;
-    background-color: mediumorchid;
+    background-color: lightblue;
     box-shadow: 4px 4px 14px rgba(0,0,0,0.88);
     border-radius: 25px;
 }
@@ -151,9 +151,13 @@ body {
     padding: 5px;
 }
 .comment-area {
-    background-color: lightblue;
-    padding-left:10px;
-    border-radius: 20px;
+    font-size: 14px;
+    max-width: inherit;
+    background-color: lightgray;
+    border-radius: 5px;
+    height: 100px;
+    width: 100%;
+
 }
 
 .search-button {
@@ -177,7 +181,7 @@ body {
     opacity:0.8;
 }
 
-.basket{
+.basket {
     cursor: pointer;
 }
 
@@ -185,3 +189,14 @@ body {
         width: 49px;
         height: auto;
     }
+
+.order-indicator {
+    display: none;
+    position: relative;
+    transform: translate(200%, 100%);
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: lightskyblue;
+    opacity: 0.9;
+}

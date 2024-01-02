@@ -15,8 +15,8 @@ else
                     <p>@comment.User.Login</p>
                 </div>
                 <div class="container-fluid">
-                    <div class="comment-area">
-                        <p>@comment.Text</p>
+                    <div>
+                        <textarea readonly="readonly" class="comment-area">@comment.Text</textarea>
                     </div>
                     <span>@comment.CreationDate.ToShortDateString()</span>
                 </div>
