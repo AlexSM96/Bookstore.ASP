@@ -33,13 +33,18 @@ namespace Bookstore.Presentation.Controllers
         [HttpGet]
         public async Task<IActionResult> GetCountBooksInOrder()
         {
-            var user = await _mediator
+            if (User is not null && User.Identity is not null && User.Identity.IsAuthenticated
+                && !string.IsNullOrWhiteSpace(User.Identity.Name))
+            {
+                var user = await _mediator
                     .Send(new GetUserQuery<string>(User.Identity.Name));
 
-            var basket = await _mediator
-                .Send(new GetBasketQuery(user.Id));
+                var basket = await _mediator
+                    .Send(new GetBasketQuery(user.Id));
+                return Json(new { Count = basket?.Books?.Count() });
+            }
 
-            return Json(new { Count = basket?.Books?.Count() });
+            return Json(new {});          
         }
 
         [HttpPost]

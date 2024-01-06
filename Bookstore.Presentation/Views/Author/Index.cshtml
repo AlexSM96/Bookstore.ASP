@@ -5,12 +5,25 @@
 
 <h1>Авторы</h1>
 <div class="container">
-    <ul class="list-group-horizontal-lg">
+    <div class="row align-content-center">
         @foreach (var author in Model)
         {
-            <li class="list-group-item list-group-item-info">
-                <a class="nav-item" asp-controller="Book" asp-action="GetBooks" title="Открыть книги автора">@author.Name</a>
-            </li>
+            <div class="col-md-6 rounded-3">
+                <h3>@author.Name</h3>
+                <details title="Развернуть">
+                    <summary>Книги</summary>
+                        @if (author.Books is not null && author.Books.Any())
+                        {
+                            foreach (var book in author.Books)
+                            {
+                                <p>
+                                    <a asp-controller="Book" asp-action="GetBook" asp-route-bookid="@book.Id">@book.Title</a>
+                                </p>
+                            }
+                        }
+                   
+                </details>
+            </div>
         }
-    </ul>
+    </div>
 </div>

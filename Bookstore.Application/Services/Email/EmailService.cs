@@ -28,7 +28,7 @@ namespace Bookstore.Application.Services.Email
             message.Subject = subject;
             message.Body = new TextPart(MimeKit.Text.TextFormat.Html)
             {
-                Text = body, 
+                Text = body
             };
 
             await _client.ConnectAsync("smtp.yandex.ru", 465, true);

@@ -193,10 +193,10 @@ body {
 .order-indicator {
     display: none;
     position: relative;
-    transform: translate(200%, 100%);
-    width: 20px;
-    height: 20px;
+    transform: translate(290%, 120%);
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
-    background-color: lightskyblue;
+    background-color: deepskyblue;
     opacity: 0.9;
 }

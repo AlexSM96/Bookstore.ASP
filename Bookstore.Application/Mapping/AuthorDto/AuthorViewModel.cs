@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using Bookstore.Application.Mapping.BookDto;
 using System.ComponentModel.DataAnnotations;
 
 namespace Bookstore.Application.Mapping.AuthorDto
@@ -15,5 +16,7 @@ namespace Bookstore.Application.Mapping.AuthorDto
 
         [Required(ErrorMessage ="Веведите имя автора")]
         public string Name { get; set; }
+
+        public IList<BookViewModel> Books { get; set; }
     }
 }

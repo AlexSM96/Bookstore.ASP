@@ -8,6 +8,7 @@
 
         public async Task<IList<Author>> Handle(GetAuthorsQuery request, CancellationToken cancellationToken) => 
             await _context.Authors
+            .Include(a => a.Books)
             .ToListAsync(cancellationToken);
         
     }
