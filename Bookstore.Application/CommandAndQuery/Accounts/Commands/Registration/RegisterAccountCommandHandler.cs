@@ -1,10 +1,4 @@
-﻿using Bookstore.Application.Extensions;
-using Bookstore.Application.Interfaces;
-using Bookstore.Domain.Entities;
-using Bookstore.Domain.Enums;
-using MediatR;
-using Microsoft.EntityFrameworkCore;
-using System.Security.Claims;
+﻿using Bookstore.Domain.Enums;
 
 namespace Bookstore.Application.CommandAndQuery.Accounts.Commands.Registration
 {
