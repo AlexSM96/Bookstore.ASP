@@ -9,119 +9,119 @@ build_property.EnforceExtendedAnalyzerRules =
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Bookstore.Presentation
 build_property.RootNamespace = Bookstore.Presentation
-build_property.ProjectDir = C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Presentation\
+build_property.ProjectDir = C:\Users\Professional\source\repos\bookstore\Bookstore.ASP\Bookstore.Presentation\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.RazorLangVersion = 7.0
 build_property.SupportLocalizedComponentNames = 
 build_property.GenerateRazorMetadataSourceChecksumAttributes = true
-build_property.MSBuildProjectDirectory = C:\Users\Professional\source\repos\Bookstore.ASP\Bookstore.ASP.NET\Bookstore.Presentation
+build_property.MSBuildProjectDirectory = C:\Users\Professional\source\repos\bookstore\Bookstore.ASP\Bookstore.Presentation
 build_property._RazorSourceGeneratorDebug = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Account/RegisterUser.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Account/RegisterUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxSZWdpc3RlclVzZXIuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Account/SignIn.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Account/SignIn.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWNjb3VudFxTaWduSW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Author/AddAuthor.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Author/AddAuthor.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXEFkZEF1dGhvci5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Author/Index.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Author/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aG9yXEluZGV4LmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Basket/GetBasket.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Basket/GetBasket.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQmFza2V0XEdldEJhc2tldC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Book/AddBook.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Book/AddBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xBZGRCb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Book/EditorTemplates/GetBookEditable.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Book/EditorTemplates/GetBookEditable.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xFZGl0b3JUZW1wbGF0ZXNcR2V0Qm9va0VkaXRhYmxlLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Book/GetBook.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Book/GetBook.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xHZXRCb29rLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Book/GetBooks.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Book/GetBooks.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xHZXRCb29rcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Book/Index.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Book/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQm9va1xJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Category/AddCategory.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Category/AddCategory.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcQWRkQ2F0ZWdvcnkuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Category/GetCategories.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Category/GetCategories.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2F0ZWdvcnlcR2V0Q2F0ZWdvcmllcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Home/Index.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Home/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Order/GetOrders.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Order/GetOrders.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcT3JkZXJcR2V0T3JkZXJzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Review/GetComments.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Review/GetComments.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEdldENvbW1lbnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Review/GetCommentsForAdmin.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Review/GetCommentsForAdmin.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmV2aWV3XEdldENvbW1lbnRzRm9yQWRtaW4uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Shared/CssPartial.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Shared/CssPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXENzc1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Shared/FooterPartial.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Shared/FooterPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEZvb3RlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Shared/HeaderPartial.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Shared/HeaderPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEhlYWRlclBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Shared/MetatagPartial.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Shared/MetatagPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXE1ldGF0YWdQYXJ0aWFsLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Shared/ScriptPartial.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Shared/ScriptPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXFNjcmlwdFBhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Shared/_ValidationScriptsPartial.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Shared/_ValidationScriptsPartial.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/User/GetUser.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/User/GetUser.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRVc2VyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/User/GetUsers.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/User/GetUsers.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxHZXRVc2Vycy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/_ViewImports.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/_ViewImports.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/_ViewStart.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/_ViewStart.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
-[C:/Users/Professional/source/repos/Bookstore.ASP/Bookstore.ASP.NET/Bookstore.Presentation/Views/Shared/_Layout.cshtml]
+[C:/Users/Professional/source/repos/bookstore/Bookstore.ASP/Bookstore.Presentation/Views/Shared/_Layout.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = b-xox5no1qpa

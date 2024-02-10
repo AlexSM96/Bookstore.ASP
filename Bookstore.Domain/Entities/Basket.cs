@@ -8,6 +8,6 @@ namespace Bookstore.Domain.Entities
 
         public User User { get; set; }
 
-        public IList<Book> Books { get; set; }
+        public IList<Book> Books { get; set; } = new List<Book>();
     }
 }

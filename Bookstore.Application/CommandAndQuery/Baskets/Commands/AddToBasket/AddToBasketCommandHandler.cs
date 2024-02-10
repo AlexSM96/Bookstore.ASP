@@ -12,24 +12,28 @@
             {
                 var user = await _context.Users
                       .Include(u => u.Basket)
-                      .FirstOrDefaultAsync(b => request != null && b.Id == request.UserId)
-                      ?? throw new ArgumentNullException(nameof(User));
+                      .FirstOrDefaultAsync(u => request != null && u.Id == request.UserId);
 
                 var basket = await _context.Baskets
                     .Include(b => b.Books)
-                    .FirstOrDefaultAsync(b => user != null && b.Id == user.Basket.Id);
+                    .FirstOrDefaultAsync(b => user != null && user.Basket != null && b.Id == user.Basket.Id);
 
                 if (basket is null)
                 {
                     basket = new Basket();
                     basket.Id = Guid.NewGuid();
                     basket.UserId = user.Id;
+                    if(basket.Books == null)
+                    {
+                        basket.Books = new List<Book>();
+                    }
+
                     basket.Books.Add(request.Book);
                     await _context.Baskets.AddAsync(basket);
                 }
                 else
                 {
-                    if (!basket.Books.Contains(request.Book))
+                    if (basket.Books != null && !basket.Books.Contains(request.Book))
                     {
                         basket.Books.Add(request.Book);
                     }

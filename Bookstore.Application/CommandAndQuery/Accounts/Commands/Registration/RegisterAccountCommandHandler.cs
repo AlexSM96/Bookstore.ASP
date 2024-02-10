@@ -27,6 +27,7 @@ namespace Bookstore.Application.CommandAndQuery.Accounts.Commands.Registration
                     };
 
                     user.Role = AddRole(user);
+                    user.Basket = new Basket();
                     await _context.Users.AddAsync(user);
                     await _context.SaveChangesAsync(cancellationToken);
                     return user.Authenticate();
