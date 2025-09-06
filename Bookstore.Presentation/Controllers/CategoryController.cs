@@ -29,7 +29,7 @@
             if (ModelState.IsValid)
             {
                 var category = await _mediator.Send(model);
-                return Ok();
+                return RedirectToAction(nameof(AddCategory));
             }
 
             return BadRequest(model);

@@ -36,7 +36,7 @@
             var author = await _mediator.Send(model);
             if (author != null)
             {
-                return Ok();
+                return RedirectToAction(nameof(AddAuthor));
             }
 
             return BadRequest(model);

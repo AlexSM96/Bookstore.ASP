@@ -33,3 +33,15 @@ C:\Users\Professional\source\repos\bookstore\Bookstore.ASP\Bookstore.Domain\obj\
 C:\Users\Professional\source\repos\bookstore\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\refint\Bookstore.Domain.dll
 C:\Users\Professional\source\repos\bookstore\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.pdb
 C:\Users\Professional\source\repos\bookstore\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\ref\Bookstore.Domain.dll
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\bin\Debug\net7.0\Bookstore.Domain.deps.json
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\bin\Debug\net7.0\Bookstore.Domain.dll
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\bin\Debug\net7.0\Bookstore.Domain.pdb
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.AssemblyInfoInputs.cache
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.AssemblyInfo.cs
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.sourcelink.json
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.dll
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\refint\Bookstore.Domain.dll
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\Bookstore.Domain.pdb
+C:\Users\Alexander\source\repos\Курсовая\Bookstore.ASP\Bookstore.Domain\obj\Debug\net7.0\ref\Bookstore.Domain.dll

@@ -1,40 +1,39 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Presentation\\Bookstore.Presentation.csproj": {}
+    "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Presentation\\Bookstore.Presentation.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj": {
+    "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj",
+        "projectUniqueName": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj",
         "projectName": "Bookstore.Application",
-        "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj",
-        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Application\\obj\\",
+        "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj",
+        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Application\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj": {
-                "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj"
+              "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj": {
+                "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj"
               }
             }
           }
@@ -43,11 +42,17 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper": {
               "target": "Package",
@@ -86,44 +91,43 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj": {
+    "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj",
+        "projectUniqueName": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj",
         "projectName": "Bookstore.DAL",
-        "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj",
-        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.DAL\\obj\\",
+        "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj",
+        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.DAL\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj": {
-                "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj"
+              "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj": {
+                "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj"
               },
-              "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj": {
-                "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj"
+              "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj": {
+                "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj"
               }
             }
           }
@@ -132,29 +136,35 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "Microsoft.EntityFrameworkCore": {
               "target": "Package",
-              "version": "[7.0.10, )"
-            },
-            "Microsoft.EntityFrameworkCore.SqlServer": {
-              "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[9.0.8, )"
             },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
               "target": "Package",
-              "version": "[7.0.10, )"
+              "version": "[9.0.8, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
-              "version": "[7.0.0, )"
+              "version": "[9.0.8, )"
+            },
+            "Npgsql.EntityFrameworkCore.PostgreSQL": {
+              "target": "Package",
+              "version": "[9.0.4, )"
             }
           },
           "imports": [
@@ -173,38 +183,37 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj": {
+    "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj",
         "projectName": "Bookstore.Domain",
-        "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj",
-        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj",
+        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {}
           }
         },
@@ -212,11 +221,17 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "imports": [
             "net461",
             "net462",
@@ -233,41 +248,40 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Presentation\\Bookstore.Presentation.csproj": {
+    "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Presentation\\Bookstore.Presentation.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Presentation\\Bookstore.Presentation.csproj",
+        "projectUniqueName": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Presentation\\Bookstore.Presentation.csproj",
         "projectName": "Bookstore.Presentation",
-        "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Presentation\\Bookstore.Presentation.csproj",
-        "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Presentation\\obj\\",
+        "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Presentation\\Bookstore.Presentation.csproj",
+        "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Presentation\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
-          "net7.0"
+          "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
-          "net7.0": {
-            "targetAlias": "net7.0",
+          "net8.0": {
+            "targetAlias": "net8.0",
             "projectReferences": {
-              "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj": {
-                "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj"
+              "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj": {
+                "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.DAL\\Bookstore.DAL.csproj"
               }
             }
           }
@@ -276,11 +290,17 @@
           "warnAsError": [
             "NU1605"
           ]
-        }
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        },
+        "SdkAnalysisLevel": "9.0.300"
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "dependencies": {
             "AutoMapper.Extensions.Microsoft.DependencyInjection": {
               "target": "Package",
@@ -328,7 +348,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

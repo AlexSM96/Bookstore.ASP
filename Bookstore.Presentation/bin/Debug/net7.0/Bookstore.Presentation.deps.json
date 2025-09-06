@@ -3162,7 +3162,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "runtime": {
-          "Bookstore.Application.dll": {}
+          "Bookstore.Application.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         },
         "compile": {
           "Bookstore.Application.dll": {}
@@ -3177,7 +3180,10 @@
           "Microsoft.Extensions.Configuration.Abstractions": "7.0.0"
         },
         "runtime": {
-          "Bookstore.DAL.dll": {}
+          "Bookstore.DAL.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         },
         "compile": {
           "Bookstore.DAL.dll": {}
@@ -3185,7 +3191,10 @@
       },
       "Bookstore.Domain/1.0.0": {
         "runtime": {
-          "Bookstore.Domain.dll": {}
+          "Bookstore.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         },
         "compile": {
           "Bookstore.Domain.dll": {}

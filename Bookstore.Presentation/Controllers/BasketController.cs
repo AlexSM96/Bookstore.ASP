@@ -89,7 +89,7 @@ namespace Bookstore.Presentation.Controllers
                 await _mediator.Send(deleteCommand);
             }
 
-            return RedirectToAction("GetBasket");
+            return RedirectToAction(nameof(GetBasket));
         }
     }
 }

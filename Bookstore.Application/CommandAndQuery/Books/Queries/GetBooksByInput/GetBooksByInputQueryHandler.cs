@@ -15,9 +15,9 @@
                         .Include(b => b.Authors)
                         .Include(b => b.Categories)
                         .Where(b => b.Categories
-                            .Any(c => c.Name.Contains(request.InputData))
-                            || b.Authors.Any(a => a.Name.Contains(request.InputData))
-                            || b.Title.Contains(request.InputData))
+                            .Any(c => c.Name.ToLower().Contains(request.InputData.ToLower()))
+                            || b.Authors.Any(a => a.Name.ToLower().Contains(request.InputData.ToLower()))
+                            || b.Title.ToLower().Contains(request.InputData.ToLower()))
                         .ToListAsync();
                 }
 
@@ -27,7 +27,6 @@
             {
                 throw;
             }
-
         }
     }
 }

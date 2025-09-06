@@ -230,7 +230,10 @@
       "System.Text.Encoding.CodePages/7.0.0": {},
       "Bookstore.Domain/1.0.0": {
         "runtime": {
-          "Bookstore.Domain.dll": {}
+          "Bookstore.Domain.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.0.0"
+          }
         }
       }
     }

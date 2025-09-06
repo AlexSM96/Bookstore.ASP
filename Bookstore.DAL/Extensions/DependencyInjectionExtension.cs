@@ -8,11 +8,11 @@ namespace Bookstore.DAL.Extensions
     {
         public static IServiceCollection AddDataAccessLayer(this IServiceCollection services, IConfiguration configuration)
         {
-            var connectionString = configuration.GetConnectionString("MSSQL");
+            var connectionString = configuration.GetConnectionString("MyDb");
 
             return services.AddDbContext<BookstoreDbContext>(option =>
             {
-                option.UseSqlServer(connectionString);
+                option.UseNpgsql(connectionString);
             });
         }
     }

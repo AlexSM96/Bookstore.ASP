@@ -8,7 +8,10 @@ namespace Bookstore.DAL
     public sealed class BookstoreDbContext : DbContext, IBaseDbContext
     {
         public BookstoreDbContext(DbContextOptions<BookstoreDbContext> option)
-            : base(option) { }
+            : base(option) 
+        {
+            Database.EnsureCreated();   
+        }
 
         public DbSet<Book> Books { get; set; }
 
@@ -26,6 +29,8 @@ namespace Bookstore.DAL
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            AppContext.SetSwitch("Npgsql.EnableLegacyTimestampBehavior", true);
+            AppContext.SetSwitch("Npgsql.DisableDateTimeInfinityConversions", true);
             modelBuilder
                 .ApplyConfiguration(new BookConfiguration())
                 .ApplyConfiguration(new AuthorConfiguration())

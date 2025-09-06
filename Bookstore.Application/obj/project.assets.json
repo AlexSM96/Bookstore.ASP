@@ -1,7 +1,7 @@
 {
   "version": 3,
   "targets": {
-    "net7.0": {
+    "net8.0": {
       "AutoMapper/12.0.1": {
         "type": "package",
         "dependencies": {
@@ -401,7 +401,7 @@
       },
       "Bookstore.Domain/1.0.0": {
         "type": "project",
-        "framework": ".NETCoreApp,Version=v7.0",
+        "framework": ".NETCoreApp,Version=v8.0",
         "compile": {
           "bin/placeholder/Bookstore.Domain.dll": {}
         },
@@ -1086,7 +1086,7 @@
     }
   },
   "projectFileDependencyGroups": {
-    "net7.0": [
+    "net8.0": [
       "AutoMapper >= 12.0.1",
       "Bookstore.Domain >= 1.0.0",
       "MailKit >= 4.2.0",
@@ -1096,40 +1096,39 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\Professional\\.nuget\\packages\\": {},
+    "C:\\Users\\Alexander\\.nuget\\packages\\": {},
     "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj",
+      "projectUniqueName": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj",
       "projectName": "Bookstore.Application",
-      "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj",
-      "packagesPath": "C:\\Users\\Professional\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Application\\obj\\",
+      "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Application\\Bookstore.Application.csproj",
+      "packagesPath": "C:\\Users\\Alexander\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Application\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
       ],
       "configFilePaths": [
-        "C:\\Users\\Professional\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Alexander\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
-        "net7.0"
+        "net8.0"
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "C:\\Program Files\\dotnet\\library-packs": {},
         "https://api.nuget.org/v3/index.json": {}
       },
       "frameworks": {
-        "net7.0": {
-          "targetAlias": "net7.0",
+        "net8.0": {
+          "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj": {
-              "projectPath": "C:\\Users\\Professional\\source\\repos\\bookstore\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj"
+            "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj": {
+              "projectPath": "C:\\Users\\Alexander\\source\\repos\\Курсовая\\Bookstore.ASP\\Bookstore.Domain\\Bookstore.Domain.csproj"
             }
           }
         }
@@ -1138,11 +1137,17 @@
         "warnAsError": [
           "NU1605"
         ]
-      }
+      },
+      "restoreAuditProperties": {
+        "enableAudit": "true",
+        "auditLevel": "low",
+        "auditMode": "direct"
+      },
+      "SdkAnalysisLevel": "9.0.300"
     },
     "frameworks": {
-      "net7.0": {
-        "targetAlias": "net7.0",
+      "net8.0": {
+        "targetAlias": "net8.0",
         "dependencies": {
           "AutoMapper": {
             "target": "Package",
@@ -1181,7 +1186,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.304/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
